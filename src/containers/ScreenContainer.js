@@ -1,4 +1,5 @@
 import ScreenSelector from "../components/ScreenSelector";
+import HomeScreen from "../components/HomeScreen";
 
 const ScreenContainer = () => {
 
@@ -11,9 +12,9 @@ const ScreenContainer = () => {
     return(
 
         <>
-
-            <ScreenSelector/>
-
+            <div className="screen-content-container">
+                <ScreenSelector/>
+            </div>
         </>
     )
 

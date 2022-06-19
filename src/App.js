@@ -17,7 +17,7 @@
 
 import { Component } from 'react';
 import './App.css';
-import PokeDex from './containers/PokeDex';
+import PokeDexContainer from './containers/PokeDexContainer';
 
 class App extends Component {
   constructor(props) {
@@ -34,7 +34,7 @@ class App extends Component {
     return (
       <div >
         {this.state.matches && (<h1>Big Screen</h1>)}
-        {!this.state.matches && (<PokeDex/>)}
+        {!this.state.matches && (<PokeDexContainer/>)}
       </div>
     );
   }
