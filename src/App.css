@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+#RetroFont{
+    font-family: 'Press Start 2P', cursive;
+}
+
+#Footer{
+    bottom: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#Header{
+    top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+@media (min-width: 650px ) {
+    .App {
+        background-position: center center;
+    }
+
+    .App-content {
+        align-items: flex-end;
+        justify-content: center;
+    }
+}
