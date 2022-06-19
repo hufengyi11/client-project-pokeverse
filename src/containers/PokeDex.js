@@ -11,22 +11,40 @@ const PokeDex = () => {
         <div className="mainYellowContainer">
           <div>
             <div className="screen-border-top">
-                <div className="screen-border-top-opaque"></div>
+              <div className="screen-border-top-opaque"></div>
             </div>
           </div>
+          <div className="screen">
+            {/* TURN 'screen-content-container' into REACT COMPONENT */}
+            <div className="screen-content-container">
+                
 
-          <div className="screen"></div>
+
+                <div className="test-logo">R</div>
+                <div className="test-slogan">BLASTING OFF...</div>
+
+
+
+                <div className="pokeverse-version">Pok&eacute;verse v1.0.3</div>
+
+            </div>
+          </div>
           <div className="screenBorderBottomText">POK&Eacute;VERSE&trade;</div>
 
           <div className="screenBorderTopText">Team Rocket Edition</div>
           <div className="v13_1212"></div>
 
           <div className="buttonframe">
-            <div className="DPadVertical"></div>
-            <div className="DPadHorizontal"></div>
+              <div className="DPadVerticalTOP"></div>
+              <div className="DPadVerticalBOTTOM"></div>
+              <div className="DPadHorizontalLEFT"></div>
+              <div className="DPadHorizontalRIGHT"></div>
             <div className="DPadCenter"></div>
+            <div className="DPadCenterSquare"></div>
+            <div className='DPadTrianlgeLeft'></div>
+            <div className="DPadTrianlgeRight"></div>
             <div className="Nintendo-container">
-              <div className="Nintendo">Nintendo</div>
+              <div className="Nintendo">Rocktendo</div>
               <div className="Nintendo-outline"></div>
             </div>
             <div className="noButton">B</div>
@@ -37,7 +55,7 @@ const PokeDex = () => {
             </div>
             <div className="v13_1213"></div>
           </div>
-          <div classname='v13_11'></div>  
+          <div classname="v13_11"></div>
           <div className="v13_1213"></div>
           <div className="v13_1099"></div>
         </div>

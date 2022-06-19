@@ -29,6 +29,7 @@
       rgba(253, 209, 0, 1) 0%,
       rgba(222, 183, 0, 1) 100%
     ); */
+    
     background:linear-gradient(145deg, rgba(255,240,169,1) 0%, rgba(253,209,0,1) 22%, rgba(191,158,0,1) 100%);
     background-blend-mode: overlay;
     background-size: cover;
@@ -123,7 +124,47 @@
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     box-shadow: inset 0px 1px 15px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
+  .screen-content-container {
+    height: 92%;
+    width: 100%;
+    margin: 20px;
+    border-color: black;
+    /* border-style: dashed; */
+
+
+    display: flex;
+    flex-direction: column;
+}
+
+  .test-logo {
+    margin: auto;
+    margin-left: 80px;
+    font-family: "Press Start 2P";
+    font-weight: Regular;
+    font-size: 125px;
+    margin-bottom: 10px;
+    color: #042200;
+  }
+  .test-slogan {
+    margin: auto;
+    font-family: "Press Start 2P";
+    font-weight: Regular;
+    font-size: 15px;
+    margin-top: 5px;
+    color: #042200;
+  }
+  .pokeverse-version {
+    font-family: "Press Start 2P";
+    font-size: 10px;
+    margin-bottom: 5px;
+    color: #042200;
+  }
+
   .screenBorderBottomText {
     width: 108px;
     color: rgba(255, 255, 255, 1);
@@ -186,6 +227,11 @@
     left: 1px;
     overflow: hidden;
   }
+  .DPadframe{
+    background: linear-gradient(315deg, rgba(0,0,0,1) 0%, rgba(62,62,62,1) 95%, rgba(130,130,130,1) 100%);
+    box-shadow: 3px 3px 4px 2px rgba(0, 0, 0, 0.35);
+    opacity: 1;
+  }
   .button1 {
     width: 115px;
     height: 115px;
@@ -213,28 +259,46 @@
     left: 0px;
     overflow: hidden;
   }
-  .DPadVertical {
-    width: 46px;
-    height: 115px;
+  .DPadVerticalTOP {
+    width: 46px;  /*46px width*/
+    height: 37px;   /*115px height*/
     background: rgba(0, 0, 0, 1);
     opacity: 1;
     position: absolute;
     top: 20px;
-    left: 70px;
+    left: 70px;      /*70px left*/
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     overflow: hidden;
+    
   }
-  .DPadHorizontal {
-    width: 46px;
-    height: 115px;
+
+  .DPadVerticalBOTTOM {
+    width: 46px;  /*46px width*/
+    height: 37px;   /*115px height*/
     background: rgba(0, 0, 0, 1);
     opacity: 1;
     position: absolute;
-    top: 20px;
-    left: 70px;
+    top: 97px;
+    left: 70px;      /*70px left*/
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    overflow: hidden;
+    box-shadow: inset -3px -3px 4px 2px rgba(134, 131, 131, 0.579) /*box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.35);*/
+  }
+
+  .DPadHorizontalLEFT {
+    width: 46px;  /*46px width*/
+    height: 37px;   /*115px height*/
+    background: rgba(0, 0, 0, 1);
+    opacity: 1;
+    position: absolute;
+    top: 58px;
+    left: 31px;      /*70px left*/
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -242,6 +306,47 @@
     transform: rotate(-90deg);
     overflow: hidden;
   }
+
+  .DPadHorizontalRIGHT {
+    width: 46px;  /*46px width*/
+    height: 37px;   /*115px height*/
+    background: rgba(0, 0, 0, 1);
+    opacity: 1;
+    position: absolute;
+    top: 58px;
+    left: 108px;      /*70px left*/
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transform: rotate(-90deg);
+    overflow: hidden;
+    box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.35);
+  }
+
+
+  .DPadCenterSquare {
+    
+    width: 46px;  /*46px width*/
+    height: 44px;   /*115px height*/
+    background: rgba(0, 0, 0, 1);
+    opacity: 1;
+    position: absolute;
+    top: 56px;
+    left: 68px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+    overflow: hidden;
+    
+    
+    
+  }
+
+  
+  
   .DPadCenter {
     width: 34px;
     height: 34px;
@@ -251,6 +356,31 @@
     top: 60px;
     left: 75px;
     border-radius: 50%;
+    z-index: 1;
+  }
+  .DPadTrianlgeRight{
+    position: absolute;
+    top: 68px;
+    left: 122px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top: 0;
+    border-bottom: 16px solid 
+    rgba(217, 217, 217, 1);
+    transform: rotate(90deg);
+  }
+  .DPadTrianlgeLeft{
+    position: absolute;
+    top: 68px;
+    left: 42px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top: 0;
+    border-bottom: 16px solid 
+    rgba(217, 217, 217, 1);
+    transform: rotate(270deg);
   }
   .name {
     color: #fff;
@@ -311,7 +441,7 @@
     color: #ffffff;
   }
   .Nintendo-container {
-    width: 117px;
+    width: 126px;
     height: 26px;
     /* background: url("../images/v8_24.png"); */
     background-repeat: no-repeat;
@@ -320,11 +450,12 @@
     opacity: 1;
     position: absolute;
     top: 16px;
-    left: 156px;
+    left: 150px;
     overflow: hidden;
   }
   .Nintendo-outline {
-    width: 117px;
+    width: 126px;
+    /* width: auto; */
     height: 26px;
     /* background: url("../images/v8_22.png"); */
     background-repeat: no-repeat;
@@ -388,7 +519,7 @@
     border-radius: 50%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
   }
-  .graydent {
+  .v2233 {
     width: 15px;
     height: 15px;
     background: rgba(43, 49, 60, 1);
