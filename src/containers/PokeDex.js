@@ -3,10 +3,6 @@ import "./pokedex.css";
 const PokeDex = () => {
   return (
     <section>
-      {/* <div className="v1_3"></div> */}
-      {/* <div className='v8_2'>
-                <div className='mainYellowContainer'></div>
-            </div> */}
       <div className="shit-container">
         <div className="mainYellowContainer">
           <div>
@@ -26,6 +22,8 @@ const PokeDex = () => {
 
 
                 <div className="pokeverse-version">Pok&eacute;verse v1.0.3</div>
+
+
 
             </div>
           </div>
@@ -60,7 +58,6 @@ const PokeDex = () => {
           <div className="v13_1099"></div>
         </div>
       </div>
-      {/* <div className='v8_5'></div> */}
     </section>
   );
 };

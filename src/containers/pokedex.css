@@ -23,14 +23,8 @@
   .mainYellowContainer {
     width: 418px;
     height: 772px;
-    /* background: rgba(253, 209, 0, 1); */
-    /* background: linear-gradient(
-      145deg,
-      rgba(253, 209, 0, 1) 0%,
-      rgba(222, 183, 0, 1) 100%
-    ); */
-    
-    background:linear-gradient(145deg, rgba(255,240,169,1) 0%, rgba(253,209,0,1) 22%, rgba(191,158,0,1) 100%);
+    background:
+    linear-gradient(145deg, rgba(255,240,169,1) 0%, rgba(253,209,0,1) 22%, rgba(191,158,0,1) 100%);
     background-blend-mode: overlay;
     background-size: cover;
     opacity: 1;
@@ -41,33 +35,14 @@
     overflow: hidden;
     position: relative;
     margin: auto;
-    /* left: 0;
-    right: 0; */
     text-align: center;
     box-shadow: inset -3px -3px 4px 1px rgba(0, 0, 0, 0.25);
-
-    /* min-width: 100%;
-    min-height: 100%;
-    background-size: cover;
-    background-position: center; */
-
-    /* transform: translate(-50%, -50%) */
   }
   .screen-border-top {
     width: 379px;
     height: 565px;
-    /* background: rgba(78, 98, 108, 1); */
-    /* background: linear-gradient(139deg, rgba(55,69,75,1) 0%, rgba(78,98,108,0.01) 100%); */
-    /* background: linear-gradient(
-      315deg,
-      rgba(55, 69, 75, 1) 0%,
-      rgba(78, 98, 108, 1) 100%
-    ); */
-    /* background: linear-gradient(315deg, rgba(45,56,61,1) 0%, rgba(78,98,108,1) 100%); */
-    background: 
-    
+    background:   
     linear-gradient(315deg, rgba(45,56,61,1) 0%, rgba(78,98,108,1) 85%, rgba(109,127,135,1) 100%);
-    
     background-blend-mode: overlay;
     background-size: cover;
     opacity: 1;
@@ -85,14 +60,6 @@
   .screen-border-top-opaque {
     width: 309px;
     height: 494px;
-    /* background: rgba(78, 98, 108, 1); */
-    /* background: linear-gradient(139deg, rgba(55,69,75,1) 0%, rgba(78,98,108,0.01) 100%); */
-    /* background: linear-gradient(
-      315deg,
-      rgba(55, 69, 75, 1) 0%,
-      rgba(78, 98, 108, 1) 100%
-    ); */
-    /* background: linear-gradient(315deg, rgba(45,56,61,1) 0%, rgba(78,98,108,1) 100%); */
     background-color: black; /* BACKLIGHT PROEPRTY*/
     background-blend-mode: overlay;
     background-size: cover;
@@ -135,7 +102,6 @@
     margin: 20px;
     border-color: black;
     /* border-style: dashed; */
-
 
     display: flex;
     flex-direction: column;
@@ -217,7 +183,6 @@
   .buttonframe {
     width: 416px;
     height: 188px;
-    /* background: url("../images/v13_1008.png"); */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -228,14 +193,14 @@
     overflow: hidden;
   }
   .DPadframe{
-    background: linear-gradient(315deg, rgba(0,0,0,1) 0%, rgba(62,62,62,1) 95%, rgba(130,130,130,1) 100%);
+    background: 
+    linear-gradient(315deg, rgba(0,0,0,1) 0%, rgba(62,62,62,1) 95%, rgba(130,130,130,1) 100%);
     box-shadow: 3px 3px 4px 2px rgba(0, 0, 0, 0.35);
     opacity: 1;
   }
   .button1 {
     width: 115px;
     height: 115px;
-    /* background: url("../images/v8_9.png"); */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -249,7 +214,6 @@
   .v38_2 {
     width: 115px;
     height: 115px;
-    /* background: url("../images/v38_2.png"); */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -289,7 +253,9 @@
     border-bottom-right-radius: 5px;
     overflow: hidden;
     
-     box-shadow:   1px 1px 4px 2px rgba(0, 0, 0, 0.35);
+    
+     
+    /* click box-shadow: inset -7px 0 9px -7px #ffffffe4, inset 7px 0 9px -7px #ffffffe4, inset 0 -7px 9px -7px #ffffffe4;   */
   }
 
   .DPadHorizontalLEFT {
