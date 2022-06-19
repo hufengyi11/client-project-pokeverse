@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './container/Header';
-import Body from './container/Body';
+import HomePage from './container/HomePage';
 import Footer from './container/Footer';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Header />
-      <Body />
+      <HomePage />
       <Footer />
     </>
   );
