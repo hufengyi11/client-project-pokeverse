@@ -1,0 +1,531 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+@media (max-width: 480px) {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+    margin: 0;
+  }
+  section {
+    box-sizing: unset;
+  }
+
+  .shit-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mainYellowContainer {
+    width: 418px;
+    height: 772px;
+    /* background: rgba(253, 209, 0, 1); */
+    /* background: linear-gradient(
+      145deg,
+      rgba(253, 209, 0, 1) 0%,
+      rgba(222, 183, 0, 1) 100%
+    ); */
+    background:linear-gradient(145deg, rgba(255,240,169,1) 0%, rgba(253,209,0,1) 22%, rgba(191,158,0,1) 100%);
+    background-blend-mode: overlay;
+    background-size: cover;
+    opacity: 1;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    /* left: 0;
+    right: 0; */
+    text-align: center;
+    box-shadow: inset -3px -3px 4px 1px rgba(0, 0, 0, 0.25);
+
+    /* min-width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    background-position: center; */
+
+    /* transform: translate(-50%, -50%) */
+  }
+  .screen-border-top {
+    width: 379px;
+    height: 565px;
+    /* background: rgba(78, 98, 108, 1); */
+    /* background: linear-gradient(139deg, rgba(55,69,75,1) 0%, rgba(78,98,108,0.01) 100%); */
+    /* background: linear-gradient(
+      315deg,
+      rgba(55, 69, 75, 1) 0%,
+      rgba(78, 98, 108, 1) 100%
+    ); */
+    /* background: linear-gradient(315deg, rgba(45,56,61,1) 0%, rgba(78,98,108,1) 100%); */
+    background: 
+    
+    linear-gradient(315deg, rgba(45,56,61,1) 0%, rgba(78,98,108,1) 85%, rgba(109,127,135,1) 100%);
+    
+    background-blend-mode: overlay;
+    background-size: cover;
+    opacity: 1;
+    position: relative;
+    top: 18px;
+    left: 18px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+    box-shadow: inset -2px -4px 4px 2px rgba(0, 0, 0, 0.25);
+  }
+
+  .screen-border-top-opaque {
+    width: 309px;
+    height: 494px;
+    /* background: rgba(78, 98, 108, 1); */
+    /* background: linear-gradient(139deg, rgba(55,69,75,1) 0%, rgba(78,98,108,0.01) 100%); */
+    /* background: linear-gradient(
+      315deg,
+      rgba(55, 69, 75, 1) 0%,
+      rgba(78, 98, 108, 1) 100%
+    ); */
+    /* background: linear-gradient(315deg, rgba(45,56,61,1) 0%, rgba(78,98,108,1) 100%); */
+    background-color: black; /* BACKLIGHT PROEPRTY*/
+    background-blend-mode: overlay;
+    background-size: cover;
+    opacity: 1;
+    position: relative;
+    top: 36.4px;
+    left: 35px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+    box-shadow: inset -2px -4px 4px 2px rgba(0, 0, 0, 0.25);
+  }
+
+  
+  
+  .screen {
+    width: 309px;
+    height: 494px;
+    background: rgba(138, 228, 173, 0.5);
+    opacity: 1;
+    position: absolute;
+    top: 54px;
+    left: 53px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: inset 0px 1px 15px 10px rgba(0, 0, 0, 0.5);
+  }
+  .screenBorderBottomText {
+    width: 108px;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    top: 560px;
+    left: 160px;
+    font-family: "Press Start 2P";
+    font-weight: Regular;
+    font-size: 12px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v13_1212 {
+    width: 12px;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    top: 556px;
+    left: 196px;
+    font-family: "Press Start 2P";
+    font-weight: Regular;
+    font-size: 12px;
+    opacity: 1;
+    text-align: left;
+  }
+  .screenBorderTopText {
+    width: 228px;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    font-family: "Press Start 2P";
+    font-weight: Regular;
+    font-size: 12px;
+    opacity: 1;
+    text-align: left;
+    
+  }
+  .v2344423 {
+    width: 12px;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    top: 566px;
+    left: 268px;
+    font-family: "Press Start 2P";
+    font-weight: Regular;
+    font-size: 6px;
+    opacity: 1;
+    text-align: left;
+  }
+  .buttonframe {
+    width: 416px;
+    height: 188px;
+    /* background: url("../images/v13_1008.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 583px;
+    left: 1px;
+    overflow: hidden;
+  }
+  .button1 {
+    width: 115px;
+    height: 115px;
+    /* background: url("../images/v8_9.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 23px;
+    left: 34px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+  }
+  .v38_2 {
+    width: 115px;
+    height: 115px;
+    /* background: url("../images/v38_2.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .DPadVertical {
+    width: 46px;
+    height: 115px;
+    background: rgba(0, 0, 0, 1);
+    opacity: 1;
+    position: absolute;
+    top: 20px;
+    left: 70px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    overflow: hidden;
+  }
+  .DPadHorizontal {
+    width: 46px;
+    height: 115px;
+    background: rgba(0, 0, 0, 1);
+    opacity: 1;
+    position: absolute;
+    top: 20px;
+    left: 70px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transform: rotate(-90deg);
+    overflow: hidden;
+  }
+  .DPadCenter {
+    width: 34px;
+    height: 34px;
+    background: rgba(43, 49, 60, 1);
+    opacity: 1;
+    position: absolute;
+    top: 60px;
+    left: 75px;
+    border-radius: 50%;
+  }
+  .name {
+    color: #fff;
+  }
+  .name {
+    color: #fff;
+  }
+  .noButton {
+    width: 50px;
+    height: 50px;
+    color: 	#C0C0C0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* background: rgba(0, 0, 0, 1); */
+    background: linear-gradient(315deg, rgba(0,0,0,1) 0%, rgba(62,62,62,1) 95%, rgba(130,130,130,1) 100%);
+    opacity: 1;
+    position: absolute;
+    top: 56px;
+    left: 252px;
+    border-radius: 50%;
+    box-shadow: 3px 3px 4px 2px rgba(0, 0, 0, 0.35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+  }
+  .yesButton {
+    width: 50px;
+    height: 50px;
+    color: 	#C0C0C0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* background: rgba(0, 0, 0, 1); */
+    background: linear-gradient(315deg, rgba(0,0,0,1) 0%, rgba(62,62,62,1) 95%, rgba(130,130,130,1) 100%);
+    /* background: linear-gradient(315deg, rgba(0,0,0,1) 0%, rgba(62,62,62,1) 82%, rgba(221,221,221,1) 89%); */
+    /* background: linear-gradient(138deg, rgba(82,82,82,1) 0%, rgba(27,27,27,1) 18%, rgba(50,50,50,1) 100%); */
+    opacity: 1;
+    position: absolute;
+    top: 23px;
+    left: 331px;
+    border-radius: 50%;
+    /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25); */
+    box-shadow: 3px 3px 4px 2px rgba(0, 0, 0, 0.35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+  }
+  .TM {
+    position: absolute;
+    width: 12px;
+    height: 6px;
+    left: 300px;
+    top: 526px;
+    font-family: "Press Start 2P";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 6px;
+    line-height: 6px;
+    color: #ffffff;
+  }
+  .Nintendo-container {
+    width: 117px;
+    height: 26px;
+    /* background: url("../images/v8_24.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 16px;
+    left: 156px;
+    overflow: hidden;
+  }
+  .Nintendo-outline {
+    width: 117px;
+    height: 26px;
+    /* background: url("../images/v8_22.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 1px solid rgb(163, 138, 9);
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    overflow: hidden;
+  }
+  .Nintendo {
+    width: 96px;
+    color: rgb(163, 138, 9);
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    font-family: "Press Start 2P";
+    font-weight: Regular;
+    font-size: 12px;
+    opacity: 1;
+    text-align: left;
+  }
+  .BottomButtonContainer {
+    width: 169px;
+    height: 20px;
+    /* background: url("../images/v13_19.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 144px;
+    left: 130px;
+    overflow: hidden;
+  }
+  .bottomButton1 {
+    width: 60px;
+    height: 20px;
+    background: rgba(0, 0, 0, 1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  }
+  .bottomButton2 {
+    width: 60px;
+    height: 20px;
+    background: rgba(0, 0, 0, 1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 109px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  }
+  .graydent {
+    width: 15px;
+    height: 15px;
+    background: rgba(43, 49, 60, 1);
+    opacity: 1;
+    position: absolute;
+    top: 123px;
+    left: 355px;
+    border-radius: 50%;
+  }
+  .v13_11 {
+    width: 428px;
+    height: 76px;
+    /* background: url("../images/v13_11.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v13_13 {
+    width: 144px;
+    color: rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 30px;
+    left: 142px;
+    font-family: "Press Start 2P";
+    font-weight: Regular;
+    font-size: 16px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v13_1103 {
+    width: 44px;
+    height: 32px;
+    /* background: url("../images/v13_1103.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding: 6px 4px;
+    margin: 10px;
+    opacity: 1;
+    position: absolute;
+    top: 22px;
+    left: 20px;
+    overflow: hidden;
+  }
+  .name {
+    color: #fff;
+  }
+  .name {
+    color: #fff;
+  }
+  .name {
+    color: #fff;
+  }
+  .footercontainer {
+    width: 428px;
+    height: 76px;
+    /* background: url("../images/v13_1097.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 850px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .footer1 {
+    width: 72px;
+    color: rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 38px;
+    left: 35px;
+    font-family: "Press Start 2P";
+    font-weight: Regular;
+    font-size: 12px;
+    opacity: 1;
+    text-align: left;
+  }
+  .footer2 {
+    width: 60px;
+    color: rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 38px;
+    left: 333px;
+    font-family: "Press Start 2P";
+    font-weight: Regular;
+    font-size: 12px;
+    opacity: 1;
+    text-align: left;
+  }
+  .footer3 {
+    width: 108px;
+    color: rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 38px;
+    left: 160px;
+    font-family: "Press Start 2P";
+    font-weight: Regular;
+    font-size: 12px;
+    opacity: 1;
+    text-align: left;
+  }
+  .name {
+    color: #fff;
+  }
+  .v13_1213 {
+    width: 12px;
+    color: rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 29px;
+    left: 192px;
+    font-family: "Press Start 2P";
+    font-weight: Regular;
+    font-size: 12px;
+    opacity: 1;
+    text-align: left;
+  }
+}
+
+/* TM */
+
+/* position: absolute;
+width: 12px;
+height: 6px;
+left: 268px;
+top: 566px;
+
+font-family: "Press Start 2P";
+font-style: normal;
+font-weight: 400;
+font-size: 6px;
+line-height: 6px;
+/* identical to box height */
+
+/* color: #ffffff; */ 
