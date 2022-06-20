@@ -13,18 +13,30 @@
   }
 
   .shit-container {
-    width: 100vw;
-    height: 100vh;
+    width: 375px;
+    height: 667px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   .mainYellowContainer {
+<<<<<<< HEAD
     width: 418px;
     height: 772px;
     background:
     linear-gradient(145deg, rgba(255,240,169,1) 0%, rgba(253,209,0,1) 22%, rgba(191,158,0,1) 100%);
+=======
+    width: 320px;
+    height: 521px;
+    /* background: rgba(253, 209, 0, 1); */
+    /* background: linear-gradient(
+      145deg,
+      rgba(253, 209, 0, 1) 0%,
+      rgba(222, 183, 0, 1) 100%
+    ); */
+    background:linear-gradient(145deg, rgba(255,240,169,1) 0%, rgba(253,209,0,1) 22%, rgba(191,158,0,1) 100%);
+>>>>>>> big-screen-css
     background-blend-mode: overlay;
     background-size: cover;
     opacity: 1;
@@ -39,16 +51,30 @@
     box-shadow: inset -3px -3px 4px 1px rgba(0, 0, 0, 0.25);
   }
   .screen-border-top {
+<<<<<<< HEAD
     width: 379px;
     height: 565px;
     background:   
+=======
+    width: 272px;
+    height: 350px;
+    /* background: rgba(78, 98, 108, 1); */
+    /* background: linear-gradient(139deg, rgba(55,69,75,1) 0%, rgba(78,98,108,0.01) 100%); */
+    /* background: linear-gradient(
+      315deg,
+      rgba(55, 69, 75, 1) 0%,
+      rgba(78, 98, 108, 1) 100%
+    ); */
+    /* background: linear-gradient(315deg, rgba(45,56,61,1) 0%, rgba(78,98,108,1) 100%); */
+    background: 
+>>>>>>> big-screen-css
     linear-gradient(315deg, rgba(45,56,61,1) 0%, rgba(78,98,108,1) 85%, rgba(109,127,135,1) 100%);
     background-blend-mode: overlay;
     background-size: cover;
     opacity: 1;
     position: relative;
-    top: 18px;
-    left: 18px;
+    top: 17px;
+    left: 24px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     border-bottom-left-radius: 50px;
@@ -58,15 +84,28 @@
   }
 
   .screen-border-top-opaque {
+<<<<<<< HEAD
     width: 309px;
     height: 494px;
+=======
+    width: 0px;
+    height: 0px;
+    /* background: rgba(78, 98, 108, 1); */
+    /* background: linear-gradient(139deg, rgba(55,69,75,1) 0%, rgba(78,98,108,0.01) 100%); */
+    /* background: linear-gradient(
+      315deg,
+      rgba(55, 69, 75, 1) 0%,
+      rgba(78, 98, 108, 1) 100%
+    ); */
+    /* background: linear-gradient(315deg, rgba(45,56,61,1) 0%, rgba(78,98,108,1) 100%); */
+>>>>>>> big-screen-css
     background-color: black; /* BACKLIGHT PROEPRTY*/
     background-blend-mode: overlay;
     background-size: cover;
     opacity: 1;
     position: relative;
-    top: 36.4px;
-    left: 35px;
+    top: 0px;
+    left: 0px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     border-bottom-left-radius: 50px;
@@ -74,19 +113,22 @@
     overflow: hidden;
     box-shadow: inset -2px -4px 4px 2px rgba(0, 0, 0, 0.25);
   }
+<<<<<<< HEAD
 
 
 
   
   
+=======
+>>>>>>> big-screen-css
   .screen {
-    width: 309px;
-    height: 494px;
+    width: 224px;
+    height: 302px;
     background: rgba(138, 228, 173, 0.5);
     opacity: 1;
     position: absolute;
-    top: 54px;
-    left: 53px;
+    top: 40px;
+    left: 48px;
     border: 1px solid rgba(0, 0, 0, 1);
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
@@ -137,11 +179,11 @@
     width: 108px;
     color: rgba(255, 255, 255, 1);
     position: absolute;
-    top: 560px;
-    left: 160px;
+    top: 348px;
+    left: 114px;
     font-family: "Press Start 2P";
     font-weight: Regular;
-    font-size: 12px;
+    font-size: 10px;
     opacity: 1;
     text-align: left;
   }
@@ -161,11 +203,11 @@
     width: 228px;
     color: rgba(255, 255, 255, 1);
     position: absolute;
-    top: 30px;
-    left: 100px;
+    top: 25px;
+    left: 70px;
     font-family: "Press Start 2P";
     font-weight: Regular;
-    font-size: 12px;
+    font-size: 10px;
     opacity: 1;
     text-align: left;
     
@@ -183,15 +225,15 @@
     text-align: left;
   }
   .buttonframe {
-    width: 416px;
+    width: 375px;
     height: 188px;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     opacity: 1;
     position: absolute;
-    top: 583px;
-    left: 1px;
+    top: 333px;
+    left: 0px;
     overflow: hidden;
   }
   .DPadframe{
@@ -201,8 +243,14 @@
     opacity: 1;
   }
   .button1 {
+<<<<<<< HEAD
     width: 115px;
     height: 115px;
+=======
+    width: 80px;
+    height: 80px;
+    /* background: url("../images/v8_9.png"); */
+>>>>>>> big-screen-css
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -214,8 +262,14 @@
     overflow: hidden;
   }
   .v38_2 {
+<<<<<<< HEAD
     width: 115px;
     height: 115px;
+=======
+    width: 80px;
+    height: 80px;
+    /* background: url("../images/v38_2.png"); */
+>>>>>>> big-screen-css
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -225,6 +279,7 @@
     left: 0px;
     overflow: hidden;
   }
+<<<<<<< HEAD
   .DPadVerticalTOP {
     width: 46px;  /*46px width*/
     height: 37px;   /*115px height*/
@@ -233,6 +288,16 @@
     position: absolute;
     top: 20px;
     left: 70px;      /*70px left*/
+=======
+  .DPadVertical {
+    width: 26px;
+    height: 75px;
+    background: rgba(0, 0, 0, 1);
+    opacity: 1;
+    position: absolute;
+    top: 55px;
+    left: 60px;
+>>>>>>> big-screen-css
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -240,6 +305,7 @@
     overflow: hidden;
     
   }
+<<<<<<< HEAD
 
   .DPadVerticalBOTTOM {
     width: 46px;  /*46px width*/
@@ -269,6 +335,16 @@
     position: absolute;
     top: 58px;
     left: 31px;      /*70px left*/
+=======
+  .DPadHorizontal {
+    width: 26px;
+    height: 75px;
+    background: rgba(0, 0, 0, 1);
+    opacity: 1;
+    position: absolute;
+    top: 55px;
+    left: 60px;
+>>>>>>> big-screen-css
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -335,13 +411,13 @@
   
   
   .DPadCenter {
-    width: 34px;
-    height: 34px;
+    width: 24px;
+    height: 24px;
     background: rgba(43, 49, 60, 1);
     opacity: 1;
     position: absolute;
-    top: 60px;
-    left: 75px;
+    top: 80px;
+    left: 60px;
     border-radius: 50%;
     z-index: 1;
   }
@@ -376,16 +452,16 @@
     color: #fff;
   }
   .noButton {
-    width: 50px;
-    height: 50px;
+    width: 28px;
+    height: 28px;
     color: 	#C0C0C0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     /* background: rgba(0, 0, 0, 1); */
     background: linear-gradient(315deg, rgba(0,0,0,1) 0%, rgba(62,62,62,1) 95%, rgba(130,130,130,1) 100%);
     opacity: 1;
     position: absolute;
-    top: 56px;
-    left: 252px;
+    top: 76px;
+    left: 192px;
     border-radius: 50%;
     box-shadow: 3px 3px 4px 2px rgba(0, 0, 0, 0.35);
     display: flex;
@@ -419,8 +495,8 @@
 
 
   .yesButton {
-    width: 50px;
-    height: 50px;
+    width: 28px;
+    height: 28px;
     color: 	#C0C0C0;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     /* background: rgba(0, 0, 0, 1); */
@@ -429,8 +505,8 @@
     /* background: linear-gradient(138deg, rgba(82,82,82,1) 0%, rgba(27,27,27,1) 18%, rgba(50,50,50,1) 100%); */
     opacity: 1;
     position: absolute;
-    top: 23px;
-    left: 331px;
+    top: 53px;
+    left: 251px;
     border-radius: 50%;
     /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25); */
     box-shadow: 3px 3px 4px 2px rgba(0, 0, 0, 0.35);
@@ -480,6 +556,7 @@
     background-size: cover;
     opacity: 1;
     position: absolute;
+<<<<<<< HEAD
     top: 16px;
     left: 150px;
     overflow: hidden;
@@ -488,6 +565,15 @@
     width: 126px;
     /* width: auto; */
     height: 26px;
+=======
+    top: 48px;
+    left: 110px;
+    overflow: hidden;
+  }
+  .Nintendo-outline {
+    width: 96px;
+    height: 18px;
+>>>>>>> big-screen-css
     /* background: url("../images/v8_22.png"); */
     background-repeat: no-repeat;
     background-position: center center;
@@ -504,14 +590,14 @@
     overflow: hidden;
   }
   .Nintendo {
-    width: 96px;
+    width: 90px;
     color: rgb(163, 138, 9);
     position: absolute;
-    top: 7px;
-    left: 10px;
+    top: 4px;
+    left: 12px;
     font-family: "Press Start 2P";
     font-weight: Regular;
-    font-size: 12px;
+    font-size: 10px;
     opacity: 1;
     text-align: left;
   }
@@ -525,11 +611,11 @@
     opacity: 1;
     position: absolute;
     top: 144px;
-    left: 130px;
+    left: 80px;
     overflow: hidden;
   }
   .bottomButton1 {
-    width: 60px;
+    width: 40px;
     height: 20px;
     /* background: rgba(0, 0, 0, 1); */
     background: linear-gradient(350deg, rgba(0,0,0,1) 0%, rgba(62,62,62,1) 95%, rgba(130,130,130,1) 100%);
@@ -541,7 +627,7 @@
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.25);
   }
   .bottomButton2 {
-    width: 60px;
+    width: 40px;
     height: 20px;
     /* background: rgba(0, 0, 0, 1); */
     background: linear-gradient(350deg, rgba(0,0,0,1) 0%, rgba(62,62,62,1) 95%, rgba(130,130,130,1) 100%);
@@ -576,7 +662,7 @@
     opacity: 1;
     position: absolute;
     top: 123px;
-    left: 355px;
+    left: 255px;
     border-radius: 50%;
   }
   .v13_11 {
@@ -618,79 +704,6 @@
     top: 22px;
     left: 20px;
     overflow: hidden;
-  }
-  .name {
-    color: #fff;
-  }
-  .name {
-    color: #fff;
-  }
-  .name {
-    color: #fff;
-  }
-  .footercontainer {
-    width: 428px;
-    height: 76px;
-    /* background: url("../images/v13_1097.png"); */
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
-    position: absolute;
-    top: 850px;
-    left: 0px;
-    overflow: hidden;
-  }
-  .footer1 {
-    width: 72px;
-    color: rgba(0, 0, 0, 1);
-    position: absolute;
-    top: 38px;
-    left: 35px;
-    font-family: "Press Start 2P";
-    font-weight: Regular;
-    font-size: 12px;
-    opacity: 1;
-    text-align: left;
-  }
-  .footer2 {
-    width: 60px;
-    color: rgba(0, 0, 0, 1);
-    position: absolute;
-    top: 38px;
-    left: 333px;
-    font-family: "Press Start 2P";
-    font-weight: Regular;
-    font-size: 12px;
-    opacity: 1;
-    text-align: left;
-  }
-  .footer3 {
-    width: 108px;
-    color: rgba(0, 0, 0, 1);
-    position: absolute;
-    top: 38px;
-    left: 160px;
-    font-family: "Press Start 2P";
-    font-weight: Regular;
-    font-size: 12px;
-    opacity: 1;
-    text-align: left;
-  }
-  .name {
-    color: #fff;
-  }
-  .v13_1213 {
-    width: 12px;
-    color: rgba(0, 0, 0, 1);
-    position: absolute;
-    top: 29px;
-    left: 192px;
-    font-family: "Press Start 2P";
-    font-weight: Regular;
-    font-size: 12px;
-    opacity: 1;
-    text-align: left;
   }
 }
 
