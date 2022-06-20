@@ -21,10 +21,15 @@
   }
 
   .mainYellowContainer {
-    width: 418px;
-    height: 772px;
-    background:
-    linear-gradient(145deg, rgba(255,240,169,1) 0%, rgba(253,209,0,1) 22%, rgba(191,158,0,1) 100%);
+    width: 320px;
+    height: 521px;
+    /* background: rgba(253, 209, 0, 1); */
+    /* background: linear-gradient(
+      145deg,
+      rgba(253, 209, 0, 1) 0%,
+      rgba(222, 183, 0, 1) 100%
+    ); */
+    background:linear-gradient(145deg, rgba(255,240,169,1) 0%, rgba(253,209,0,1) 22%, rgba(191,158,0,1) 100%);
     background-blend-mode: overlay;
     background-size: cover;
     opacity: 1;
@@ -35,13 +40,30 @@
     overflow: hidden;
     position: relative;
     margin: auto;
+    /* left: 0;
+    right: 0; */
     text-align: center;
     box-shadow: inset -3px -3px 4px 1px rgba(0, 0, 0, 0.25);
+
+    /* min-width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    background-position: center; */
+
+    /* transform: translate(-50%, -50%) */
   }
   .screen-border-top {
-    width: 379px;
-    height: 565px;
-    background:   
+    width: 272px;
+    height: 350px;
+    /* background: rgba(78, 98, 108, 1); */
+    /* background: linear-gradient(139deg, rgba(55,69,75,1) 0%, rgba(78,98,108,0.01) 100%); */
+    /* background: linear-gradient(
+      315deg,
+      rgba(55, 69, 75, 1) 0%,
+      rgba(78, 98, 108, 1) 100%
+    ); */
+    /* background: linear-gradient(315deg, rgba(45,56,61,1) 0%, rgba(78,98,108,1) 100%); */
+    background: 
     linear-gradient(315deg, rgba(45,56,61,1) 0%, rgba(78,98,108,1) 85%, rgba(109,127,135,1) 100%);
     background-blend-mode: overlay;
     background-size: cover;
@@ -58,8 +80,16 @@
   }
 
   .screen-border-top-opaque {
-    width: 309px;
-    height: 494px;
+    width: 0px;
+    height: 0px;
+    /* background: rgba(78, 98, 108, 1); */
+    /* background: linear-gradient(139deg, rgba(55,69,75,1) 0%, rgba(78,98,108,0.01) 100%); */
+    /* background: linear-gradient(
+      315deg,
+      rgba(55, 69, 75, 1) 0%,
+      rgba(78, 98, 108, 1) 100%
+    ); */
+    /* background: linear-gradient(315deg, rgba(45,56,61,1) 0%, rgba(78,98,108,1) 100%); */
     background-color: black; /* BACKLIGHT PROEPRTY*/
     background-blend-mode: overlay;
     background-size: cover;
@@ -74,11 +104,6 @@
     overflow: hidden;
     box-shadow: inset -2px -4px 4px 2px rgba(0, 0, 0, 0.25);
   }
-
-
-
-  
-  
   .screen {
     width: 224px;
     height: 302px;
@@ -93,46 +118,7 @@
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     box-shadow: inset 0px 1px 15px 10px rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
-
-  .screen-content-container {
-    height: 92%;
-    width: 100%;
-    margin: 20px;
-    border-color: black;
-    /* border-style: dashed; */
-
-    display: flex;
-    flex-direction: column;
-}
-
-  .test-logo {
-    margin: auto;
-    margin-left: 80px;
-    font-family: "Press Start 2P";
-    font-weight: Regular;
-    font-size: 125px;
-    margin-bottom: 10px;
-    color: #042200;
-  }
-  .test-slogan {
-    margin: auto;
-    font-family: "Press Start 2P";
-    font-weight: Regular;
-    font-size: 15px;
-    margin-top: 5px;
-    color: #042200;
-  }
-  .pokeverse-version {
-    font-family: "Press Start 2P";
-    font-size: 10px;
-    margin-bottom: 5px;
-    color: #042200;
-  }
-
   .screenBorderBottomText {
     width: 108px;
     color: rgba(255, 255, 255, 1);
@@ -185,6 +171,7 @@
   .buttonframe {
     width: 375px;
     height: 188px;
+    /* background: url("../images/v13_1008.png"); */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -193,12 +180,6 @@
     top: 333px;
     left: 0px;
     overflow: hidden;
-  }
-  .DPadframe{
-    background: 
-    linear-gradient(315deg, rgba(0,0,0,1) 0%, rgba(62,62,62,1) 95%, rgba(130,130,130,1) 100%);
-    box-shadow: 3px 3px 4px 2px rgba(0, 0, 0, 0.35);
-    opacity: 1;
   }
   .button1 {
     width: 80px;
@@ -240,7 +221,6 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     overflow: hidden;
-    
   }
   .DPadHorizontal {
     width: 26px;
@@ -257,64 +237,6 @@
     transform: rotate(-90deg);
     overflow: hidden;
   }
-
-  .DPadHorizontalLEFT-invisible{
-    width: 46px;  /*46px width*/
-    height: 37px;
-    background: transparent;
-    border: none !important;
-    top: 585px;
-    left: 56px;
-    position: absolute;
-    z-index: 1;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    transform: rotate(90deg);
-    
-  }
-
-  .DPadHorizontalRIGHT {
-    width: 46px;  /*46px width*/
-    height: 37px;   /*115px height*/
-    background: rgba(0, 0, 0, 1);
-    opacity: 1;
-    position: absolute;
-    top: 58px;
-    left: 108px;      /*70px left*/
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    transform: rotate(-90deg);
-    overflow: hidden;
-    box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.35);
-  }
-
-
-  .DPadCenterSquare {
-    
-    width: 46px;  /*46px width*/
-    height: 44px;   /*115px height*/
-    background: rgba(0, 0, 0, 1);
-    opacity: 1;
-    position: absolute;
-    top: 56px;
-    left: 68px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    
-    overflow: hidden;
-    
-    
-    
-  }
-
-  
-  
   .DPadCenter {
     width: 24px;
     height: 24px;
@@ -324,31 +246,6 @@
     top: 80px;
     left: 60px;
     border-radius: 50%;
-    z-index: 1;
-  }
-  .DPadTrianlgeRight{
-    position: absolute;
-    top: 68px;
-    left: 122px;
-    width: 0;
-    height: 0;
-    border: 10px solid transparent;
-    border-top: 0;
-    border-bottom: 16px solid 
-    rgba(217, 217, 217, 1);
-    transform: rotate(90deg);
-  }
-  .DPadTrianlgeLeft{
-    position: absolute;
-    top: 68px;
-    left: 42px;
-    width: 0;
-    height: 0;
-    border: 10px solid transparent;
-    border-top: 0;
-    border-bottom: 16px solid 
-    rgba(217, 217, 217, 1);
-    transform: rotate(270deg);
   }
   .name {
     color: #fff;
@@ -374,31 +271,6 @@
     align-items: center;
     font-size: 22px;
   }
-
-  .noButton-invisible {
-    width: 50px;
-    height: 50px;
-    background: transparent; 
-    border: none !important;
-   
-    position: absolute;
-    top: 584px;
-    left: 199px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-  }
-
-
-
-
-
-
-
-
-
   .yesButton {
     width: 28px;
     height: 28px;
@@ -420,25 +292,6 @@
     align-items: center;
     font-size: 22px;
   }
-
-
-  .yesButton-invisible{
-    width: 50px;
-    height: 50px;
-    background: transparent; 
-    border: none !important;
-   
-    position: absolute;
-    top: 551px;
-    left: 278px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    
-    
-  }
   .TM {
     position: absolute;
     width: 12px;
@@ -453,7 +306,7 @@
     color: #ffffff;
   }
   .Nintendo-container {
-    width: 126px;
+    width: 117px;
     height: 26px;
     /* background: url("../images/v8_24.png"); */
     background-repeat: no-repeat;
@@ -497,7 +350,7 @@
   }
   .BottomButtonContainer {
     width: 169px;
-    height: 40px;
+    height: 20px;
     /* background: url("../images/v13_19.png"); */
     background-repeat: no-repeat;
     background-position: center center;
@@ -511,45 +364,26 @@
   .bottomButton1 {
     width: 40px;
     height: 20px;
-    /* background: rgba(0, 0, 0, 1); */
-    background: linear-gradient(350deg, rgba(0,0,0,1) 0%, rgba(62,62,62,1) 95%, rgba(130,130,130,1) 100%);
+    background: rgba(0, 0, 0, 1);
     opacity: 1;
     position: absolute;
     top: 0px;
     left: 0px;
     border-radius: 50%;
-    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
   }
   .bottomButton2 {
     width: 40px;
     height: 20px;
-    /* background: rgba(0, 0, 0, 1); */
-    background: linear-gradient(350deg, rgba(0,0,0,1) 0%, rgba(62,62,62,1) 95%, rgba(130,130,130,1) 100%);
+    background: rgba(0, 0, 0, 1);
     opacity: 1;
     position: absolute;
     top: 0px;
     left: 109px;
     border-radius: 50%;
-    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
   }
-
-  .backlight-button {
-
-    width: 60px;
-    height: 20px;
-    /* background: rgba(0, 0, 0, 1); */
-    background: transparent;
-    opacity: 1;
-    position: absolute;
-    top: 726px;
-    left: 240px;
-    border-radius: 50%;
-    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.25);
-
-
-
-  }
-  .v2233 {
+  .graydent {
     width: 15px;
     height: 15px;
     background: rgba(43, 49, 60, 1);
@@ -617,3 +451,4 @@ line-height: 6px;
 /* identical to box height */
 
 /* color: #ffffff; */ 
+
