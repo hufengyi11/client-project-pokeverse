@@ -21,22 +21,10 @@
   }
 
   .mainYellowContainer {
-<<<<<<< HEAD
     width: 418px;
     height: 772px;
     background:
     linear-gradient(145deg, rgba(255,240,169,1) 0%, rgba(253,209,0,1) 22%, rgba(191,158,0,1) 100%);
-=======
-    width: 320px;
-    height: 521px;
-    /* background: rgba(253, 209, 0, 1); */
-    /* background: linear-gradient(
-      145deg,
-      rgba(253, 209, 0, 1) 0%,
-      rgba(222, 183, 0, 1) 100%
-    ); */
-    background:linear-gradient(145deg, rgba(255,240,169,1) 0%, rgba(253,209,0,1) 22%, rgba(191,158,0,1) 100%);
->>>>>>> big-screen-css
     background-blend-mode: overlay;
     background-size: cover;
     opacity: 1;
@@ -51,23 +39,9 @@
     box-shadow: inset -3px -3px 4px 1px rgba(0, 0, 0, 0.25);
   }
   .screen-border-top {
-<<<<<<< HEAD
     width: 379px;
     height: 565px;
     background:   
-=======
-    width: 272px;
-    height: 350px;
-    /* background: rgba(78, 98, 108, 1); */
-    /* background: linear-gradient(139deg, rgba(55,69,75,1) 0%, rgba(78,98,108,0.01) 100%); */
-    /* background: linear-gradient(
-      315deg,
-      rgba(55, 69, 75, 1) 0%,
-      rgba(78, 98, 108, 1) 100%
-    ); */
-    /* background: linear-gradient(315deg, rgba(45,56,61,1) 0%, rgba(78,98,108,1) 100%); */
-    background: 
->>>>>>> big-screen-css
     linear-gradient(315deg, rgba(45,56,61,1) 0%, rgba(78,98,108,1) 85%, rgba(109,127,135,1) 100%);
     background-blend-mode: overlay;
     background-size: cover;
@@ -84,21 +58,8 @@
   }
 
   .screen-border-top-opaque {
-<<<<<<< HEAD
     width: 309px;
     height: 494px;
-=======
-    width: 0px;
-    height: 0px;
-    /* background: rgba(78, 98, 108, 1); */
-    /* background: linear-gradient(139deg, rgba(55,69,75,1) 0%, rgba(78,98,108,0.01) 100%); */
-    /* background: linear-gradient(
-      315deg,
-      rgba(55, 69, 75, 1) 0%,
-      rgba(78, 98, 108, 1) 100%
-    ); */
-    /* background: linear-gradient(315deg, rgba(45,56,61,1) 0%, rgba(78,98,108,1) 100%); */
->>>>>>> big-screen-css
     background-color: black; /* BACKLIGHT PROEPRTY*/
     background-blend-mode: overlay;
     background-size: cover;
@@ -113,14 +74,11 @@
     overflow: hidden;
     box-shadow: inset -2px -4px 4px 2px rgba(0, 0, 0, 0.25);
   }
-<<<<<<< HEAD
 
 
 
   
   
-=======
->>>>>>> big-screen-css
   .screen {
     width: 224px;
     height: 302px;
@@ -243,14 +201,9 @@
     opacity: 1;
   }
   .button1 {
-<<<<<<< HEAD
-    width: 115px;
-    height: 115px;
-=======
     width: 80px;
     height: 80px;
     /* background: url("../images/v8_9.png"); */
->>>>>>> big-screen-css
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -262,14 +215,9 @@
     overflow: hidden;
   }
   .v38_2 {
-<<<<<<< HEAD
-    width: 115px;
-    height: 115px;
-=======
     width: 80px;
     height: 80px;
     /* background: url("../images/v38_2.png"); */
->>>>>>> big-screen-css
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -279,16 +227,6 @@
     left: 0px;
     overflow: hidden;
   }
-<<<<<<< HEAD
-  .DPadVerticalTOP {
-    width: 46px;  /*46px width*/
-    height: 37px;   /*115px height*/
-    background: rgba(0, 0, 0, 1);
-    opacity: 1;
-    position: absolute;
-    top: 20px;
-    left: 70px;      /*70px left*/
-=======
   .DPadVertical {
     width: 26px;
     height: 75px;
@@ -297,7 +235,6 @@
     position: absolute;
     top: 55px;
     left: 60px;
->>>>>>> big-screen-css
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -305,37 +242,6 @@
     overflow: hidden;
     
   }
-<<<<<<< HEAD
-
-  .DPadVerticalBOTTOM {
-    width: 46px;  /*46px width*/
-    height: 38px;   /*115px height*/
-    background: rgba(0, 0, 0, 1);
-    opacity: 1;
-    position: absolute;
-    top: 95px;
-    left: 70px;      /*70px left*/
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.35);
-    
-    
-     
-    /* click box-shadow: inset -7px 0 9px -7px #ffffffe4, inset 7px 0 9px -7px #ffffffe4, inset 0 -7px 9px -7px #ffffffe4;   */
-  }
-
-  .DPadHorizontalLEFT {
-    width: 46px;  /*46px width*/
-    height: 37px;   /*115px height*/
-    background: rgba(0, 0, 0, 1);
-    opacity: 1;
-    position: absolute;
-    top: 58px;
-    left: 31px;      /*70px left*/
-=======
   .DPadHorizontal {
     width: 26px;
     height: 75px;
@@ -344,7 +250,6 @@
     position: absolute;
     top: 55px;
     left: 60px;
->>>>>>> big-screen-css
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -556,16 +461,6 @@
     background-size: cover;
     opacity: 1;
     position: absolute;
-<<<<<<< HEAD
-    top: 16px;
-    left: 150px;
-    overflow: hidden;
-  }
-  .Nintendo-outline {
-    width: 126px;
-    /* width: auto; */
-    height: 26px;
-=======
     top: 48px;
     left: 110px;
     overflow: hidden;
@@ -573,7 +468,6 @@
   .Nintendo-outline {
     width: 96px;
     height: 18px;
->>>>>>> big-screen-css
     /* background: url("../images/v8_22.png"); */
     background-repeat: no-repeat;
     background-position: center center;
