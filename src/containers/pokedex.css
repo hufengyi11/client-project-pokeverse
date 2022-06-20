@@ -182,8 +182,8 @@
     overflow: hidden;
   }
   .button1 {
-    width: 115px;
-    height: 115px;
+    width: 80px;
+    height: 80px;
     /* background: url("../images/v8_9.png"); */
     background-repeat: no-repeat;
     background-position: center center;
@@ -196,8 +196,8 @@
     overflow: hidden;
   }
   .v38_2 {
-    width: 115px;
-    height: 115px;
+    width: 80px;
+    height: 80px;
     /* background: url("../images/v38_2.png"); */
     background-repeat: no-repeat;
     background-position: center center;
@@ -209,13 +209,13 @@
     overflow: hidden;
   }
   .DPadVertical {
-    width: 46px;
-    height: 115px;
+    width: 26px;
+    height: 75px;
     background: rgba(0, 0, 0, 1);
     opacity: 1;
     position: absolute;
-    top: 20px;
-    left: 70px;
+    top: 55px;
+    left: 60px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -223,13 +223,13 @@
     overflow: hidden;
   }
   .DPadHorizontal {
-    width: 28px;
-    height: 115px;
+    width: 26px;
+    height: 75px;
     background: rgba(0, 0, 0, 1);
     opacity: 1;
     position: absolute;
-    top: 20px;
-    left: 70px;
+    top: 55px;
+    left: 60px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -243,8 +243,8 @@
     background: rgba(43, 49, 60, 1);
     opacity: 1;
     position: absolute;
-    top: 60px;
-    left: 75px;
+    top: 80px;
+    left: 60px;
     border-radius: 50%;
   }
   .name {
