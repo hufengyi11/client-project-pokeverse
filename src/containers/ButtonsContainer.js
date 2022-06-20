@@ -1,3 +1,6 @@
+import ButtonFunctions from "../components/ButtonFunctions";
+import BackLightButton from "../components/Buttons/BackLightButton";
+
 const ButtonsContainer = () => {
 
     
@@ -22,9 +25,12 @@ const ButtonsContainer = () => {
                 <div className="BottomButtonContainer">
                     <div className="bottomButton1"></div>
                     <div className="bottomButton2"></div>
+                
                 </div>
                 <div className="v13_1213"></div>
+                
             </div>
+            
         </>
     )
 }

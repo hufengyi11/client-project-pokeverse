@@ -16,7 +16,7 @@ const HomeScreen = ({goToDisplayPokemonScreen_FromHomeScreen}) => {
     return(
         <>
             <p>Home</p>
-            <ButtonFunctions goToDisplayPokemonScreen_FromHomeScreen = {goToDisplayPokemonScreen_FromHomeScreen}/>
+            <ButtonFunctions goToDisplayPokemonScreen_FromHomeScreen = {goToDisplayPokemonScreen_FromHomeScreen} screen = {'HomeScreen'}/>
         </>
     )
 }

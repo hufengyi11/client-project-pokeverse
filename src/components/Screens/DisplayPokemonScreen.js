@@ -7,7 +7,7 @@ const DisplayPokemonScreen = ({goToHomeScreen_FromDisplayPokemonScreen}) => {
     return(
         <>
         <p>POKEMON!!!!</p>
-        <ButtonFunctions goToHomeScreen_FromDisplayPokemonScreen = {goToHomeScreen_FromDisplayPokemonScreen}/>
+        <ButtonFunctions goToHomeScreen_FromDisplayPokemonScreen = {goToHomeScreen_FromDisplayPokemonScreen} screen = {'DisplayPokemonScreen'}/>
         </>
     )
 
