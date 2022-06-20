@@ -2,7 +2,7 @@ import React from 'react'
 import "./PokeDex-Desktop.css";
 
 
-PokeDex_Desktop = () => {
+const PokeDex_Desktop = () => {
     return (
         <div>
             <>
