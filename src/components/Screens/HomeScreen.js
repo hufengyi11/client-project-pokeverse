@@ -1,7 +1,8 @@
 import {useState} from 'react';
+import ButtonFunctions from '../ButtonFunctions';
 
 
-const HomeScreen = () => {
+const HomeScreen = ({goToDisplayPokemonScreen_FromHomeScreen}) => {
 
     const [screenOption,setScreenOption] = useState(1);
 
@@ -15,6 +16,7 @@ const HomeScreen = () => {
     return(
         <>
             <p>Home</p>
+            <ButtonFunctions goToDisplayPokemonScreen_FromHomeScreen = {goToDisplayPokemonScreen_FromHomeScreen}/>
         </>
     )
 }

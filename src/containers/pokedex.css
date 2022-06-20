@@ -275,6 +275,23 @@
     overflow: hidden;
   }
 
+  .DPadHorizontalLEFT-invisible{
+    width: 46px;  /*46px width*/
+    height: 37px;
+    background: transparent;
+    border: none !important;
+    top: 585px;
+    left: 56px;
+    position: absolute;
+    z-index: 1;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transform: rotate(90deg);
+    
+  }
+
   .DPadHorizontalRIGHT {
     width: 46px;  /*46px width*/
     height: 37px;   /*115px height*/
@@ -374,6 +391,31 @@
     align-items: center;
     font-size: 22px;
   }
+
+  .noButton-invisible {
+    width: 500px;
+    height: 500px;
+    background: blue; 
+    border: none !important;
+   
+    position: absolute;
+    top: 500px;
+    left: 278px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+
+
+
+
+
+
+
+
+
   .yesButton {
     width: 50px;
     height: 50px;
@@ -396,9 +438,22 @@
     font-size: 22px;
   }
 
+
   .yesButton-invisible{
-    background: transparent;
+    width: 50px;
+    height: 50px;
+    background: transparent; 
     border: none !important;
+   
+    position: absolute;
+    top: 551px;
+    left: 278px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    
     
   }
   .TM {

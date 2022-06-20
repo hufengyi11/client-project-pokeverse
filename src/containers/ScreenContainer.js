@@ -1,5 +1,5 @@
-import ScreenSelector from "../components/ScreenSelector";
-import HomeScreen from "../components/HomeScreen";
+import ScreenSelector from "../components/Screens/ScreenSelector";
+import HomeScreen from "../components/Screens/HomeScreen";
 
 const ScreenContainer = () => {
 

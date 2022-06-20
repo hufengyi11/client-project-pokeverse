@@ -1,4 +1,5 @@
-const StartUpScreen = () => {
+import ButtonFunctions from "../ButtonFunctions";
+const StartUpScreen = ({goToHomeScreen}) => {
 
 
 
@@ -9,6 +10,8 @@ const StartUpScreen = () => {
             <div className="test-logo">R</div>
             <div className="test-slogan">BLASTING OFF...</div>
             <div className="pokeverse-version">Pok&eacute;verse v1.0.3</div>
+            <ButtonFunctions goToHomeScreen = {goToHomeScreen}/>
+
         </>
 
     )
