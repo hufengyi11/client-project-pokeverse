@@ -6,12 +6,12 @@ import PokeDexDesktop from './containers/PokeDex-Desktop';
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = { matches: window.matchMedia("(min-width: 768px)").matches };
+    this.state = { matches: window.matchMedia("(min-width: 480px)").matches };
   }
 
   componentDidMount() {
     const handler = e => this.setState({matches: e.matches});
-    window.matchMedia("(min-width: 768px)").addEventListener('change', handler);
+    window.matchMedia("(min-width: 480px)").addEventListener('change', handler);
   }
 
   render() {
