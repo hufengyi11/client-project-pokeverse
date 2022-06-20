@@ -6,15 +6,21 @@ import BackLightButton from "../components/Buttons/BackLightButton";
 
 const PokeDexContainer = () => {
 
+  const blackBoxShadow = "inset 0px 1px 15px 10px rgba(0, 0, 0, 0.5)";
+  const whiteBoxShadow = "0px 1px 15px 4px rgba(255, 255, 255, 0.5)";
+
   const [screenBack, setScreenBack] = useState({backgroundColor: "black"});
+  const [boxShadow,setBoxShadow] = useState({boxShadow: blackBoxShadow})
 
 
   const backLightToggle = () => {
     if (screenBack.backgroundColor === "black") {
       setScreenBack({backgroundColor: "white"});
+      setBoxShadow({boxShadow: whiteBoxShadow});
     }
     else {
       setScreenBack({backgroundColor: "black"});
+      setBoxShadow({boxShadow: blackBoxShadow});
     }
   }
 
@@ -29,14 +35,15 @@ const PokeDexContainer = () => {
               </div>
             </div>
           </div>
-          <div className="screen">
+          <div style={boxShadow} className="screen">
             <ScreenContainer/>
           </div>
           <div className="screenBorderBottomText">POK&Eacute;VERSE&trade;</div>
-
           <div className="screenBorderTopText">Team Rocket Edition</div>
           <ButtonsContainer/>
           <BackLightButton backLightToggle={backLightToggle}/>
+          <div className="keyhole"></div>
+          <div className="keychain"></div>
         </div>
       </div>
     </section>

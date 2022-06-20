@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+.PageHeader {
+    font-family: "Press Start 2P";
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+    font-family: "Press Start 2P";
+    font-size: 10px;
+}

@@ -23,12 +23,6 @@
   .mainYellowContainer {
     width: 320px;
     height: 521px;
-    /* background: rgba(253, 209, 0, 1); */
-    /* background: linear-gradient(
-      145deg,
-      rgba(253, 209, 0, 1) 0%,
-      rgba(222, 183, 0, 1) 100%
-    ); */
     background:linear-gradient(145deg, rgba(255,240,169,1) 0%, rgba(253,209,0,1) 22%, rgba(191,158,0,1) 100%);
     background-blend-mode: overlay;
     background-size: cover;
@@ -55,14 +49,6 @@
   .screen-border-top {
     width: 272px;
     height: 350px;
-    /* background: rgba(78, 98, 108, 1); */
-    /* background: linear-gradient(139deg, rgba(55,69,75,1) 0%, rgba(78,98,108,0.01) 100%); */
-    /* background: linear-gradient(
-      315deg,
-      rgba(55, 69, 75, 1) 0%,
-      rgba(78, 98, 108, 1) 100%
-    ); */
-    /* background: linear-gradient(315deg, rgba(45,56,61,1) 0%, rgba(78,98,108,1) 100%); */
     background: 
     linear-gradient(315deg, rgba(45,56,61,1) 0%, rgba(78,98,108,1) 85%, rgba(109,127,135,1) 100%);
     background-blend-mode: overlay;
@@ -80,23 +66,14 @@
   }
 
   .screen-border-top-opaque {
-    width: 0px;
-    height: 0px;
-    /* background: rgba(78, 98, 108, 1); */
-    /* background: linear-gradient(139deg, rgba(55,69,75,1) 0%, rgba(78,98,108,0.01) 100%); */
-    /* background: linear-gradient(
-      315deg,
-      rgba(55, 69, 75, 1) 0%,
-      rgba(78, 98, 108, 1) 100%
-    ); */
-    /* background: linear-gradient(315deg, rgba(45,56,61,1) 0%, rgba(78,98,108,1) 100%); */
-    background-color: black; /* BACKLIGHT PROEPRTY*/
+    width: 224px;
+    height: 302px;
     background-blend-mode: overlay;
     background-size: cover;
     opacity: 1;
     position: relative;
-    top: 0px;
-    left: 0px;
+    top: 23px;
+    left: 24px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     border-bottom-left-radius: 50px;
@@ -112,12 +89,11 @@
     position: absolute;
     top: 40px;
     left: 48px;
-    border: 1px solid rgba(0, 0, 0, 1);
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    box-shadow: inset 0px 1px 15px 10px rgba(0, 0, 0, 0.5);
+    font-family: "Press Start 2P";
   }
   .screenBorderBottomText {
     width: 108px;
@@ -171,7 +147,6 @@
   .buttonframe {
     width: 375px;
     height: 188px;
-    /* background: url("../images/v13_1008.png"); */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -184,7 +159,6 @@
   .button1 {
     width: 80px;
     height: 80px;
-    /* background: url("../images/v8_9.png"); */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -198,7 +172,6 @@
   .v38_2 {
     width: 80px;
     height: 80px;
-    /* background: url("../images/v38_2.png"); */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -208,61 +181,181 @@
     left: 0px;
     overflow: hidden;
   }
-  .DPadVertical {
-    width: 26px;
-    height: 75px;
-    background: rgba(0, 0, 0, 1);
+  .DPadVerticalTOP {
+    width: 24.5px;
+    height: 28.5px;
+    background: linear-gradient(315deg, rgba(0,0,0,1) 0%, rgba(62,62,62,1) 95%, rgba(130,130,130,1) 100%);
     opacity: 1;
     position: absolute;
     top: 55px;
-    left: 60px;
+    left: 53px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     overflow: hidden;
+    box-shadow: 1.5px 1px 2px 1px rgba(0, 0, 0, 0.35);
   }
-  .DPadHorizontal {
-    width: 26px;
-    height: 75px;
-    background: rgba(0, 0, 0, 1);
+ .DPadVerticalBOTTOM {
+    width: 24.5px;
+    height: 28.5px; 
+    background: linear-gradient(315deg, rgba(0,0,0,1) 0%, rgba(62,62,62,1) 95%, rgba(130,130,130,1) 100%);
     opacity: 1;
     position: absolute;
-    top: 55px;
-    left: 60px;
+    top: 115px;
+    left: 53px;   
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    overflow: hidden;
+    box-shadow: 1.5px 1px 2px 1px rgba(0, 0, 0, 0.35);
+    
+    
+     
+    /* click box-shadow: inset -7px 0 9px -7px #ffffffe4, inset 7px 0 9px -7px #ffffffe4, inset 0 -7px 9px -7px #ffffffe4;   */
+  }
+
+  .DPadHorizontalLEFT {
+    width: 24.5px;
+    height: 28.5px;
+    background: linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(62,62,62,1) 95%, rgba(130,130,130,1) 100%);
+    opacity: 1;
+    position: absolute;
+    top: 86px;
+    left: 24px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     transform: rotate(-90deg);
     overflow: hidden;
+    box-shadow: -1.5px 1px 2px 1px rgba(0, 0, 0, 0.35);
   }
-  .DPadCenter {
-    width: 24px;
-    height: 24px;
-    background: rgba(43, 49, 60, 1);
+
+  .DPadHorizontalLEFT-invisible{
+    width: 75px;
+    height: 25px;
+    background: transparent;
+    border: none !important;
+    top: 585px;
+    left: 56px;
+    position: absolute;
+    z-index: 1;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transform: rotate(90deg);
+    
+  }
+
+  .DPadHorizontalRIGHT {
+    width: 24.5px;
+    height: 28.5px;
+    background: linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(62,62,62,1) 95%, rgba(130,130,130,1) 100%);
     opacity: 1;
     position: absolute;
-    top: 80px;
-    left: 60px;
+    top: 86px;
+    left: 81px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transform: rotate(-90deg);
+    overflow: hidden;
+    box-shadow: -1.5px 1px 2px 1px rgba(0, 0, 0, 0.35);
+  }
+
+
+  .DPadCenterSquare {
+    width: 35px;
+    height: 35px;
+    opacity: 1;
+    position: absolute;
+    top: 83.3px;
+    left: 48px;
+    
+    overflow: hidden;
+  }
+  .DPadCenter {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(315deg, rgba(0,0,0,1) 0%, rgba(62,62,62,1) 95%, rgba(130,130,130,1) 100%);
+    opacity: 1;
+    position: absolute;
+    top: 90px;
+    left: 55px;
     border-radius: 50%;
+    z-index: 1;
   }
-  .name {
-    color: #fff;
+  .DPadTrianlgeRight{
+    position: absolute;
+    top: 92px;
+    left: 88px;
+    width: 4px;
+    height: 5px;
+    border: 7px solid transparent;
+    border-top: 0;
+    border-bottom: 16px solid 
+    rgb(90, 84, 84);
+
+    transform: rotate(90deg);
+    box-shadow: inset 0px 0px 2px 10px rgba(0, 0, 0, 1);
   }
-  .name {
-    color: #fff;
+  .DPadTrianlgeLeft{
+    position: absolute;
+    top: 92px;
+    left: 28px;
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    border-top: 0;
+    border-bottom: 16px solid 
+    
+    rgb(90, 84, 84);
+    transform: rotate(270deg);
   }
+  .DPadTrianlgeTop{
+    position: absolute;
+    top: 60px;
+    left: 58px;
+    width: 4px;
+    height: 5px;
+    border: 7px solid transparent;
+    border-top: 0;
+    border-bottom: 16px solid 
+    rgb(90, 84, 84);
+
+    /* box-shadow: inset 0px 0px 2px 10px rgba(0, 0, 0, 1); */
+    transform: rotate(0deg);
+  }
+
+  .DPadTrianlgeBottom{
+    position: absolute;
+    top: 122px;
+    left: 58px;
+    width: 4px;
+    height: 5px;
+    border: 7px solid transparent;
+    border-top: 0;
+    border-bottom: 16px solid 
+    rgb(90, 84, 84);
+
+    /* box-shadow: inset 0px 0px 2px 10px rgba(0, 0, 0, 1); */
+    transform: rotate(180deg);
+  }
+
   .noButton {
-    width: 28px;
-    height: 28px;
+    width: 35px;
+    height: 35px;
     color: 	#C0C0C0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     /* background: rgba(0, 0, 0, 1); */
     background: linear-gradient(315deg, rgba(0,0,0,1) 0%, rgba(62,62,62,1) 95%, rgba(130,130,130,1) 100%);
     opacity: 1;
     position: absolute;
-    top: 76px;
+    top: 95px;
     left: 192px;
     border-radius: 50%;
     box-shadow: 3px 3px 4px 2px rgba(0, 0, 0, 0.35);
@@ -272,25 +365,55 @@
     font-size: 22px;
   }
   .yesButton {
-    width: 28px;
-    height: 28px;
+    width: 35px;
+    height: 35px;
     color: 	#C0C0C0;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    /* background: rgba(0, 0, 0, 1); */
     background: linear-gradient(315deg, rgba(0,0,0,1) 0%, rgba(62,62,62,1) 95%, rgba(130,130,130,1) 100%);
-    /* background: linear-gradient(315deg, rgba(0,0,0,1) 0%, rgba(62,62,62,1) 82%, rgba(221,221,221,1) 89%); */
-    /* background: linear-gradient(138deg, rgba(82,82,82,1) 0%, rgba(27,27,27,1) 18%, rgba(50,50,50,1) 100%); */
     opacity: 1;
     position: absolute;
-    top: 53px;
-    left: 251px;
+    top: 65px;
+    left: 250px;
     border-radius: 50%;
-    /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25); */
     box-shadow: 3px 3px 4px 2px rgba(0, 0, 0, 0.35);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 22px;
+  }
+
+  .noButton-invisible {
+    width: 35px;
+    height: 35px;
+    background: transparent; 
+    border: none !important;
+   
+    position: absolute;
+    top: 388px;
+    left: 144px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+
+  .yesButton-invisible{
+    width: 35px;
+    height: 35px;
+    background: transparent; 
+    border: none !important;
+   
+    position: absolute;
+    top: 358px;
+    left: 202px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    
+    
   }
   .TM {
     position: absolute;
@@ -306,22 +429,20 @@
     color: #ffffff;
   }
   .Nintendo-container {
-    width: 117px;
+    width: 120px;
     height: 26px;
-    /* background: url("../images/v8_24.png"); */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     opacity: 1;
     position: absolute;
     top: 48px;
-    left: 110px;
+    left: 103px;
     overflow: hidden;
   }
   .Nintendo-outline {
-    width: 96px;
+    width: 110px;
     height: 18px;
-    /* background: url("../images/v8_22.png"); */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -351,37 +472,48 @@
   .BottomButtonContainer {
     width: 169px;
     height: 20px;
-    /* background: url("../images/v13_19.png"); */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     opacity: 1;
     position: absolute;
-    top: 144px;
+    top: 160px;
     left: 80px;
     overflow: hidden;
   }
   .bottomButton1 {
     width: 40px;
-    height: 20px;
-    background: rgba(0, 0, 0, 1);
+    height: 15px;
+    background: linear-gradient(138deg, rgba(82,82,82,1) 0%, rgba(27,27,27,1) 18%, rgba(50,50,50,1) 100%);
     opacity: 1;
     position: absolute;
     top: 0px;
-    left: 0px;
+    left: 30px;
     border-radius: 50%;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: 2px 1px 3px 2px rgba(0, 0, 0, 0.25);
   }
   .bottomButton2 {
     width: 40px;
-    height: 20px;
-    background: rgba(0, 0, 0, 1);
+    height: 15px;
+    background: linear-gradient(138deg, rgba(82,82,82,1) 0%, rgba(27,27,27,1) 18%, rgba(50,50,50,1) 100%);
     opacity: 1;
     position: absolute;
     top: 0px;
-    left: 109px;
+    left: 98px;
     border-radius: 50%;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: 2px 1px 3px 2px rgba(0, 0, 0, 0.25);
+  }
+
+  .backlight-button{
+
+    width: 40px;
+    height: 15px;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: 493px;
+    left: 178px;
+    border-radius: 50%;
   }
   .graydent {
     width: 15px;
@@ -396,7 +528,6 @@
   .v13_11 {
     width: 428px;
     height: 76px;
-    /* background: url("../images/v13_11.png"); */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -421,7 +552,6 @@
   .v13_1103 {
     width: 44px;
     height: 32px;
-    /* background: url("../images/v13_1103.png"); */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -433,22 +563,27 @@
     left: 20px;
     overflow: hidden;
   }
+
+  .keyhole{
+    width: 18px;
+    height: 10px;
+    background-image: linear-gradient(180deg, black, white);    
+    border-style: solid;
+    border-radius: 5px;
+    position: absolute;
+    top: 494px;
+    left: 290px;
+    transform: rotate(142deg);
+  }
+  .keychain{
+    width: 15px;
+    height: 12px;
+    border-style: solid;
+    border-radius: 30px;
+    position: absolute;
+    top: 495px;
+    left: 295px; 
+    transform: rotate(42deg);
+  }
 }
-
-/* TM */
-
-/* position: absolute;
-width: 12px;
-height: 6px;
-left: 268px;
-top: 566px;
-
-font-family: "Press Start 2P";
-font-style: normal;
-font-weight: 400;
-font-size: 6px;
-line-height: 6px;
-/* identical to box height */
-
-/* color: #ffffff; */ 
 
