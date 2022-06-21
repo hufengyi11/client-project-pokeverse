@@ -6,7 +6,7 @@ import DisplayPokemonScreen from "./DisplayPokemonScreen";
 import PokemonInfo from "../DisplayPokemon/PokemonInfo";
 import SelectPokemon from "../DisplayPokemon/SelectPokemon";
 import RatePokemonForm from "../RatePokemon/RatePokemonForm";
-
+import FindTrainersScreen from "../FindTrainersScreen/FindTrainersScreen";
 
 const ScreenSelector = () => {
 
@@ -15,23 +15,24 @@ const ScreenSelector = () => {
     useEffect(()=>{
         setTimeout(()=>{
             setScreen('Home')
-        },4000)
+        },1000)
     },[])
 
-    const handleButtonClick = (screenName) => setScreen(screenName);
+    const handleButtonClick = (screenName) => {
+        setScreen(screenName)
+        console.log(screenName);
+    };
 
-    const handleDPadClick = () => {
-        return(1)
-    }
+    
 
     const screens = {
 
         StartUpScreen: 
             <StartUpScreen />,
-        HomeScreen : 
+        HomeScreen: 
             <HomeScreen 
                 goToDisplayPokemonScreen_FromHomeScreen={()=> handleButtonClick('RatePokemon')}
-                goDown_DPad = {()=>handleDPadClick()}
+                
             />,
         SelectPokemonScreen: 
             <SelectPokemon 
@@ -40,6 +41,12 @@ const ScreenSelector = () => {
         RatePokemonScreen:
             <RatePokemonForm 
                 goToHomeScreen_FromRatePokemonScreen={() => handleButtonClick('Home')}
+                goToFindTrainersScreen_FromRatePokemonScreen={() => handleButtonClick('FindTrainers')}
+                
+            />,
+        FindTrainersScreen:
+            <FindTrainersScreen
+                goToRatePokemonScreen_FromFindTrainersScreen={()=>handleButtonClick('RatePokemon')}
             />
     }
 

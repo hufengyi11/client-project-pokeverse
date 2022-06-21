@@ -30,7 +30,7 @@ const SelectPokemon = ({goToHomeScreen_FromSelectPokemonScreen}) => {
 
     const findPokemon = async () => {
         const searchBy = getSearchBy();
-        console.log("searchBy: " + searchBy);
+        // console.log("searchBy: " + searchBy);
 
         try {
             const responsePokemon = await axios.get("https://pokeapi.co/api/v2/pokemon/" + searchBy)

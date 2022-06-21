@@ -352,14 +352,12 @@ const PokeDex_Desktop = (props) => {
 		C219.6,507,219.6,507,219.6,507z"
                                 />
                                 {/* round button */}
-                                <a href='https://en.wikipedia.org/wiki/Arrow'>
-                                    <path
-                                        id="XMLID_51_"
-                                        className="st20"
-                                        d="M134.9,390.7c10.4-0.1,19,8,19.1,18.2c0.1,10.8-8,18.7-18.5,19.5
+                                <path
+                                    id="XMLID_51_"
+                                    className="st20"
+                                    d="M134.9,390.7c10.4-0.1,19,8,19.1,18.2c0.1,10.8-8,18.7-18.5,19.5
 		c-11.1,0.8-19.8-9.3-19.7-18.1C116,398.6,123.1,390.9,134.9,390.7z"
-                                    />
-                                </a>
+                                />
                                 {/* right orange button */}
                                 <path
                                     id="XMLID_52_"
@@ -636,22 +634,22 @@ const PokeDex_Desktop = (props) => {
                                 <foreignObject x="258" y="403" width='50' height='24'>
                                     <button>B</button>
                                 </foreignObject>
-                                <foreignObject  x="345" y="403" width='50' height='24'>
+                                <foreignObject x="345" y="403" width='50' height='24'>
                                     <button>Up</button>
                                 </foreignObject>
-                                <foreignObject  x="345" y="463" width='50' height='24'>
+                                <foreignObject x="345" y="463" width='50' height='24'>
                                     <button>Down</button>
                                 </foreignObject>
-                                <foreignObject  x="305" y="433" width='50' height='24'>
+                                <foreignObject x="305" y="433" width='50' height='24'>
                                     <button>Left</button>
                                 </foreignObject>
-                                <foreignObject  x="365" y="433" width='50' height='24'>
+                                <foreignObject x="365" y="433" width='50' height='24'>
                                     <button>right</button>
                                 </foreignObject>
-                                <foreignObject  x="118" y="400" width='50' height='24'>
+                                <foreignObject x="118" y="400" width='50' height='24'>
                                     <button>On</button>
                                 </foreignObject>
-                                <foreignObject  x="150" y="343" width='50' height='24'>
+                                <foreignObject x="150" y="343" width='50' height='24'>
                                     <button>Backlight</button>
                                 </foreignObject>
                             </g>

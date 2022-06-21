@@ -1,2 +1,77 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
+.rate-pokemon-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.rate-pokemon-title {
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+.rate-pokemon-poke-id {
+    margin-top: 12px;
+    font-size: 12px;
+}
+
+.rate-pokemon-id {
+    font-family: "Press Start 2P";
+    background-color: transparent;
+    margin-bottom: 10px;
+    border: none;
+    height: 25px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 9px;
+    font-size: 11px;
+}
+
+.rate-pokemon-poke-name {
+    margin-top: 12px;
+    font-size: 12px;
+}
+
+.rate-pokemon-name {
+    font-family: "Press Start 2P";
+    background-color: transparent;
+    margin-bottom: 10px;
+    border: none;
+    height: 25px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 9px;
+    font-size: 11px;
+}
+
+.rate-pokemon-poke-rating {
+    margin-top: 12px;
+    font-size: 12px;
+}
+
+.rate-pokemon-rating {
+    font-family: "Press Start 2P";
+    background-color: transparent;
+    margin-bottom: 10px;
+    border: none;
+    height: 25px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 9px;
+    font-size: 11px;
+}
+
+.rate-pokemon-instruction {
+    font-size: 10px;
+    padding: 5px;
+    margin-bottom: 17px;
+}
