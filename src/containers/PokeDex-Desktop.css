@@ -21,7 +21,7 @@
 	.st20{fill:#307AFA;stroke:#231F20;stroke-miterlimit:10;}
 	.st21{fill:#FA6505;stroke:#231F20;stroke-miterlimit:10;}
 	.st22{fill:#50FA05;stroke:#231F20;stroke-miterlimit:10;}
-	.st23{fill:#FAFAFA;stroke:#000000;stroke-miterlimit:10;}
+	.st23{fill:#5e5c5c;stroke:#000000;stroke-miterlimit:10;}
 	.st24{fill:#4FF905;stroke:#000000;stroke-miterlimit:10;}
 	.st25{fill:#F90505;stroke:#000000;stroke-miterlimit:10;}
 	.st26{fill:#F9F905;stroke:#000000;stroke-miterlimit:10;}
@@ -41,18 +41,3 @@
 	.st40{fill:#70EF52;stroke:#000000;stroke-miterlimit:10;}
 	.st41{fill:#FA9A05;stroke:#000000;stroke-miterlimit:10;}
 	.st42{fill:#9AFACF;}
-	.yesButton-invisible {
-		width: 35px;
-		height: 35px;
-		background: transparent;
-		border: none !important;
-	  
-		position: absolute;
-		top: 358px;
-		left: 202px;
-		border-radius: 50%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		z-index: 1;
-	  }
