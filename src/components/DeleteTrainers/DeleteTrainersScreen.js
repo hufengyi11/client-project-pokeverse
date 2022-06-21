@@ -6,7 +6,7 @@ const DeleteTrainersScreen = ({ goToHomeScreen_FromDeleteTrainersScreen }) => {
     return (
 
         <>
-            <form onSubmit={handleFormSubmit}>
+            {/* <form>
                 <div>Add New Trainer</div>
                 <div>Name:</div>
                 <input
@@ -31,7 +31,7 @@ const DeleteTrainersScreen = ({ goToHomeScreen_FromDeleteTrainersScreen }) => {
                     onChange={(event) => setTrainerTown(event.target.value)}
                 />
                 <input type="submit" className='submitButton' value="submit"/>
-            </form>
+            </form> */}
 
             <ButtonFunctions
                 goToHomeScreen_FromDeleteTrainersScreen={goToHomeScreen_FromDeleteTrainersScreen}
