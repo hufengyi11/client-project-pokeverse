@@ -1,8 +1,15 @@
 import ScreenSelector from "../components/Screens/ScreenSelector";
 import HomeScreen from "../components/Screens/HomeScreen";
+import BackLightButton from "../components/Buttons/BackLightButton";
+import PokeDexContainer from "./PokeDexContainer";
 
-const ScreenContainer = () => {
+import { useState } from "react";
 
+const ScreenContainer = ({onClickHere}) => {
+
+    const [screen,setScreen] = useState("");
+    const [backLightButtonNull,setBackLightButtonNull] = useState("");
+    
     
 
     
@@ -10,10 +17,28 @@ const ScreenContainer = () => {
 
 
     return(
-
         <>
             <div className="screen-content-container">
-                <ScreenSelector/>
+            <button className='power-button' onClick={()=>{
+                if(screen===""){
+
+                    setScreen(<ScreenSelector/>)
+                    setBackLightButtonNull("");
+                    
+                    
+
+                }else if(screen!=""){
+                    setScreen("")
+                    setBackLightButtonNull(<button className='backlight-button__Null' ></button>)
+                    
+                }
+                
+                
+                
+                
+                }}></button>
+                {screen}
+                {backLightButtonNull}
             </div>
         </>
     )

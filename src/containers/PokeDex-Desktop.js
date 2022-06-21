@@ -1,8 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./PokeDex-Desktop.css";
+import BackLightButton from "../components/Buttons/BackLightButton";
+import ScreenSelector from '../components/Screens/ScreenSelector';
 
 
-const PokeDex_Desktop = () => {
+
+const PokeDex_Desktop = (props) => {
+
+    const blackBoxShadow = "inset 0px 1px 15px 10px rgba(0, 0, 0, 0.5)";
+    const whiteBoxShadow = "0px 1px 15px 4px rgba(255, 255, 255, 0.5)";
+
+    const [screenBack, setScreenBack] = useState({ backgroundColor: "black" });
+    const [boxShadow, setBoxShadow] = useState({ boxShadow: blackBoxShadow })
+
+    const backLightToggle = () => {
+        if (screenBack.backgroundColor === "black") {
+            setScreenBack({ backgroundColor: "white" });
+            setBoxShadow({ boxShadow: whiteBoxShadow });
+        }
+        else {
+            setScreenBack({ backgroundColor: "black" });
+            setBoxShadow({ boxShadow: blackBoxShadow });
+        }
+    }
+
     return (
         <div>
             <>
@@ -23,6 +44,7 @@ const PokeDex_Desktop = () => {
                             style={{ enableBackground: "new 0 0 960 560" }}
                             xmlSpace="preserve"
                         >
+
                             <g id="XMLID_1_">
                                 <path
                                     id="XMLID_2_"
@@ -309,6 +331,7 @@ const PokeDex_Desktop = () => {
 		c0,15.2,0.1,29.7,0.1,44.2c0,14.8,0,29.7,0,44.5c0,14.7,0,29.3,0,44c0,20.3,0.1,40.7-0.1,61c0,2.9,0.8,4.9,2.8,7
 		c12.9,12.7,25.8,25.6,38.6,38.5c2.3,2.4,4.7,3.1,7.9,3.1c77-0.1,154-0.1,230.9-0.1C389.3,383,390.5,383,392.2,383z"
                                 />
+                                {/* Dpad */}
                                 <path
                                     id="XMLID_49_"
                                     className="st18"
@@ -328,19 +351,24 @@ const PokeDex_Desktop = () => {
 		c0.1,11.7,0.1,23.3,0,35c0,1.6-0.4,3.3-0.9,4.8c-1.1,3.5-2.9,4.7-6.6,4.7C254.9,507,237.2,507,219.6,507
 		C219.6,507,219.6,507,219.6,507z"
                                 />
-                                <path
-                                    id="XMLID_51_"
-                                    className="st20"
-                                    d="M134.9,390.7c10.4-0.1,19,8,19.1,18.2c0.1,10.8-8,18.7-18.5,19.5
+                                {/* round button */}
+                                <a href='https://en.wikipedia.org/wiki/Arrow'>
+                                    <path
+                                        id="XMLID_51_"
+                                        className="st20"
+                                        d="M134.9,390.7c10.4-0.1,19,8,19.1,18.2c0.1,10.8-8,18.7-18.5,19.5
 		c-11.1,0.8-19.8-9.3-19.7-18.1C116,398.6,123.1,390.9,134.9,390.7z"
-                                />
+                                    />
+                                </a>
+                                {/* right orange button */}
                                 <path
                                     id="XMLID_52_"
                                     className="st21"
                                     d="M270.1,405c6.7,0,13.3-0.1,20,0c3.9,0,5.8,1.7,6.1,5.1c0.3,3-0.7,4.8-3.5,5.9
-		c-1.7,0.6-3.5,1-5.3,1c-11.7,0.1-23.3,0.1-35,0c-1.8,0-3.6-0.4-5.3-1c-2.9-1.1-3.9-3.4-3.3-6.5c0.5-2.7,2.3-4.3,5.2-4.4
-		C256.1,404.9,263.1,405,270.1,405z"
+        c-1.7,0.6-3.5,1-5.3,1c-11.7,0.1-23.3,0.1-35,0c-1.8,0-3.6-0.4-5.3-1c-2.9-1.1-3.9-3.4-3.3-6.5c0.5-2.7,2.3-4.3,5.2-4.4
+        C256.1,404.9,263.1,405,270.1,405z"
                                 />
+                                {/* left yellow button */}
                                 <path
                                     id="XMLID_53_"
                                     className="st22"
@@ -348,12 +376,14 @@ const PokeDex_Desktop = () => {
 		c0.4-2.5,2.8-4.6,5.6-4.7c14-0.1,27.9-0.1,41.9,0c2.9,0,5.2,2.1,5.5,4.7c0.4,2.8-0.9,5.3-3.7,6.2c-1.7,0.6-3.5,0.9-5.3,1
 		C210.2,417.1,204.4,417,198.6,417z"
                                 />
+                                {/* top big round light bulb */}
                                 <path
                                     id="XMLID_54_"
                                     className="st23"
                                     d="M140.6,93.4c-17.7,1-39.5-15-39.4-39.8c0.1-20.2,16.6-39.5,39.9-39.4
 		c23.3,0.1,39.7,19.5,39.7,39.7C180.8,78.4,158.9,94.7,140.6,93.4z"
                                 />
+                                {/* 55-57: top 3 indication light */}
                                 <path
                                     id="XMLID_55_"
                                     className="st24"
@@ -531,6 +561,7 @@ const PokeDex_Desktop = () => {
                                     d="M231.3,23c-1.8,0.8-3.2,1.7-4.7,1.9c-0.8,0.1-2.1-1.1-2.4-1.9c-0.2-0.6,1-1.8,1.8-2.4
 		C228.1,19.2,229.4,20.6,231.3,23z"
                                 />
+                                {/* screen container */}
                                 <path
                                     id="XMLID_96_"
                                     className="st23"
@@ -539,6 +570,7 @@ const PokeDex_Desktop = () => {
 		c-3.7-1.5-5.5-4.7-6-8.6c-0.2-1.6-0.2-3.3-0.2-5c0-48.8,0-97.6,0-146.4c0-3.7,0.2-7.3,2.7-10.3c1.9-2.3,4.2-3.7,7.3-3.7
 		c2.3,0,4.7,0,7,0C179.7,156,217.3,156,255,156z"
                                 />
+
                                 <path
                                     id="XMLID_97_"
                                     className="st35"
@@ -597,12 +629,23 @@ const PokeDex_Desktop = () => {
                                     d="M134.8,40.9c-1.7,0-3.3,0.2-5,0c-2.9-0.3-4.4-2.6-3.6-5.3c2.3-7.6,13.4-13.3,21-10.7
 		c3.2,1.1,4.9,3.4,5.8,6.3c1,3.4,0,5.1-3.2,6.9C146.6,39.7,140.3,40.9,134.8,40.9z"
                                 />
+                                <g fill="transparent" stroke="transparent" stroke-width="2">
+                                    <rect x='174' y ='405' width='50' height='10'>A</rect>
+                                    <BackLightButton backLightToggle={backLightToggle} />
+                                    {/* screencontainer 567*/}
+                                    {/* b button */}
+                                </g>
+                                <g fill="transparent" stroke="green" stroke-width="5">
+                                    <rect cx="270" cy="410" r="20" />
+
+
+                                    {/* screencontainer 567*/}
+                                    {/* a button */}
+                                </g>
                             </g>
-                            {/* text*/}
                         </svg>
                     </div>
                 </div>
-                {/* partial */}
             </>
         </div>
     )

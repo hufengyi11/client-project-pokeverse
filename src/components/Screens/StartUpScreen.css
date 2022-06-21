@@ -1,0 +1,35 @@
+
+
+.start-up-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.test-logo {
+    margin: auto;
+    font-family: "Press Start 2P";
+    font-weight: Regular;
+    font-size: 100px;
+    margin-bottom: 10px;
+    padding-left:15px;
+    color: #042200;
+}
+
+.test-slogan {
+    margin: auto;
+    font-family: "Press Start 2P";
+    font-weight: Regular;
+    font-size: 10px;
+    margin-top: 5px;
+    padding-left:15px;
+    color: #042200;
+}
+
+.pokeverse-version {
+    font-family: "Press Start 2P";
+    font-size: 8px;
+    margin-bottom: 5px;
+    color: #042200;
+}

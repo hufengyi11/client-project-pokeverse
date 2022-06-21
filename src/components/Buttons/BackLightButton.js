@@ -5,14 +5,9 @@ import PokeDexContainer from "../../containers/PokeDexContainer";
 const BackLightButton = ({backLightToggle}) => {
 
 
-
-
-    
-
     return(
         <>
-        
-        <button className='backlight-button' onClick={()=>{backLightToggle()}}></button>
+            <button className='backlight-button' onClick={()=>{backLightToggle()}}></button>
         </>
 
     )

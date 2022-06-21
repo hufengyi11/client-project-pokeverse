@@ -16,6 +16,8 @@ const ButtonsContainer = () => {
                 <div className="DPadCenterSquare"></div>
                 <div className='DPadTrianlgeLeft'></div>
                 <div className="DPadTrianlgeRight"></div>
+                <div className="DPadTrianlgeTop"></div>
+                <div className="DPadTrianlgeBottom"></div>
                 <div className="Nintendo-container">
                     <div className="Nintendo">Rocktendo</div>
                     <div className="Nintendo-outline"></div>
