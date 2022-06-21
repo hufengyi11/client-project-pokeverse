@@ -17,6 +17,10 @@ const RatePokemonForm = ({goToHomeScreen_FromRatePokemonScreen, goToFindTrainers
 
     const handleSumbit = async () => {
 
+        console.log(pokeId);
+        console.log(pokemonName);
+        console.log(pokemonRating);
+
         // const result = await PutPokemon(
         //     pokeId, 
         //     pokeName[0].toUpperCase() + pokeName.substring(1).toLowerCase(),
@@ -41,9 +45,18 @@ const RatePokemonForm = ({goToHomeScreen_FromRatePokemonScreen, goToFindTrainers
 
 
     const getPokemonImage = async (value) => {
-        const databaseResult = await GetIdPokemon(value);
-        console.log(databaseResult)
-        setCurrentRating(databaseResult.rating);
+
+        let databaseResult;
+
+        try {
+            databaseResult = await GetIdPokemon(value);
+            console.log(databaseResult)
+            setCurrentRating(databaseResult.rating);
+        }
+        catch (err) {
+            console.log(err);
+        }
+
         try {
             const response = await axios.get("https://pokeapi.co/api/v2/pokemon/" + databaseResult.name.toLowerCase());
             setImgUrl(response.data.sprites.front_default);
