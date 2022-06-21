@@ -22,7 +22,7 @@ class App extends Component {
           <h1 className='PageHeader'>PokeVerse</h1>
         </div>
         <div >
-          {this.state.matches && (<PokeDexDesktop yesButton = {<button className="yesButton-invisible"></button>}/>)}
+          {this.state.matches && (<PokeDexDesktop/>)}
           {!this.state.matches && (<PokeDexContainer/>)}
         </div>
         <div className='footer'>
