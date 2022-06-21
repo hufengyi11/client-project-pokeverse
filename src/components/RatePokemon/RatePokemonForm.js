@@ -6,14 +6,31 @@ import ButtonFunctions from '../ButtonFunctions';
 const RatePokemonForm = ({goToHomeScreen_FromRatePokemonScreen, goToFindTrainersScreen_FromRatePokemonScreen}) => {
 
     const [pokeId, setPokeId] = React.useState("");
-    const [pokeName, setPokeName] = React.useState("");
     const [pokemonRating, setPokemonRating] = React.useState("");
 
 
-    const handleEnter = () => {
-        const result = PutPokemon(pokeId, pokeName, null, pokemonRating);
+    const handleSumbit = async () => {
+
+        // const result = await PutPokemon(
+        //     pokeId, 
+        //     pokeName[0].toUpperCase() + pokeName.substring(1).toLowerCase(),
+        //     null,
+        //     pokemonRating
+        // );
+
+        // if (result.status === 200) {
+        //     console.log(result);
+        // }
+        // else {
+        //     console.log("FAILED");
+        // }
+
     }
 
+    const getPokemonImage = () => {
+
+    }
+    
 
     return (
         <>
@@ -28,15 +45,6 @@ const RatePokemonForm = ({goToHomeScreen_FromRatePokemonScreen, goToFindTrainers
                             setPokeId(event.target.value)
                         }}
                 />
-                <div className="rate-pokemon-poke-name">Poke Name:</div>
-                <input 
-                    type="text" 
-                    className="rate-pokemon-name" 
-                    value={pokeName} 
-                    onChange={(event) => {
-                            setPokeName(event.target.value)
-                        }}
-                />
                 <div className="rate-pokemon-poke-rating">Rating:</div>
                 <input 
                     type="text" 
@@ -47,9 +55,12 @@ const RatePokemonForm = ({goToHomeScreen_FromRatePokemonScreen, goToFindTrainers
                         }}
                 />
                 <div className="rate-pokemon-instruction">Press A to rate</div>
+                <button 
+                    className="yesButton-invisible" 
+                    onClick={() => {handleSumbit()}}
+                ></button>
                 <ButtonFunctions 
                     goToHomeScreen_FromRatePokemonScreen={goToHomeScreen_FromRatePokemonScreen}
-                    goToFindTrainersScreen_FromRatePokemonScreen={goToFindTrainersScreen_FromRatePokemonScreen}
                     screen={'RatePokemonScreen'}
                 />
             </section>
