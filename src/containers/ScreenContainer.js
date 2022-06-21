@@ -1,5 +1,5 @@
 import ScreenSelector from "../components/Screens/ScreenSelector";
-import HomeScreen from "../components/Screens/HomeScreen";
+import HomeScreen from "../components/HomeScreen/HomeScreen";
 import BackLightButton from "../components/Buttons/BackLightButton";
 import PokeDexContainer from "./PokeDexContainer";
 

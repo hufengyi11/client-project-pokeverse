@@ -4,33 +4,23 @@ import ButtonFunctions from '../ButtonFunctions.js'
 import axios from 'axios';
 
 
-const PokemonInfo = ({goToHomeScreen_FromDisplayPokemonScreen}) => {
+const PokemonInfo = ({goToHomeScreen_FromSelectPokemonScreen, currentPokemon}) => {
 
-    const [currentPokemon, setCurrentPokemon] = useState(
-            {
-                pokemonIndex: "0006",
-                pokemonName: "FLETCHINDER",
-                pokemonRegion: "KANTO",
-                pokemonImage: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
-                pokemonTypeOne: "FIRE",
-                pokemonTypeTwo: "FIGHTING",
-                pokemonHeight: "1.7",
-                pokemonWeight: "200.5",
-                pokemonFlavourText: "Under a full moon, this POKéMON likes to mimic the shadows of people and laugh at their fright."
-            }
+
+    const howManyTypes = () => {
+        if (currentPokemon.pokemonTypeTwo === "") {
+            return (
+                <div className="pokemon-info-type-1">{currentPokemon.pokemonTypeOne}</div>
+            )
+        }
+        return (
+            <>
+                <div className="pokemon-info-type-1">{currentPokemon.pokemonTypeOne}</div>
+                <div className="pokemon-info-type-2">{currentPokemon.pokemonTypeTwo}</div>
+            </>
         )
-
-    useEffect(() => {
-        getNewPokemon();
-    });
-
-    const getNewPokemon = async () => {
-        const pokemonSpeciesRes = await axios.get("https://pokeapi.co/api/v2/pokemon-species/94");
-        const pokemonRes = await axios.get("https://pokeapi.co/api/v2/pokemon/94");
-        const pokemonSpeciesJson = pokemonSpeciesRes.data;
-        console.log(pokemonSpeciesJson);
     }
-    
+
     return (
         <section className="pokemon-info-section">
             <div className="pokemon-info-pokemon-index">{currentPokemon.pokemonIndex}</div>
@@ -43,8 +33,7 @@ const PokemonInfo = ({goToHomeScreen_FromDisplayPokemonScreen}) => {
                     className="pokemon-info-image"
                 />
                 <section className="pokemon-info-type">
-                    <div className="pokemon-info-type-1">{currentPokemon.pokemonTypeOne}</div>
-                    <div className="pokemon-info-type-2">{currentPokemon.pokemonTypeTwo}</div>
+                    {howManyTypes()}
                 </section>
             </section>
             <section className="pokemon-info-bottom">
@@ -57,8 +46,8 @@ const PokemonInfo = ({goToHomeScreen_FromDisplayPokemonScreen}) => {
                 </section>
             </section>
             <ButtonFunctions 
-                goToHomeScreen_FromDisplayPokemonScreen = {goToHomeScreen_FromDisplayPokemonScreen} 
-                screen = {'DisplayPokemonScreen'}
+                goToHomeScreen_FromSelectPokemonScreen={goToHomeScreen_FromSelectPokemonScreen} 
+                screen = {'SelectPokemonScreen'}
             />
         </section>
     )

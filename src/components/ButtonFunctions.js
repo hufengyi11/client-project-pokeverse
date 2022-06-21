@@ -13,6 +13,15 @@ const ButtonFunctions = (props) => {
             {
                 class: "yesButton-invisible", 
                 function: props.goToDisplayPokemonScreen_FromHomeScreen
+            },
+            {
+                class: "DPadVerticalTOP_invisible"
+                
+
+            },
+            {
+                class: "DPadVerticalBOTTOM_invisible",
+                function: props.goDown_DPad
             }
         ],
         DisplayPokemonScreen: [

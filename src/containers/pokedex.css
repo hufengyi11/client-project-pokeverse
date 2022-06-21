@@ -221,6 +221,23 @@ section {
   box-shadow: 1.5px 1px 2px 1px rgba(0, 0, 0, 0.35);
 }
 
+.DPadVerticalTOP_invisible {
+  width: 24.5px;
+  height: 28.5px;
+  color : blue;
+  opacity: 1;
+  position: absolute;
+  top: 348px;
+  left: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  overflow: hidden;
+  box-shadow: 1.5px 1px 2px 1px rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
 .DPadVerticalBOTTOM {
   width: 24.5px;
   height: 28.5px;
@@ -235,6 +252,27 @@ section {
   border-bottom-right-radius: 5px;
   overflow: hidden;
   box-shadow: 1.5px 1px 2px 1px rgba(0, 0, 0, 0.35);
+
+
+
+  /* click box-shadow: inset -7px 0 9px -7px #ffffffe4, inset 7px 0 9px -7px #ffffffe4, inset 0 -7px 9px -7px #ffffffe4;   */
+}
+
+.DPadVerticalBOTTOM_invisible {
+  width: 24.5px;
+  height: 28.5px;
+  color: blue;
+  opacity: 1;
+  position: absolute;
+  top: 408px;
+  left: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  overflow: hidden;
+  box-shadow: 1.5px 1px 2px 1px rgba(0, 0, 0, 0.35);
+  z-index: 1;
 
 
 
