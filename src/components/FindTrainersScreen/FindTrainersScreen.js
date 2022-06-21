@@ -2,28 +2,13 @@ import ButtonFunctions from "../ButtonFunctions"
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./FindTrainerScreen.css"
-import GetAllTrainers from "../APIfunctions/GetAllTrainers";
-// import SearchList from "./SearchList";
 
 
-// const [trainer, setTrainer] = useState([]);
 const FindTrainersScreen = ({ goToFindTrainersScreen_FromRatePokemonScreen, goToRatePokemonScreen_FromFindTrainersScreen }) => {
 
 
     const [trainers, setTrainers] = useState([]);
-    const [searchField, setSearchField] = useState([]);
-
-    const filteredTrainer = trainers.filter(
-        trainer => {
-            return (
-                trainer.name
-            );
-        }
-    );
-
-    const handleChange = e => {
-        setSearchField(e.target.value);
-    }
+    const [searchField, setSearchField] = useState("");
 
     useEffect(() => {
         axios.get('http://localhost:8080/trainer')
@@ -33,33 +18,34 @@ const FindTrainersScreen = ({ goToFindTrainersScreen_FromRatePokemonScreen, goTo
             }).catch((err) => console.log(err));
     }, [])
 
-    // function searchList() {
-    //     return (
-    //         <SearchList filteredTrainer={filteredTrainer} />
-    //     );
-    //   }    
-
-
     return (
         <div>
             <form className="container">
-                <label htmlFor="name">Find trainer by ID</label>
+                <label htmlFor="name">Find trainer</label>
                 <input
                     className="textbox"
-                    type='text' />
-                <input
-                    className="submit_button"
-                    type="submit"
-                    value="FindTrainerById"
-                />
+                    type='number'
+                    placeholder="type a number"
+                    onChange={event => { setSearchField(event.target.value)}}
+                   />
             </form>
-            {/* {searchList()} */}
-            <div className="container">
-                <p>All trainers</p>
-                <ul className="a">
-                    {trainers.map(trainer =>
-                        <li key={trainer.id}>{`${trainer.name}`}</li>)}
-                </ul>
+
+            <div>
+                {
+                    trainers.filter((val) => {
+                        if(searchField == ""){
+                            return val
+                        }else if (val.id == searchField){
+                            return val
+                        }
+                    }).map((val, id) => {
+                        return (
+                            <div>
+                                <p>{val.name}</p>
+                            </div>
+                        )
+                    })
+                }
             </div>
 
             <ButtonFunctions

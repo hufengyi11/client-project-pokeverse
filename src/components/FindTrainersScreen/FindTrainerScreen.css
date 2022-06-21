@@ -6,9 +6,7 @@
     background-color: transparent;
 }
 
-.textbox{
-    background-color: transparent;
-}
+
 
 .container{
     padding: 10px;
@@ -19,4 +17,9 @@ ul.a{
     display: flex;
     flex-direction: column;
     justify-items: left;
+}
+
+input{
+    background-color: transparent;
+
 }
