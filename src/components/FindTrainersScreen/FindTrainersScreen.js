@@ -38,7 +38,7 @@ const FindTrainersScreen = ({goToHomeScreen_FromFindTrainersScreen}) => {
                 <label htmlFor="name">Find trainer by ID</label>
                 <input
                     className="textbox"
-                    type='nu' />
+                    type='number' />
                 <input
                     className="submit_button"
                     type="submit"
@@ -50,7 +50,7 @@ const FindTrainersScreen = ({goToHomeScreen_FromFindTrainersScreen}) => {
                 <ul className="a">
                     {trainers.map(trainer =>
                         <li key={trainer.id}>{
-                        `${trainer.name}${trainer.age}${trainer.town}`}</li>)}
+                        `${trainer.name}\n${trainer.age}\n${trainer.town}`}</li>)}
                 </ul>
             </div>
 
