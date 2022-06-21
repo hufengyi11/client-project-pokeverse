@@ -7,7 +7,7 @@
 	.st6{fill:#9A0505;}
 	.st7{fill:#940505;}
 	.st8{fill:#900505;}
-	.st9{fill:#950505;}
+	.st9{fill:#950505;} 
 	.st10{fill:#930505;}
 	.st11{fill:#910505;}
 	.st12{fill:#8F0505;}
@@ -41,3 +41,18 @@
 	.st40{fill:#70EF52;stroke:#000000;stroke-miterlimit:10;}
 	.st41{fill:#FA9A05;stroke:#000000;stroke-miterlimit:10;}
 	.st42{fill:#9AFACF;}
+	.yesButton-invisible {
+		width: 35px;
+		height: 35px;
+		background: transparent;
+		border: none !important;
+	  
+		position: absolute;
+		top: 358px;
+		left: 202px;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 1;
+	  }

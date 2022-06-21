@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+
+.select-pokemon-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.select-pokemon-title {
+    font-family: "Press Start 2P";
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.select-pokemon-by-index {
+    font-size: 12px;
+}
+.select-pokemon-or {
+    margin-bottom: 20px;
+}
+.select-pokemon-by-name {
+    font-size: 12px;
+}
+
+input {
+    text-align: center;
+}
+input:focus {
+    outline: none !important;
+}
+.enter-pokemon-index {
+    font-family: "Press Start 2P";
+    background-color: transparent;
+    margin-bottom: 10px;
+    border: none;
+    height: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 9px;
+}
+.enter-pokemon-name {
+    font-family: "Press Start 2P";
+    background-color: transparent;
+    border: none;
+    height: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 9px;
+}
+
+.select-pokemon-instruction {
+    font-size: 10px;
+    padding: 5px;
+}

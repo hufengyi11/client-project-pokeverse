@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+
+.pokemon-info-section {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.pokemon-info-pokemon-index {
+    font-family: "Press Start 2P";
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.pokemon-info-pokemon-name {
+    font-family: "Press Start 2P";
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.pokemon-info-pokemon-region {
+    font-family: "Press Start 2P";
+    font-size: 10px;
+    margin-bottom: 0px;
+}
+
+.pokemon-info-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.pokemon-info-image {
+    filter: grayscale(100%) brightness(0.8) contrast(175%);
+}
+
+.pokemon-info-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+    align-items: center;
+    width: 120px;
+}
+
+.pokemon-info-type-1 {
+    font-family: "Press Start 2P";
+    font-size: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 6px 10px 6px 10px;
+    border: 2px;
+    border-style: solid;
+    border-radius: 8px;
+}
+
+.pokemon-info-type-2 {
+    font-family: "Press Start 2P";
+    font-size: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 6px 10px 6px 10px;
+    border: 2px;
+    border-style: solid;
+    border-radius: 8px;
+}
+
+.pokemon-info-bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.pokemon-info-physical-attributes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-family: "Press Start 2P";
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.pokemon-info-flavour-text {
+    font-family: "Press Start 2P";
+    font-size: 9px;
+    margin-top: 10px;
+    padding: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border: 2px;
+    border-style: dotted;
+    border-radius: 8px;
+}
+
+
+
+
+
