@@ -6,3 +6,17 @@
     background-color: transparent;
 }
 
+.textbox{
+    background-color: transparent;
+}
+
+.container{
+    padding: 10px;
+}
+
+ul.a{
+    list-style-type: square;
+    display: flex;
+    flex-direction: column;
+    justify-items: left;
+}

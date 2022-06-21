@@ -12,7 +12,7 @@ const ButtonFunctions = (props) => {
         HomeScreen : [
             {
                 class: "yesButton-invisible", 
-                function: props.goToDisplayPokemonScreen_FromHomeScreen
+                function: props.goTo
             },
             {
                 class: "DPadVerticalTOP_invisible",
@@ -45,10 +45,6 @@ const ButtonFunctions = (props) => {
             {
                 class : 'noButton-invisible', 
                 function : props.goToHomeScreen_FromRatePokemonScreen
-            },
-            {
-                class: 'yesButton-invisible',
-                function: props.goToFindTrainersScreen_FromRatePokemonScreen
             }
         ],
         FindTrainersScreen: [

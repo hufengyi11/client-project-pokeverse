@@ -93,6 +93,8 @@
     border: 2px;
     border-style: dotted;
     border-radius: 8px;
+    max-height: 75px;
+    overflow: hidden;
 }
 
 

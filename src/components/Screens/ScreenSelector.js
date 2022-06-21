@@ -12,6 +12,7 @@ const ScreenSelector = () => {
 
     const [screen,setScreen] = useState('StartUp');
 
+
     useEffect(()=>{
         setTimeout(()=>{
             setScreen('Home')
@@ -31,7 +32,9 @@ const ScreenSelector = () => {
             <StartUpScreen />,
         HomeScreen: 
             <HomeScreen 
-                goToDisplayPokemonScreen_FromHomeScreen={()=> handleButtonClick('RatePokemon')}
+                goToDisplayPokemonScreen_FromHomeScreen={()=> handleButtonClick('SelectPokemon')}
+                goToRatePokemonScreen_FromHomeScreen = {()=>{handleButtonClick('RatePokemon')}}
+                goToFindTrainersScreen_FromHomeScreen = {()=>{handleButtonClick('FindTrainers')}}
                 
             />,
         SelectPokemonScreen: 
@@ -41,12 +44,10 @@ const ScreenSelector = () => {
         RatePokemonScreen:
             <RatePokemonForm 
                 goToHomeScreen_FromRatePokemonScreen={() => handleButtonClick('Home')}
-                goToFindTrainersScreen_FromRatePokemonScreen={() => handleButtonClick('FindTrainers')}
-                
             />,
         FindTrainersScreen:
             <FindTrainersScreen
-                goToRatePokemonScreen_FromFindTrainersScreen={()=>handleButtonClick('RatePokemon')}
+                // goToRatePokemonScreen_FromFindTrainersScreen={()=>handleButtonClick('RatePokemon')}
             />
     }
 

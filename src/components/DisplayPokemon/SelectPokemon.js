@@ -12,21 +12,41 @@ const SelectPokemon = ({goToHomeScreen_FromSelectPokemonScreen}) => {
     const [currentPokemon, setCurrentPokemon] = React.useState({});
     const [foundPokemon, setFoundPokemon] = React.useState(true);
 
+
     const pokemonIndexChange = (event) => {
         setPokemonIndex(event.target.value);
         setPokemonName("");
     }
+
 
     const pokemonNameChange = (event) => {
         setPokemonName(event.target.value);
         setPokemonIndex("");
     }
 
+
     const getSearchBy = () => {
         if (!(pokemonIndex === "")) return pokemonIndex;
         if (!(pokemonName === "")) return pokemonName;
         return "0";
     }
+
+
+    const getEnglishFlavourText = (flavourTextArray) => {
+        let flavourText = "";
+        for (let i = 0; i < flavourTextArray.length; i++) {
+            if (flavourTextArray[i].language.name === "en") {
+                flavourText = flavourTextArray[i].flavor_text.replaceAll('\n', " ").replaceAll('\f', " ");
+                break;
+            }
+        }
+
+        if (flavourText.length >= 123) {
+            flavourText = flavourText.substring(0, 123) + "...";
+        }
+        return flavourText;
+    }
+
 
     const findPokemon = async () => {
         const searchBy = getSearchBy();
@@ -46,7 +66,7 @@ const SelectPokemon = ({goToHomeScreen_FromSelectPokemonScreen}) => {
                 pokemonTypeTwo: (responsePokemon.data.types.length > 1 ? responsePokemon.data.types[1].type.name : "").toUpperCase(),
                 pokemonHeight: responsePokemon.data.height / 10,
                 pokemonWeight: responsePokemon.data.weight / 10,
-                pokemonFlavourText: responsePokemonSpecies.data.flavor_text_entries[0].flavor_text.replaceAll('\n', " ").replaceAll('\f', " ")
+                pokemonFlavourText: getEnglishFlavourText(responsePokemonSpecies.data.flavor_text_entries)
             }
             // console.log(pokemonData);
             setCurrentPokemon(pokemonData);
@@ -70,6 +90,7 @@ const SelectPokemon = ({goToHomeScreen_FromSelectPokemonScreen}) => {
                     <div className="select-pokemon-title">FIND POKEMON</div>
                     <div className="select-pokemon-by-index">BY INDEX:</div>
                     <input 
+                        spellCheck="false"
                         type="text" 
                         className="enter-pokemon-index" 
                         value={pokemonIndex} 
@@ -78,12 +99,13 @@ const SelectPokemon = ({goToHomeScreen_FromSelectPokemonScreen}) => {
                     <div className="select-pokemon-or">- OR -</div>
                     <div className="select-pokemon-by-name">BY NAME:</div>
                     <input 
+                        spellCheck="false"
                         type="text" 
                         className="enter-pokemon-name"
                         value={pokemonName} 
                         onChange={pokemonNameChange}
                     />
-                    <text className="select-pokemon-instruction">Press A to search</text>
+                    <div className="select-pokemon-instruction">Press A to search</div>
                     {foundPokemon ? null: <div className="select-pokemon-not-found">! NOT FOUND !</div>}
                     <button 
                         className="yesButton-invisible" 
