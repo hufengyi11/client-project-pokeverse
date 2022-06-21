@@ -7,6 +7,10 @@ import PokemonInfo from "../DisplayPokemon/PokemonInfo";
 import SelectPokemon from "../DisplayPokemon/SelectPokemon";
 import RatePokemonForm from "../RatePokemon/RatePokemonForm";
 import FindTrainersScreen from "../FindTrainersScreen/FindTrainersScreen";
+import MoveTrainers from "../MoveTrainers/MoveTrainers";
+import CatchNewPokemon from "../CatchNewPokemon/CatchNewPokemon";
+import AddNewTrainerScreen from "../AddNewTrainer/AddNewTrainer";
+import DeleteTrainersScreen from "../DeleteTrainers/DeleteTrainersScreen";
 
 const ScreenSelector = () => {
 
@@ -35,7 +39,10 @@ const ScreenSelector = () => {
                 goToDisplayPokemonScreen_FromHomeScreen={() => handleButtonClick('SelectPokemon')}
                 goToRatePokemonScreen_FromHomeScreen={() => { handleButtonClick('RatePokemon') }}
                 goToFindTrainersScreen_FromHomeScreen={() => { handleButtonClick('FindTrainers') }}
-
+                goToMoveTrainersScreen_FromHomeScreen={() => { handleButtonClick('MoveTrainers') }}
+                goToCatchNewPokemonScreen_FromHomeScreen={() => { handleButtonClick('CatchNewPokemon') }}
+                goToAddATrainer_FromHomeScreen={() => { handleButtonClick('AddNewTrainer') }}
+                goToDeleteTrainersScreen_FromHomeScreen = {()=>{handleButtonClick('DeleteTrainers')}}
             />,
         SelectPokemonScreen:
             <SelectPokemon
@@ -48,8 +55,23 @@ const ScreenSelector = () => {
         FindTrainersScreen:
             <FindTrainersScreen
                 goToHomeScreen_FromFindTrainersScreen={() => handleButtonClick('Home')}
+            />,
+        MoveTrainersScreen:
+            <MoveTrainers
+                goToHomeScreen_FromMoveTrainersScreen={() => handleButtonClick('Home')}
+            />,
+        CatchNewPokemonScreen:
+            <CatchNewPokemon
+                goToHomeScreen={() => handleButtonClick('Home')}
+            />,
+        AddNewTrainerScreen:
+            <AddNewTrainerScreen
+                goToHomeScreen_FromAddNewTrainerScreen={() => handleButtonClick('Home')}
+            />,
+        DeleteTrainersScreen:
+            <DeleteTrainersScreen
+                goToHomeScreen_FromDeleteTrainersScreen={() => handleButtonClick('Home')}
             />
-
     }
 
 

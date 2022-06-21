@@ -3,74 +3,108 @@ import StartUpScreen from "./Screens/StartUpScreen"
 
 const ButtonFunctions = (props) => {
 
-    
 
 
 
-    const screens =  {
 
-        HomeScreen : [
+    const screens = {
+
+        HomeScreen: [
             {
-                class: "yesButton-invisible", 
+                class: "yesButton-invisible",
                 function: props.goTo
             },
             {
                 class: "DPadVerticalTOP_invisible",
                 function: props.goUp_DPad
-                
-
             },
             {
                 class: "DPadVerticalBOTTOM_invisible",
                 function: props.goDown_DPad
             },
             {
-                class:"DPadHorizontalLEFT_invisible",
+                class: "DPadHorizontalLEFT_invisible",
                 function: props.goLeft_DPad
             },
             {
-                class:"DPadHorizontalRIGHT_invisible",
+                class: "DPadHorizontalRIGHT_invisible",
                 function: props.goRight_DPad
             }
         ],
         DisplayPokemonScreen: [
             {
-                class : 'noButton-invisible', 
-                function : props.goToHomeScreen_FromDisplayPokemonScreen
+                class: 'noButton-invisible',
+                function: props.goToHomeScreen_FromDisplayPokemonScreen
             },
             {
-                class:'yesButton-invisible', 
+                class: 'yesButton-invisible',
                 function: props.goToDisplayPokemonScreen_FromHomeScreen
             }
         ],
         SelectPokemonScreen: [
             {
-                class : 'noButton-invisible', 
-                function : props.goToHomeScreen_FromSelectPokemonScreen
+                class: 'noButton-invisible',
+                function: props.goToHomeScreen_FromSelectPokemonScreen
             }
         ],
         RatePokemonScreen: [
             {
-                class : 'noButton-invisible', 
-                function : props.goToHomeScreen_FromRatePokemonScreen
+                class: 'noButton-invisible',
+                function: props.goToHomeScreen_FromRatePokemonScreen
             }
         ],
         FindTrainersScreen: [
             {
-                class : 'noButton-invisible', 
-                function : props.goToHomeScreen_FromFindTrainersScreen
-              },
-              {
+                class: 'noButton-invisible',
+                function: props.goToHomeScreen_FromFindTrainersScreen
+            },
+            {
                 class: 'yesButton-invisible',
                 function: props.goToHomeScreen_FromFindTrainersScreen
-              }
+            }
+        ],
+        MoveTrainersScreen: [
+            {
+                class: 'noButton-invisible',
+                function: props.goToHomeScreen_FromMoveTrainersScreen
+            },
+            {
+                class:'yesButton-invisible',
+                function: props.acceptChange
+            }
+        ],
+        CatchNewPokemonScreen: [
+            {
+                class: 'noButton-invisible',
+                function: props.goToHomeScreen
+            }
+        ],
+        AddNewTrainerScreen: [
+            {
+                class: 'noButton-invisible',
+                function: props.goToHomeScreen_FromAddNewTrainerScreen
+            },
+            {
+                class: 'yesButton-invisible',
+                function: props.passInPropName
+            }
+        ],
+        DeleteTrainersScreen: [
+            {
+                class: 'noButton-invisible',
+                function: props.goToHomeScreen_FromDeleteTrainersScreen
+            },
+            {
+                class: 'yesButton-invisible',
+                function: props.goToHomeScreen_FromDeleteTrainersScreen
+            }
         ]
 
     }
 
-    
 
-    return(
+
+    return (
         <>
             {screens[props.screen].map((button, index) => {
                 return <button className={button.class} onClick={button.function} key={index}></button>

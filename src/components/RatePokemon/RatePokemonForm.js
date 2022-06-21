@@ -12,29 +12,33 @@ const RatePokemonForm = ({goToHomeScreen_FromRatePokemonScreen, goToFindTrainers
     const [display, setDisplay] = React.useState(false);
     const [imgUrl, setImgUrl] = React.useState("");
     const [pokemonName, setPokemonName] = React.useState("");
-    const [currentRating, setCurrentRating] = React.useState("220");
+    const [currentRating, setCurrentRating] = React.useState("000");
+    const [pokemonType, setPokemonType] = React.useState("");
 
 
     const handleSumbit = async () => {
 
         console.log(pokeId);
         console.log(pokemonName);
+        console.log(pokemonType);
         console.log(pokemonRating);
 
-        // const result = await PutPokemon(
-        //     pokeId, 
-        //     pokeName[0].toUpperCase() + pokeName.substring(1).toLowerCase(),
-        //     null,
-        //     pokemonRating
-        // );
+        const result = await PutPokemon(
+            pokeId, 
+            pokemonName,
+            pokemonType,
+            pokemonRating
+        );
 
-        // if (result.status === 200) {
-        //     console.log(result);
-        // }
-        // else {
-        //     console.log("FAILED");
-        // }
+        if (result.status === 200) {
+            console.log(result);
+        }
+        else {
+            console.log("FAILED");
+        }
 
+        const databaseResult = await GetIdPokemon(pokeId);
+        setCurrentRating(databaseResult.rating);
     }
 
 
@@ -50,8 +54,10 @@ const RatePokemonForm = ({goToHomeScreen_FromRatePokemonScreen, goToFindTrainers
 
         try {
             databaseResult = await GetIdPokemon(value);
-            console.log(databaseResult)
+            // console.log(databaseResult)
             setCurrentRating(databaseResult.rating);
+            setPokemonName(databaseResult.name);
+            setPokemonType(databaseResult.type);
         }
         catch (err) {
             console.log(err);

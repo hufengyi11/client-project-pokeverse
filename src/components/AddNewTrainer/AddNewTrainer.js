@@ -2,49 +2,66 @@ import React from 'react';
 import './AddNewTrainer.css'
 import PostTrainer from '../APIfunctions/PostTrainer';
 import ButtonFunctions from '../ButtonFunctions';
+import axios from "axios";
 
-const AddNewTrainer = () => {
+const AddNewTrainerScreen = ({ goToHomeScreen_FromAddNewTrainerScreen, handleButtonClick }) => {
 
     const [trainerName, setTrainerName] = React.useState("");
-    const [trainerAge, setTrainerAge] = React.useState("");
+    const [trainerAge, setTrainerAge] = React.useState(0);
     const [trainerTown, setTrainerTown] = React.useState("");
 
+    const handleNameChange = event => setTrainerName(event.target.value);
+    const handleAgeChange = event => setTrainerAge(event.target.value);
+    const handleTownChange = event => setTrainerTown(event.target.value);
 
-
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const trainer = {
+            "trainerName":trainerName,
+            "trainerAge":trainerAge,
+            "trainerTown":trainerTown
+        }
+        axios.post('http://localhost:8080/trainer', trainer)
+            .then(res => {
+                console.log(res);
+            }).catch((err) => console.log(err));
+    }
 
     return (
         <>
-            <div className="add-new-trainer-container">
-                <div className="add-new-trainer-title">Add New Trainer</div>
-                <div className="add-new-trainer-name">Name:</div>
-                <input 
-                    spellCheck="false"
-                    type="text" 
-                    className="add-new-trainer-name-input" 
-                    value={trainerName} 
-                    onChange={(event) => setTrainerName(event.target.value)}
+            <form onSubmit={handleSubmit}>
+                <div>Add New Trainer</div>
+                <div>Name:</div>
+                <input
+                    type="text"
+                    className="add-new-trainer-name-input"
+                    value={trainerName}
+                    onChange={handleNameChange}
                 />
-                <div className="add-new-trainer-age">Age:</div>
-                <input 
-                    spellCheck="false"
-                    type="text" 
-                    className="add-new-trainer-age-input" 
-                    value={trainerAge} 
-                    onChange={(event) => setTrainerAge(event.target.value)}
+                <div>Age:</div>
+                <input
+                    type="text"
+                    className="add-new-trainer-age-input"
+                    value={trainerAge}
+                    onChange={handleAgeChange}
                 />
-                <div className="add-new-trainer-town">Town:</div>
-                <input 
+                <div>Town:</div>
+                <input
                     spellCheck="false"
-                    type="text" 
-                    className="add-new-trainer-town-input" 
-                    value={trainerTown} 
-                    onChange={(event) => setTrainerTown(event.target.value)}
+                    type="text"
+                    className="add-new-trainer-town-input"
+                    value={trainerTown}
+                    onChange={handleTownChange}
                 />
-            </div>
+                <input type="submit" className='submitButton' value="submit" />
+            </form>
+            <ButtonFunctions
+                goToHomeScreen_FromAddNewTrainerScreen={goToHomeScreen_FromAddNewTrainerScreen}
+                screen={'AddNewTrainerScreen'} />
         </>
     )
 
 }
 
 
-export default AddNewTrainer;
+export default AddNewTrainerScreen;

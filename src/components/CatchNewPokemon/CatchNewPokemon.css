@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+.catch-new-pokemon-container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.catch-new-pokemon-title {
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+.catch-new-pokemon-current-encounter-container {
+    height: 140px;
+    width: 175px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: black;
+    border-style: dashed;
+    border-width: 2px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+
+.catch-new-pokemon-current-pokemon {
+    filter: grayscale(100%) brightness(0.8) contrast(175%);
+    transform: scale(1.3);
+    margin-bottom: 5px;
+}
+
+.catch-new-pokemon-current-name {
+
+}
+
+.catch-new-pokemon-press-random {
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.catch-new-pokemon-press-catch {
+    font-size: 10px;
+    margin-top: 5px;
+}

@@ -6,7 +6,9 @@ import Picka_hi from './Picka_hi.jpeg'
 
 
 const HomeScreen = ({goToDisplayPokemonScreen_FromHomeScreen,goToRatePokemonScreen_FromHomeScreen,
-                     goToFindTrainersScreen_FromHomeScreen}) => {
+                     goToFindTrainersScreen_FromHomeScreen,goToMoveTrainersScreen_FromHomeScreen,
+                     goToCatchNewPokemonScreen_FromHomeScreen,goToAddATrainer_FromHomeScreen,
+                     goToDeleteTrainersScreen_FromHomeScreen}) => {
 
     let [screenOption,setScreenOption] = useState(1);
     let [horizontalScreenOption,setHorizontalScreenOption] = useState(1);
@@ -65,33 +67,7 @@ const HomeScreen = ({goToDisplayPokemonScreen_FromHomeScreen,goToRatePokemonScre
 
 }
 
-    // const options ={
-    //     option1: <p className= "option">Find Pokemon</p>,
-                    
-    //     option2:<p className= "option">Rate Pokemon</p>,
-    //     option3: <p className= "option">Find Trainers</p>,
-    //     option4: <p className= "option">Move Trainers</p>,
-    //     option5: <p className= "option">Delete Pokemon</p>,
-    //     option6: <p className= "option">Delete Trainers</p>,
-    //     option7: <p className= "option">Catch New Pokemon</p>,
-    //     option8: <p className= "option">Add a Trainer</p>
-
-    // }
-
-    // const selectedOptions ={
-
-    //     option1: <p className= "option" style= {{color: "red"}}>Find Pokemon</p>,
-    //     option2:<p className= "option" style= {{color: "red"}}>Rate Pokemon</p>,
-    //     option3: <p className= "option" style= {{color: "red"}}>Find Trainers</p>,
-    //     option4: <p className= "option" style= {{color: "red"}}>Move Trainers</p>,
-    //     option5: <p className= "option" style= {{color: "red"}}>Delete Pokemon</p>,
-    //     option6: <p className= "option" style= {{color: "red"}}>Delete Trainers</p>,
-    //     option7: <p className= "option" style= {{color: "red"}}>Catch New Pokemon</p>,
-    //     option8: <p className= "option" style= {{color: "red"}}>Add a Trainer</p>
-
-
-
-    // }
+    
 
     const optionsPokemon = {
         option1: <p className= "option">Find Pokemon</p>,
@@ -133,14 +109,16 @@ const HomeScreen = ({goToDisplayPokemonScreen_FromHomeScreen,goToRatePokemonScre
     const screenDestinationsPokemon = {
          option1: goToDisplayPokemonScreen_FromHomeScreen,
          option2: goToRatePokemonScreen_FromHomeScreen,
-        //  option3: goToFindTrainersScreen_FromHomeScreen
+         option4: goToCatchNewPokemonScreen_FromHomeScreen
          
     }
 
     const screenDestinationsTrainers = {
         option1: goToFindTrainersScreen_FromHomeScreen,
-        // option2: goToRatePokemonScreen_FromHomeScreen,
-       //  option3: goToFindTrainersScreen_FromHomeScreen
+        option2: goToMoveTrainersScreen_FromHomeScreen,
+        option3: goToDeleteTrainersScreen_FromHomeScreen,
+        option4: goToAddATrainer_FromHomeScreen
+       
         
    }
 
