@@ -10,51 +10,52 @@ import FindTrainersScreen from "../FindTrainersScreen/FindTrainersScreen";
 
 const ScreenSelector = () => {
 
-    const [screen,setScreen] = useState('StartUp');
+    const [screen, setScreen] = useState('StartUp');
 
 
-    useEffect(()=>{
-        setTimeout(()=>{
+    useEffect(() => {
+        setTimeout(() => {
             setScreen('Home')
-        },1000)
-    },[])
+        }, 1000)
+    }, [])
 
     const handleButtonClick = (screenName) => {
         setScreen(screenName)
         console.log(screenName);
     };
 
-    
+
 
     const screens = {
 
-        StartUpScreen: 
+        StartUpScreen:
             <StartUpScreen />,
-        HomeScreen: 
-            <HomeScreen 
-                goToDisplayPokemonScreen_FromHomeScreen={()=> handleButtonClick('SelectPokemon')}
-                goToRatePokemonScreen_FromHomeScreen = {()=>{handleButtonClick('RatePokemon')}}
-                goToFindTrainersScreen_FromHomeScreen = {()=>{handleButtonClick('FindTrainers')}}
-                
+        HomeScreen:
+            <HomeScreen
+                goToDisplayPokemonScreen_FromHomeScreen={() => handleButtonClick('SelectPokemon')}
+                goToRatePokemonScreen_FromHomeScreen={() => { handleButtonClick('RatePokemon') }}
+                goToFindTrainersScreen_FromHomeScreen={() => { handleButtonClick('FindTrainers') }}
+
             />,
-        SelectPokemonScreen: 
-            <SelectPokemon 
-                goToHomeScreen_FromSelectPokemonScreen={()=> handleButtonClick('Home')}
+        SelectPokemonScreen:
+            <SelectPokemon
+                goToHomeScreen_FromSelectPokemonScreen={() => handleButtonClick('Home')}
             />,
         RatePokemonScreen:
-            <RatePokemonForm 
+            <RatePokemonForm
                 goToHomeScreen_FromRatePokemonScreen={() => handleButtonClick('Home')}
             />,
         FindTrainersScreen:
             <FindTrainersScreen
-                // goToRatePokemonScreen_FromFindTrainersScreen={()=>handleButtonClick('RatePokemon')}
+                goToHomeScreen_FromFindTrainersScreen={() => handleButtonClick('Home')}
             />
+
     }
 
 
-    return(
+    return (
         <>
-            {screens[`${screen}Screen`]}           
+            {screens[`${screen}Screen`]}
         </>
     )
 }

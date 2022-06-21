@@ -73,7 +73,7 @@ const SelectPokemon = ({goToHomeScreen_FromSelectPokemonScreen}) => {
             setOnSelectScreen(false);
         }
         catch (err) {
-            console.log(err);
+            // console.log(err);
             setFoundPokemon(false);
             setTimeout(() => {
                 setFoundPokemon(true);

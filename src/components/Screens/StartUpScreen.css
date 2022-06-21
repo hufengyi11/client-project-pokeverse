@@ -7,6 +7,17 @@
     flex-direction: column;
 }
 
+/* @keyframes identifier2 {
+    0%   {margin-bottom: 10px;}
+  25%  {margin-bottom:50px;}
+  50%  {margin-bottom:60px;}
+  75%  {margin-bottom:70px;}
+  100% {margin-bottom:200px;}
+} */
+
+
+
+
 .test-logo {
     margin: auto;
     font-family: "Press Start 2P";
@@ -15,6 +26,8 @@
     margin-bottom: 10px;
     padding-left:15px;
     color: #042200;
+    animation-name: identifier2;
+    animation-duration: 4s;
 }
 
 .test-slogan {

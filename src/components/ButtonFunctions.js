@@ -23,6 +23,14 @@ const ButtonFunctions = (props) => {
             {
                 class: "DPadVerticalBOTTOM_invisible",
                 function: props.goDown_DPad
+            },
+            {
+                class:"DPadHorizontalLEFT_invisible",
+                function: props.goLeft_DPad
+            },
+            {
+                class:"DPadHorizontalRIGHT_invisible",
+                function: props.goRight_DPad
             }
         ],
         DisplayPokemonScreen: [
@@ -49,9 +57,13 @@ const ButtonFunctions = (props) => {
         ],
         FindTrainersScreen: [
             {
-                class: 'noButton-invisible',
-                function: props.goToRatePokemonScreen_FromFindTrainersScreen
-            }
+                class : 'noButton-invisible', 
+                function : props.goToHomeScreen_FromFindTrainersScreen
+              },
+              {
+                class: 'yesButton-invisible',
+                function: props.goToHomeScreen_FromFindTrainersScreen
+              }
         ]
 
     }

@@ -1,22 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
-.submit_button{
+.submit_button {
     font-family: "Press Start 2P";
     font-size: x-small;
     background-color: transparent;
 }
 
-.textbox{
+.textbox {
     background-color: transparent;
 }
 
-.container{
+.container {
     padding: 10px;
 }
 
-ul.a{
+ul.a {
+    width: 224px;
+    height: 302px;
     list-style-type: square;
     display: flex;
     flex-direction: column;
     justify-items: left;
+    font-size: 10px;
 }

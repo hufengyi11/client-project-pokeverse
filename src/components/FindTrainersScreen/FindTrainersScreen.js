@@ -7,8 +7,7 @@ import GetAllTrainers from "../APIfunctions/GetAllTrainers";
 
 
 // const [trainer, setTrainer] = useState([]);
-const FindTrainersScreen = ({ goToFindTrainersScreen_FromRatePokemonScreen, goToRatePokemonScreen_FromFindTrainersScreen }) => {
-
+const FindTrainersScreen = ({goToHomeScreen_FromFindTrainersScreen}) => {
 
     const [trainers, setTrainers] = useState([]);
     const [searchField, setSearchField] = useState([]);
@@ -33,38 +32,30 @@ const FindTrainersScreen = ({ goToFindTrainersScreen_FromRatePokemonScreen, goTo
             }).catch((err) => console.log(err));
     }, [])
 
-    // function searchList() {
-    //     return (
-    //         <SearchList filteredTrainer={filteredTrainer} />
-    //     );
-    //   }    
-
-
     return (
         <div>
             <form className="container">
                 <label htmlFor="name">Find trainer by ID</label>
                 <input
                     className="textbox"
-                    type='text' />
+                    type='nu' />
                 <input
                     className="submit_button"
                     type="submit"
                     value="FindTrainerById"
                 />
             </form>
-            {/* {searchList()} */}
             <div className="container">
                 <p>All trainers</p>
                 <ul className="a">
                     {trainers.map(trainer =>
-                        <li key={trainer.id}>{`${trainer.name}`}</li>)}
+                        <li key={trainer.id}>{
+                        `${trainer.name}${trainer.age}${trainer.town}`}</li>)}
                 </ul>
             </div>
 
             <ButtonFunctions
-                goToFindTrainersScreen_FromRatePokemonScreen={goToFindTrainersScreen_FromRatePokemonScreen}
-                goToRatePokemonScreen_FromFindTrainersScreen={goToRatePokemonScreen_FromFindTrainersScreen}
+                goToHomeScreen_FromFindTrainersScreen={goToHomeScreen_FromFindTrainersScreen}
                 screen={'FindTrainersScreen'}
             />
         </div>

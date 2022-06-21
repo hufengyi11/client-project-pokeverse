@@ -12,8 +12,45 @@
 
 
 
+.leftRight{
+    font-size: 10px;
+    padding: 1px;
+    
+    
+}
+
+@keyframes identifier {
+
+    from{border-left: 3px solid black;
+        border-right:3px solid black;
+        }
+    to{border-left: 6px double black;
+        border-right:6px double black;
+        }
+    
+}
 
 .option{
     font-size :10px;
     padding:3px; 
 }
+
+.optionSelected{
+    font-size :10px;
+    padding:3px; 
+    border-left: 3px solid black;
+    border-right:3px solid black;
+    animation-name: identifier;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+
+
+}
+
+.Picka{
+
+    width: 50px;
+    mix-blend-mode: multiply;
+
+}
+

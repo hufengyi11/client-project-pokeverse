@@ -3,6 +3,7 @@
 .rate-pokemon-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .rate-pokemon-title {
@@ -29,29 +30,32 @@
     border-radius: 9px;
     font-size: 11px;
 }
-
-.rate-pokemon-poke-name {
-    margin-top: 12px;
-    font-size: 12px;
+::placeholder {
+    color: black
 }
 
-.rate-pokemon-name {
-    font-family: "Press Start 2P";
-    background-color: transparent;
-    margin-bottom: 10px;
-    border: none;
-    height: 25px;
-    width: 100%;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 9px;
-    font-size: 11px;
+.rate-pokemon-pokemon-image-container {
+    height: 90px;
+    width: 90px;
+    border: black;
+    border-style: dotted;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+.rate-pokemon-pokemon-image {
+    filter: grayscale(100%) brightness(0.8) contrast(175%);
+}
+
+.rate-pokemon-current-rating {
+    margin-top: 10px;
+    font-size: 10px;
 }
 
 .rate-pokemon-poke-rating {
-    margin-top: 12px;
+    margin-top: 7px;
     font-size: 12px;
 }
 
