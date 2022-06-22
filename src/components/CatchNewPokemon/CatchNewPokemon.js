@@ -8,6 +8,8 @@ import PokeBall from './pokeball-png-icon-free-download-168602.png'
 const CatchNewPokemon = ({goToHomeScreen, goToRatePokemonScreenProp, goToPokemonInfoScreenProp}) => {
 
     const [currentPokemon, setCurrentPokemon] = React.useState({});
+    const [currentPokemonIndex, setCurrentPokemonIndex] = React.useState("");
+    const [currentPokemonDatabaseId, setCurrentPokemonDatabaseId] = React.useState("");
     const [currentPokemonImage, setCurrentPokemonImage] = React.useState("");
     const [currentPokemonName, setCurrentPokemonName] = React.useState("");
     const [currentScreen, setCurrentScreen] = React.useState("catch");
@@ -25,6 +27,7 @@ const CatchNewPokemon = ({goToHomeScreen, goToRatePokemonScreenProp, goToPokemon
             
             const pokemonName = responsePokemon.data.name[0].toUpperCase() + responsePokemon.data.name.substring(1);
 
+            setCurrentPokemonIndex(responsePokemon.data.id);
             setCurrentPokemonImage(responsePokemon.data.sprites.front_default);
             setCurrentPokemonName(pokemonName);
 
@@ -32,6 +35,8 @@ const CatchNewPokemon = ({goToHomeScreen, goToRatePokemonScreenProp, goToPokemon
                 name: pokemonName,
                 type: responsePokemon.data.types.map(type => type.type.name[0].toUpperCase() + type.type.name.substring(1)).join(", "),
                 generation: responsePokemonRegion.data.main_region.name[0].toUpperCase() + responsePokemonRegion.data.main_region.name.substring(1),
+                price: 0,
+                rating: 1,
                 trainer: null
             }
 
@@ -47,12 +52,12 @@ const CatchNewPokemon = ({goToHomeScreen, goToRatePokemonScreenProp, goToPokemon
     const catchPokemon = async () => {
         if (currentPokemon.name) {
             const result = await PostPokemon(JSON.stringify(currentPokemon));
-            console.log(result[result.length-1].id)
+            console.log("ID: ", result[result.length-1].id)
+            setCurrentPokemonDatabaseId(result[result.length-1].id);
             setCurrentPokemonImage("");
             setCurrentPokemonName("");
             setCurrentPokemon({});
             setCurrentScreen("caught");
-
 
             setTimeout(() => {
                 setCatching(false);
@@ -100,6 +105,8 @@ const CatchNewPokemon = ({goToHomeScreen, goToRatePokemonScreenProp, goToPokemon
 
 
     const caughtScreen = () => {
+        localStorage.setItem("pokedex_id", currentPokemonIndex);
+        localStorage.setItem("database_id", currentPokemonDatabaseId);
         if (catching) {
             return (
                 <>
@@ -119,6 +126,10 @@ const CatchNewPokemon = ({goToHomeScreen, goToRatePokemonScreenProp, goToPokemon
                     className="catch-new-pokemon-ball" 
                     src={PokeBall}
                 />
+                <label className="catch-new-pokemon-left-command">
+                    <span className="left-arrow">←</span> To Rate Pokemon</label>
+                <label className="catch-new-pokemon-right-command">
+                    <span className="right-arrow">→</span> To See Pokedex Info </label>
                 <button 
                     className="DPadHorizontalLEFT_invisible" 
                     onClick={goToRatePokemonScreenProp}

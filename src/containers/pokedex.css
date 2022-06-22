@@ -712,3 +712,17 @@ section {
   left: 295px;
   transform: rotate(42deg);
 }
+
+
+.centerButton-invisible {
+  width: 20px;
+  height: 20px;
+  /* background: linear-gradient(315deg, rgba(0, 0, 0, 1) 0%, rgba(62, 62, 62, 1) 95%, rgba(130, 130, 130, 1) 100%); */
+  background-color: hotpink;
+  opacity: 1;
+  position: absolute;
+  top: 383px;
+  left: 7px;
+  border-radius: 50%;
+  z-index: 900;
+}

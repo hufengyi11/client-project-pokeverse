@@ -96,3 +96,21 @@
         transform: rotate(0deg);
     }
 }
+
+
+.left-arrow {
+    font-size: 20px;
+}
+
+.right-arrow {
+    font-size: 20px;
+}
+
+.catch-new-pokemon-left-command {
+    margin-top: 15px;
+    font-size: 10px;
+}
+
+.catch-new-pokemon-right-command {
+    font-size: 10px;
+}

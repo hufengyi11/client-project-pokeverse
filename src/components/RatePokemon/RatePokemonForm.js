@@ -15,6 +15,11 @@ const RatePokemonForm = ({goToHomeScreen_FromRatePokemonScreen, goToFindTrainers
     const [currentRating, setCurrentRating] = React.useState("000");
     const [pokemonType, setPokemonType] = React.useState("");
 
+    React.useEffect(() => {
+        if (!(localStorage.getItem("database_id") === "0")) {
+            changePokeId();
+        }
+    }, [])
 
     const handleSumbit = async () => {
 
@@ -27,8 +32,10 @@ const RatePokemonForm = ({goToHomeScreen_FromRatePokemonScreen, goToFindTrainers
             pokeId, 
             pokemonName,
             pokemonType,
-            pokemonRating
+            parseInt(pokemonRating)
         );
+
+        console.log(result)
 
         if (result.status === 200) {
             console.log(result);
@@ -43,8 +50,16 @@ const RatePokemonForm = ({goToHomeScreen_FromRatePokemonScreen, goToFindTrainers
 
 
     const changePokeId = (event) => {
-        setPokeId(event.target.value);
-        getPokemonImage(event.target.value);
+        const databaseId = localStorage.getItem("database_id");
+        if (!(databaseId === "0")) {
+            setPokeId(databaseId);
+            getPokemonImage(databaseId);
+            localStorage.setItem("database_id", 0);
+        }
+        else {
+            setPokeId(event.target.value);
+            getPokemonImage(event.target.value);
+        }
     }
 
 

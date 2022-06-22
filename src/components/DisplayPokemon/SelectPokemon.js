@@ -13,6 +13,13 @@ const SelectPokemon = ({goToHomeScreen_FromSelectPokemonScreen}) => {
     const [foundPokemon, setFoundPokemon] = React.useState(true);
 
 
+    React.useEffect(() => {
+        if (!(localStorage.getItem("pokedex_id") === "0")) {
+            findPokemon();
+        }
+    }, [])
+    
+
     const pokemonIndexChange = (event) => {
         setPokemonIndex(event.target.value);
         setPokemonName("");
@@ -28,6 +35,10 @@ const SelectPokemon = ({goToHomeScreen_FromSelectPokemonScreen}) => {
     const getSearchBy = () => {
         if (!(pokemonIndex === "")) return pokemonIndex;
         if (!(pokemonName === "")) return pokemonName;
+        const pokedexId = localStorage.getItem("pokedex_id");
+        if (!(pokedexId === "0")) {
+            return parseInt(pokedexId);
+        }
         return "0";
     }
 
@@ -50,7 +61,7 @@ const SelectPokemon = ({goToHomeScreen_FromSelectPokemonScreen}) => {
 
     const findPokemon = async () => {
         const searchBy = getSearchBy();
-        // console.log("searchBy: " + searchBy);
+        console.log("searchBy: " + searchBy);
 
         try {
             const responsePokemon = await axios.get("https://pokeapi.co/api/v2/pokemon/" + searchBy)

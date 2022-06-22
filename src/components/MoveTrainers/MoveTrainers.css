@@ -54,6 +54,8 @@
     mix-blend-mode: multiply;
     position: absolute;
     right: 35px;
+    border: double black 2px;
+    border-radius: 15%;
     
 }
 

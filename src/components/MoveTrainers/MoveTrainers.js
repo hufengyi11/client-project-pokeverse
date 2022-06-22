@@ -26,18 +26,17 @@ const MoveTrainers = ({goToHomeScreen_FromMoveTrainersScreen,acceptChange}) => {
         if(horizontalScreenOption===1){
             const result = await GetAllTrainers();
         console.log(result)
-        if(trainerID<=3 && trainerID>=0){
+        
             setTrainerName(result[trainerID]["name"])
             setTrainerLocation(result[trainerID]["town"])
-        }else{
-            setTrainerName("Trainer doesn't exist!")
-        }
+        
 
         }
         
         else if(horizontalScreenOption===2){
+            console.log(trainerID)
             setTrainerLocation(locationOptionsRaw[`option${screenOption}`])
-            PutTrainer(trainerID,locationOptionsRaw[`option${screenOption}`])
+            PutTrainer(++trainerID,locationOptionsRaw[`option${screenOption}`])
 
         }
 
@@ -163,6 +162,8 @@ const MoveTrainers = ({goToHomeScreen_FromMoveTrainersScreen,acceptChange}) => {
         Manchester: <img src={X} className="X" style={{top: "182px", left: "104px"}}/>,
         Liverpool: <img src={X} className="X" style={{top: "187px", left: "94px"}}/>,
         Hertfordshire: <img src={X} className="X" style={{top: "216px", left: "124px"}}/>,
+        Glasgow: <img src={X} className="X" style={{top: "146px", left: "81px"}}/>,
+        Cardiff: <img src={X} className="X" style={{top: "218px", left: "88px"}}/>
 
 
 

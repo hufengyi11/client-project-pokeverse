@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import ButtonFunctions from '../ButtonFunctions';
 import "./HomeScreen.css"
 import Picka from './Picka_sit.jpeg'
@@ -9,6 +9,11 @@ const HomeScreen = ({goToDisplayPokemonScreen_FromHomeScreen,goToRatePokemonScre
                      goToFindTrainersScreen_FromHomeScreen,goToMoveTrainersScreen_FromHomeScreen,
                      goToCatchNewPokemonScreen_FromHomeScreen,goToAddATrainer_FromHomeScreen,
                      goToDeleteTrainersScreen_FromHomeScreen}) => {
+
+    useEffect(() => {
+        localStorage.setItem("pokedex_id", 0);
+        localStorage.setItem("database_id", 0);
+    }, [])
 
     let [screenOption,setScreenOption] = useState(1);
     let [horizontalScreenOption,setHorizontalScreenOption] = useState(1);
@@ -172,7 +177,6 @@ const HomeScreen = ({goToDisplayPokemonScreen_FromHomeScreen,goToRatePokemonScre
             
             
             </section>
-            
 
 
             <ButtonFunctions goTo = {screenSelect(horizontalScreenOption)} screen = {'HomeScreen'}

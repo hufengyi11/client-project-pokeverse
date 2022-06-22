@@ -11,14 +11,19 @@ import MoveTrainers from "../MoveTrainers/MoveTrainers";
 import CatchNewPokemon from "../CatchNewPokemon/CatchNewPokemon";
 import AddNewTrainerScreen from "../AddNewTrainer/AddNewTrainer";
 import DeleteTrainersScreen from "../DeleteTrainers/DeleteTrainersScreen";
+import PokemonGame from "../PokemonGame/PokemonGame";
 
 
 const ScreenSelector = () => {
 
     const [screen, setScreen] = useState('StartUp');
 
+    
+    var sound = new Audio()
 
     useEffect(() => {
+        localStorage.setItem("database_id", 0);
+        localStorage.setItem("pokedex_id", 0);
         setTimeout(() => {
             setScreen('Home')
         }, 1000)
@@ -28,6 +33,8 @@ const ScreenSelector = () => {
         setScreen(screenName)
         console.log(screenName);
     };
+
+    
 
 
 
@@ -44,6 +51,7 @@ const ScreenSelector = () => {
                 goToCatchNewPokemonScreen_FromHomeScreen={() => { handleButtonClick('CatchNewPokemon') }}
                 goToAddATrainer_FromHomeScreen={() => { handleButtonClick('AddNewTrainer') }}
                 goToDeleteTrainersScreen_FromHomeScreen = {()=>{handleButtonClick('DeleteTrainers')}}
+                
             />,
         SelectPokemonScreen:
             <SelectPokemon
@@ -75,6 +83,10 @@ const ScreenSelector = () => {
             <DeleteTrainersScreen
                 goToHomeScreen_FromDeleteTrainersScreen={() => handleButtonClick('Home')}
             />,
+        PokemonGameScreen:
+            <PokemonGame 
+                goToHomeScreen_FromPokemonGameScreen={() => handleButtonClick('Home')} 
+            />
         
 
     }

@@ -2,6 +2,7 @@ import ScreenSelector from "../components/Screens/ScreenSelector";
 import HomeScreen from "../components/HomeScreen/HomeScreen";
 import BackLightButton from "../components/Buttons/BackLightButton";
 import PokeDexContainer from "./PokeDexContainer";
+import PokemonGame from "../components/PokemonGame/PokemonGame";
 
 import { useState } from "react";
 
@@ -19,6 +20,13 @@ const ScreenContainer = ({onClickHere}) => {
     return(
         <>
             <div className="screen-content-container">
+            <button className="centerButton-invisible" onClick={()=>{
+
+                setScreen(<PokemonGame/>)
+
+
+
+            }}  ></button>
             <button className='power-button' onClick={()=>{
                 if(screen===""){
 
