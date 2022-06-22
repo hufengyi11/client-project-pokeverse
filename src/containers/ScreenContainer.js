@@ -12,14 +12,7 @@ const ScreenContainer = ({ onClickHere }) => {
     const [screen, setScreen] = useState("");
     const [backLightButtonNull, setBackLightButtonNull] = useState("");
 
-
-    const PlaySound = () => {
-
-    }
-
     const [play] = useSound(PikaSound);
-
-
 
 
     return (
@@ -28,8 +21,6 @@ const ScreenContainer = ({ onClickHere }) => {
                 <button className="centerButton-invisible" onClick={() => {
 
                     setScreen(<PokemonGame />)
-
-
 
                 }}  ></button>
                 <button className='power-button' onClick={() => {
