@@ -5,12 +5,12 @@ const PokemonBattleground = (opponentGround) => {
 
     let leftPosition, topPosition;
     if (opponentGround) {
-        leftPosition = "110px";
-        topPosition = "120px";
+        leftPosition = "-5px";
+        topPosition = "70px";
     }
     else {
-        leftPosition = "10px";
-        topPosition = "170px";
+        leftPosition = "0px";
+        topPosition = "60px";
     }
 
     const ovalGround = {
@@ -20,7 +20,8 @@ const PokemonBattleground = (opponentGround) => {
         borderRadius: "50%",
         position: "absolute",
         left: leftPosition,
-        top: topPosition
+        top: topPosition,
+        zIndex: "0"
     }
 
     return (

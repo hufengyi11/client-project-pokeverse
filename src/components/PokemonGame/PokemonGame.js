@@ -216,22 +216,10 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
             {selectTrainerOption(screenOption)}
             {screenOptions(horizontalScreenOption)} */}
             
-            {PokemonBattleStats(true)}
-            {PokemonBattleStats(false)}
-            {PokemonBattleground(true)}
-            {PokemonBattleground(false)}
-            {PokemonPlacements(
-                {
-                    front: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/52.png", 
-                    back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/52.png", 
-                    opponent: true
-                })}
-            {PokemonPlacements(
-                {
-                    front: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/52.png", 
-                    back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/52.png", 
-                    opponent: false
-                })}
+            {PokemonBattleStats(selectablePokemons[0], true)}
+            {PokemonBattleStats(selectablePokemons[0], false)}
+            {PokemonPlacements(selectablePokemons[0], true)}
+            {PokemonPlacements(selectablePokemons[0], false)}
             
 
             <ButtonFunctions dPadLeftGame={()=>{pressLeft()}} 

@@ -1,19 +1,22 @@
 import React from 'react'
-import './PokemonPlacements.css'
-
-const PokemonPlacements = (pokemonInfo) => {
+import PokemonBattleground from './PokemonBattleground';
 
 
-    let image, leftPosition, topPosition;
-    if (pokemonInfo.opponent) {
-        image = pokemonInfo.front;
+const PokemonPlacements = (pokemonInfo, opponent) => {
+
+
+    let image, scale, leftPosition, topPosition;
+    if (opponent) {
+        image = pokemonInfo.image_front;
         leftPosition = "110px";
         topPosition = "60px";
+        scale = "scale(1.1)";
     }
     else {
-        image = pokemonInfo.back;
+        image = pokemonInfo.image_back;
         leftPosition = "7px";
         topPosition = "110px";
+        scale = "scale(1.2)"
     }
 
     const pokemonContainer = {
@@ -23,18 +26,19 @@ const PokemonPlacements = (pokemonInfo) => {
     }
 
     const pokemonImage = {
-        transform: "scale(1.1)",
-        filter: "grayscale(100%) brightness(0.8) contrast(175%)"
+        transform: scale,
+        filter: "grayscale(100%) brightness(0.8) contrast(175%)",
+        zIndex: "9999"
     }
 
 
     return (
         <>
             <div style={pokemonContainer}>
+                {/* {PokemonBattleground(opponent)} */}
                 <img 
                     src={image} 
                     alt=""
-                    // className="pokemon-image"
                     style={pokemonImage}
                 />
             </div>
