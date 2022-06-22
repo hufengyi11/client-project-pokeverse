@@ -43,7 +43,7 @@ const ScreenSelector = () => {
                 goToMoveTrainersScreen_FromHomeScreen={() => { handleButtonClick('MoveTrainers') }}
                 goToCatchNewPokemonScreen_FromHomeScreen={() => { handleButtonClick('CatchNewPokemon') }}
                 goToAddATrainer_FromHomeScreen={() => { handleButtonClick('AddNewTrainer') }}
-                goToDeleteTrainersScreen_FromHomeScreen = {()=>{handleButtonClick('DeleteTrainers')}}
+                goToDeleteTrainersScreen_FromHomeScreen={() => { handleButtonClick('DeleteTrainers') }}
             />,
         SelectPokemonScreen:
             <SelectPokemon
@@ -75,7 +75,10 @@ const ScreenSelector = () => {
             <DeleteTrainersScreen
                 goToHomeScreen_FromDeleteTrainersScreen={() => handleButtonClick('Home')}
             />,
-        
+        DeletePokemonScreen:
+            <DeletePokemonScreen
+                gotoHomeScreen_FromDeletePokemonScreen={() => handleButtonClick('Home')} />
+
 
     }
 
