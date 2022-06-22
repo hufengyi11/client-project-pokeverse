@@ -69,17 +69,24 @@
 
 
 
-@keyframes pokeball-rotate {
-    from {
-        transform: 50deg;
-    }
-    to {
-        transform: -50deg;
-    }
-}
 
 .catch-new-pokemon-ball {
-    animation-name: pokeball-rotate;
-    animation-duration: 4s;
-    animation-iteration-count: 2;
+    animation: shake 2s infinite linear;
+}
+
+@keyframes shake {
+    from {
+        -webkit-transform:rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform:rotate(365deg);
+        -moz-transform: rotate(365deg);
+        -ms-transform: rotate(365deg);
+        -o-transform: rotate(365deg);
+        transform: rotate(365deg);
+    }
 }
