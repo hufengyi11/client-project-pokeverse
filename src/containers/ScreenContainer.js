@@ -3,47 +3,50 @@ import HomeScreen from "../components/HomeScreen/HomeScreen";
 import BackLightButton from "../components/Buttons/BackLightButton";
 import PokeDexContainer from "./PokeDexContainer";
 import PokemonGame from "../components/PokemonGame/PokemonGame";
-
+import useSound from "use-sound";
 import { useState } from "react";
+import PikaSound from './Pikachu-Sound-Effect.mp3'
 
-const ScreenContainer = ({onClickHere}) => {
+const ScreenContainer = ({ onClickHere }) => {
 
-    const [screen,setScreen] = useState("");
-    const [backLightButtonNull,setBackLightButtonNull] = useState("");
-    
-    
-
-    
+    const [screen, setScreen] = useState("");
+    const [backLightButtonNull, setBackLightButtonNull] = useState("");
 
 
+    const PlaySound = () => {
 
-    return(
+    }
+
+    const [play] = useSound(PikaSound);
+
+
+
+
+    return (
         <>
             <div className="screen-content-container">
-            <button className="centerButton-invisible" onClick={()=>{
+                <button className="centerButton-invisible" onClick={() => {
 
-                setScreen(<PokemonGame/>)
+                    setScreen(<PokemonGame />)
 
 
 
-            }}  ></button>
-            <button className='power-button' onClick={()=>{
-                if(screen===""){
+                }}  ></button>
+                <button className='power-button' onClick={() => {
+                    if (screen === "") {
 
-                    setScreen(<ScreenSelector/>)
-                    setBackLightButtonNull("");
-                    
-                    
+                        setScreen(<ScreenSelector />)
+                        setBackLightButtonNull("");
+                        play();
+                    } else if (screen != "") {
+                        setScreen("")
+                        setBackLightButtonNull(<button className='backlight-button__Null' ></button>)
 
-                }else if(screen!=""){
-                    setScreen("")
-                    setBackLightButtonNull(<button className='backlight-button__Null' ></button>)
-                    
-                }
-                
-                
-                
-                
+                    }
+
+
+
+
                 }}></button>
                 {screen}
                 {backLightButtonNull}

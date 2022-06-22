@@ -5,6 +5,7 @@ import Picka from './Picka_sit.jpeg'
 import Picka_hi from './Picka_hi.jpeg'
 
 
+
 const HomeScreen = ({goToDisplayPokemonScreen_FromHomeScreen,goToRatePokemonScreen_FromHomeScreen,
                      goToFindTrainersScreen_FromHomeScreen,goToMoveTrainersScreen_FromHomeScreen,
                      goToCatchNewPokemonScreen_FromHomeScreen,goToAddATrainer_FromHomeScreen,
@@ -18,7 +19,7 @@ const HomeScreen = ({goToDisplayPokemonScreen_FromHomeScreen,goToRatePokemonScre
     let [screenOption,setScreenOption] = useState(1);
     let [horizontalScreenOption,setHorizontalScreenOption] = useState(1);
 
-
+   
     const goDown_DPad = () => {
         
         setScreenOption(++screenOption);

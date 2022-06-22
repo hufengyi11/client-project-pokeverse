@@ -18,7 +18,6 @@ import DeletePokemonScreen from "../DeletePokemonScreen/DeletePokemonScreen";
 const ScreenSelector = () => {
 
     const [screen, setScreen] = useState('StartUp');
-
     
     var sound = new Audio()
 
