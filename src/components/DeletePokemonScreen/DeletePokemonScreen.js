@@ -1,6 +1,5 @@
 import ButtonFunctions from "../ButtonFunctions"
 import { useState } from "react";
-import "./DeletePokemonScreen.css"
 import DeletePokemon from "../APIfunctions/DeletePokemon";
 
 
