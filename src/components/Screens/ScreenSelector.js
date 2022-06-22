@@ -11,6 +11,7 @@ import MoveTrainers from "../MoveTrainers/MoveTrainers";
 import CatchNewPokemon from "../CatchNewPokemon/CatchNewPokemon";
 import AddNewTrainerScreen from "../AddNewTrainer/AddNewTrainer";
 import DeleteTrainersScreen from "../DeleteTrainers/DeleteTrainersScreen";
+import DeletePokemonScreen from "../DeletePokemonScreen/DeletePokemonScreen";
 
 
 const ScreenSelector = () => {
