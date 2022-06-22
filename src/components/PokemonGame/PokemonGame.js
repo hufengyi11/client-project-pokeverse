@@ -3,6 +3,7 @@ import ButtonFunctions from '../ButtonFunctions';
 import './PokemonGame.css';
 import { selectablePokemons } from './SelectablePokemons';
 import PokemonBattleStats from './PokemonBattleStats';
+import PokemonBattleground from './PokemonBattleground';
 
 const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
 
@@ -212,6 +213,7 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
             
             {PokemonBattleStats(true)}
             {PokemonBattleStats(false)}
+            {PokemonBattleground()}
             
             <ButtonFunctions dPadLeftGame={()=>{pressLeft()}} 
                             dPadRightGame ={()=>{pressRight()}}
