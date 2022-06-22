@@ -5,6 +5,8 @@ import './MoveTrainers.css'
 import GetAllTrainers from "../APIfunctions/GetAllTrainers";
 import UK from "./uk.jpeg"
 import X from "./X.jpeg"
+import PutTrainer from "../APIfunctions/PutTrainer"
+
 
 
 
@@ -15,12 +17,14 @@ const MoveTrainers = ({goToHomeScreen_FromMoveTrainersScreen,acceptChange}) => {
     const [trainerLocation,setTrainerLocation] = useState([])
     const[trainerID,setTrainerID] = useState("");
     const[horizontalScreenOption,setHorizontalScreenOption] = useState(1)
+    let [screenOption,setScreenOption] = useState(1)
 
     
 
-    const onYesClick = async (trainerID) => {
+    const onYesClick = async (trainerID,screenOption) => {
 
-        const result = await GetAllTrainers();
+        if(horizontalScreenOption===1){
+            const result = await GetAllTrainers();
         console.log(result)
         if(trainerID<=3 && trainerID>=0){
             setTrainerName(result[trainerID]["name"])
@@ -28,6 +32,16 @@ const MoveTrainers = ({goToHomeScreen_FromMoveTrainersScreen,acceptChange}) => {
         }else{
             setTrainerName("Trainer doesn't exist!")
         }
+
+        }
+        
+        else if(horizontalScreenOption===2){
+            setTrainerLocation(locationOptionsRaw[`option${screenOption}`])
+            PutTrainer(trainerID,locationOptionsRaw[`option${screenOption}`])
+
+        }
+
+        
         
     }
 
@@ -47,6 +61,57 @@ const MoveTrainers = ({goToHomeScreen_FromMoveTrainersScreen,acceptChange}) => {
         }
     }
 
+    const goUp = () => {
+        setScreenOption(--screenOption)
+        if(screenOption<1){
+
+            setScreenOption(6)
+        }
+
+    }
+
+    const goDown = () => {
+        setScreenOption(++screenOption)
+        if(screenOption>6){
+            setScreenOption(1)
+        }
+    }
+
+    const locationOptionsRaw = {
+
+        option1: 'London',
+        option2: 'Hertfordshire',
+        option3: 'Liverpool',
+        option4: 'Manchester',
+        option5: 'Glasgow',
+        option6: 'Cardiff'
+
+
+    }
+
+    const locationOptions = {
+        option1: <p className="optionMove">London</p>,
+        option2: <p className="optionMove">Hertfordshire</p>,
+        option3: <p className="optionMove">Liverpool</p>,
+        option4: <p className="optionMove">Manchester</p>,
+        option5: <p className="optionMove">Glasgow</p>,
+        option6: <p className="optionMove">Cardiff</p>
+
+    }
+
+    const selectedLocationOptions = {
+        option1: <p className="optionSelectedMove">London</p>,
+        option2: <p className="optionSelectedMove">Hertfordshire</p>,
+        option3: <p className="optionSelectedMove">Liverpool</p>,
+        option4: <p className="optionSelectedMove">Manchester</p>,
+        option5: <p className="optionSelectedMove">Glasgow</p>,
+        option6: <p className="optionSelectedMove">Cardiff</p>
+
+    }
+    const selectOption = (screenOption) => {
+        locationOptions[`option${screenOption}`] = selectedLocationOptions[`option${screenOption}`]
+    }
+
     const ScreenSections = (horizontalScreenOption) => {
 
         if(horizontalScreenOption===1){
@@ -64,25 +129,40 @@ const MoveTrainers = ({goToHomeScreen_FromMoveTrainersScreen,acceptChange}) => {
                     <section className="trainer-location">{trainerLocation}</section>
                     {locations[trainerLocation]}
                     <img src={UK} className="UK"/>
+                    
                 
                 </>
 
             )
         }else if(horizontalScreenOption===2){
+            return(
             <>
-                <p>Move <span>{trainerName}</span> to:</p>
+                <p>Move </p>
+                {trainerName}
+                <p> to:</p>
+                {selectOption(screenOption)}
+                {locationOptions["option1"]}
+                {locationOptions["option2"]}
+                {locationOptions["option3"]}
+                {locationOptions["option4"]}
+                {locationOptions["option5"]}
+                {locationOptions["option6"]}
+
+
+
             
             </>
+            )
         }
 
     }
 
     const locations = {
 
-        London: <img src={X} className="X" style={{top: "229px", left: "124px"}}/>,
-        Manchester: <img src={X} className="X" style={{top: "194px", left: "104px"}}/>,
-        Liverpool: <img src={X} className="X" style={{top: "198px", left: "94px"}}/>,
-        Hertfordshire: <img src={X} className="X" style={{top: "228px", left: "124px"}}/>,
+        London: <img src={X} className="X" style={{top: "217px", left: "124px"}}/>,
+        Manchester: <img src={X} className="X" style={{top: "182px", left: "104px"}}/>,
+        Liverpool: <img src={X} className="X" style={{top: "187px", left: "94px"}}/>,
+        Hertfordshire: <img src={X} className="X" style={{top: "216px", left: "124px"}}/>,
 
 
 
@@ -113,8 +193,10 @@ const MoveTrainers = ({goToHomeScreen_FromMoveTrainersScreen,acceptChange}) => {
         
         </section>
         <ButtonFunctions goToHomeScreen_FromMoveTrainersScreen={goToHomeScreen_FromMoveTrainersScreen} screen={"MoveTrainersScreen"}
-                         acceptChange = {()=>{onYesClick(trainerID)}} goLeft_DPad_moveTrainer = {()=>{goLeft()}}
-                         goRight_DPad_moveTrainer = {()=>{goRight()}} />
+                         acceptChange = {()=>{onYesClick(trainerID,screenOption)}} goLeft_DPad_moveTrainer = {()=>{goLeft()}}
+                         goRight_DPad_moveTrainer = {()=>{goRight()}} 
+                         goDown_DPad__moveTrainer = {()=>{goDown()}}
+                         goUp_DPad_moveTrainer = {()=>{goUp()}}/>
         </>
     )
 

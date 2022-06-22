@@ -79,6 +79,14 @@ const ButtonFunctions = (props) => {
             {
                 class: "DPadHorizontalRIGHT_invisible",
                 function: props.goRight_DPad_moveTrainer
+            },
+            {
+                class: "DPadVerticalTOP_invisible",
+                function: props.goUp_DPad_moveTrainer
+            },
+            {
+                class: "DPadVerticalBOTTOM_invisible",
+                function: props.goDown_DPad__moveTrainer
             }
 
         ],

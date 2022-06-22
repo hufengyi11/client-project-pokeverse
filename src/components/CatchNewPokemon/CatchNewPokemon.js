@@ -5,12 +5,13 @@ import PostPokemon from '../APIfunctions/PostPokemon'
 import './CatchNewPokemon.css'
 import PokeBall from './pokeball-png-icon-free-download-168602.png'
 
-const CatchNewPokemon = ({goToHomeScreen}) => {
+const CatchNewPokemon = ({goToHomeScreen, goToRatePokemonScreenProp, goToPokemonInfoScreenProp}) => {
 
     const [currentPokemon, setCurrentPokemon] = React.useState({});
     const [currentPokemonImage, setCurrentPokemonImage] = React.useState("");
     const [currentPokemonName, setCurrentPokemonName] = React.useState("");
-    const [currentScreen, setCurrentScreen] = React.useState("caught");
+    const [currentScreen, setCurrentScreen] = React.useState("catch");
+    const [catching, setCatching] = React.useState(true);
 
 
     const getRandomPokemon = async (e) => {
@@ -52,9 +53,10 @@ const CatchNewPokemon = ({goToHomeScreen}) => {
             setCurrentPokemon({});
             setCurrentScreen("caught");
 
+
             setTimeout(() => {
-                setCurrentScreen("catch");
-            }, 1000)
+                setCatching(false);
+            }, 3000)
         }
     }
 
@@ -98,13 +100,33 @@ const CatchNewPokemon = ({goToHomeScreen}) => {
 
 
     const caughtScreen = () => {
+        if (catching) {
+            return (
+                <>
+                    <div className="catch-new-pokemon-caught-message"></div>
+                    <div className="catch-new-pokemon-caught-stars"></div>
+                    <img className="catch-new-pokemon-ball pokeball-shake" src={PokeBall}/>
+                </>
+            )
+        }
         return (
             <>
                 <div className="catch-new-pokemon-caught-message">Gotcha!</div>
                 <div className="catch-new-pokemon-caught-stars">
                     <span>★</span><span>★</span><span>★</span>
                 </div>
-                <img className="catch-new-pokemon-ball" src={PokeBall}/>
+                <img 
+                    className="catch-new-pokemon-ball" 
+                    src={PokeBall}
+                />
+                <button 
+                    className="DPadHorizontalLEFT_invisible" 
+                    onClick={goToRatePokemonScreenProp}
+                ></button>
+                <button 
+                    className="DPadHorizontalRIGHT_invisible" 
+                    onClick={goToPokemonInfoScreenProp}
+                ></button>
             </>
         )
     }

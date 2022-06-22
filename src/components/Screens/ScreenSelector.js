@@ -64,6 +64,8 @@ const ScreenSelector = () => {
         CatchNewPokemonScreen:
             <CatchNewPokemon
                 goToHomeScreen={() => handleButtonClick('Home')}
+                goToRatePokemonScreenProp={() => handleButtonClick('RatePokemon')}
+                goToPokemonInfoScreenProp={() => handleButtonClick('SelectPokemon')}
             />,
         AddNewTrainerScreen:
             <AddNewTrainerScreen

@@ -80,3 +80,32 @@
     
     
 }
+
+@keyframes identifierMove {
+
+    from{border-left: 3px solid black;
+        border-right:3px solid black;
+        }
+    to{border-left: 6px double black;
+        border-right:6px double black;
+        }
+    
+}
+
+.optionMove{
+    font-size :10px;
+    padding:3px; 
+}
+
+.optionSelectedMove{
+    font-size :10px;
+    padding:3px; 
+    border-left: 3px solid black;
+    border-right:3px solid black;
+    animation-name: identifier;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    
+
+
+}

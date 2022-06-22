@@ -53,40 +53,46 @@
 .catch-new-pokemon-caught-stars {
     margin-top: 4px;
     margin-bottom: 20px;
+    height: 15px;
 }
 
 .catch-new-pokemon-caught-message {
     margin-top: 20px;
     margin-bottom: 10px;
+    height: 15px;
 }
 
 
 .catch-new-pokemon-ball {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
 }
 
 
 
-
-
-.catch-new-pokemon-ball {
-    animation: shake 2s infinite linear;
+.pokeball-shake{
+    animation: shake 2s infinite ease-in;
 }
 
 @keyframes shake {
-    from {
-        -webkit-transform:rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
+    0% {
+        -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-    to {
-        -webkit-transform:rotate(365deg);
-        -moz-transform: rotate(365deg);
-        -ms-transform: rotate(365deg);
-        -o-transform: rotate(365deg);
-        transform: rotate(365deg);
+    25% {
+        -webkit-transform: rotate(30deg);
+        transform: rotate(20deg);
+    }
+    50% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    75% {
+        -webkit-transform: rotate(-30deg);
+        transform: rotate(-20deg);
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
     }
 }
