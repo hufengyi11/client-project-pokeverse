@@ -3,22 +3,11 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./FindTrainerScreen.css"
 import AddNewTrainerScreen from "../AddNewTrainer/AddNewTrainer";
-// import SearchList from "./SearchList";
 
-
-// const [trainer, setTrainer] = useState([]);
 const FindTrainersScreen = ({ goToHomeScreen_FromFindTrainersScreen }) => {
 
     const [trainers, setTrainers] = useState([]);
     const [searchField, setSearchField] = useState([]);
-
-    const filteredTrainer = trainers.filter(
-        trainer => {
-            return (
-                trainer.name
-            );
-        }
-    );
 
     useEffect(() => {
         axios.get('http://localhost:8080/trainer')

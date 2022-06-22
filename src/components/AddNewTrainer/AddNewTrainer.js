@@ -86,7 +86,7 @@ const AddNewTrainerScreen = ({ goToHomeScreen_FromAddNewTrainerScreen, handleBut
                         value={trainerTown}
                     />
                     <label className="label">Press A to submit</label>
-                    <button className="yesButton-invisible" onClick={(event) => handleFormSubmit(event)}>Sum</button>
+                    <button className="yesButton-invisible" onClick={(event) => handleFormSubmit(event)}></button>
                 </label>
             </form>
             <ButtonFunctions

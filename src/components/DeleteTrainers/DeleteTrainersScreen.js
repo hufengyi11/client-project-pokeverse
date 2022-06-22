@@ -1,37 +1,61 @@
 import ButtonFunctions from "../ButtonFunctions";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 
 const DeleteTrainersScreen = ({ goToHomeScreen_FromDeleteTrainersScreen }) => {
 
-    return (
+    const [trainers, setTrainers] = useState([]);
+    const [searchField, setSearchField] = useState([]);
 
+    useEffect(() => {
+        axios.get('http://localhost:8080/trainer')
+            .then(res => {
+                const trainers = res.data;
+                setTrainers(trainers);
+            }).catch((err) => console.log(err));
+    }, [])
+   
+    function handleDeleteTrainer(e) {
+        e.preventDefault();        
+        axios.delete(`http://localhost:8080/trainer/${searchField}`)
+        .then(res => {
+            // const trainers = res.data;
+            // setTrainers(trainers);
+        }).catch((err) => console.log(err));
+        setSearchField(0);
+    }
+
+    return (
         <>
-            {/* <form>
-                <div>Add New Trainer</div>
-                <div>Name:</div>
+            <p>Delete a trainer</p>
+            <form>
+                <label>Type in an ID</label>
                 <input
-                    type="text"
-                    className="add-new-trainer-name-input"
-                    value={trainerName}
-                    onChange={(event) => setTrainerName(event.target.value)}
+                    className="label"
+                    type="number"
+                    value={searchField}
+                    onChange={(event) => { setSearchField(event.target.value) }}
                 />
-                <div>Age:</div>
-                <input
-                    type="text"
-                    className="add-new-trainer-age-input"
-                    value={trainerAge}
-                    onChange={(event) => setTrainerAge(event.target.value)}
-                />
-                <div>Town:</div>
-                <input
-                    spellCheck="false"
-                    type="text"
-                    className="add-new-trainer-town-input"
-                    value={trainerTown}
-                    onChange={(event) => setTrainerTown(event.target.value)}
-                />
-                <input type="submit" className='submitButton' value="submit"/>
-            </form> */}
+                <button className="yesButton-invisible" onClick={handleDeleteTrainer}></button>
+            </form>
+
+            {trainers.filter((val) => {
+                if (val.id == searchField) {
+                    return val
+                }
+            }).map((val, key) => {
+                return (
+                    <>
+                        <p>Name:{val.name}</p>
+                        <p>Age: {val.age}</p>
+                        <p>Location: {val.town}</p>
+                    </>
+                )
+            })
+            }
+
+            <label>Press A to delete</label>
 
             <ButtonFunctions
                 goToHomeScreen_FromDeleteTrainersScreen={goToHomeScreen_FromDeleteTrainersScreen}
