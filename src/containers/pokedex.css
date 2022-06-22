@@ -488,7 +488,7 @@ section {
 .yesButton-invisible {
   width: 35px;
   height: 35px;
-  background: transparent;
+  background: blue;
   border: none !important;
 
   position: absolute;
@@ -614,7 +614,7 @@ section {
 
   width: 40px;
   height: 15px;
-  background: blue;
+  background: transparent;
   opacity: 1;
   position: absolute;
   top: 453px;
