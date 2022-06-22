@@ -3,6 +3,7 @@ import ButtonFunctions from '../ButtonFunctions';
 import './PokemonGame.css';
 import { selectablePokemons } from './SelectablePokemons';
 import PokemonBattleStats from './PokemonBattleStats';
+import PokemonBattleground from './PokemonBattleground';
 
 const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
 
@@ -136,7 +137,17 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
     const computerSelection = ()=> {
         const randomElement = Math.ceil(Math.random() * selectablePokemons.length);
 
-        
+        while(pokemonNames[`option${randomElement}`]===selectedPokemon){
+
+            let rand = Math.ceil(Math.random() * selectablePokemons.length);
+            if(pokemonNames[`option${rand}`]===selectedPokemon){
+                continue;
+            }else{
+                return selectedPokemonOptions[`option${rand}`]
+            }
+            
+            
+        }
         
         
         return selectedPokemonOptions[`option${randomElement}`]
@@ -200,6 +211,7 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
             
             {PokemonBattleStats(true)}
             {PokemonBattleStats(false)}
+            {PokemonBattleground()}
             
             <ButtonFunctions dPadLeftGame={()=>{pressLeft()}} 
                             dPadRightGame ={()=>{pressRight()}}
