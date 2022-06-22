@@ -8,7 +8,7 @@ import Picka_hi from './Picka_hi.jpeg'
 const HomeScreen = ({goToDisplayPokemonScreen_FromHomeScreen,goToRatePokemonScreen_FromHomeScreen,
                      goToFindTrainersScreen_FromHomeScreen,goToMoveTrainersScreen_FromHomeScreen,
                      goToCatchNewPokemonScreen_FromHomeScreen,goToAddATrainer_FromHomeScreen,
-                     goToDeleteTrainersScreen_FromHomeScreen}) => {
+                     goToDeleteTrainersScreen_FromHomeScreen, gotoDeletePokemonScreen_FromHomeScreen}) => {
 
     useEffect(() => {
         localStorage.setItem("pokedex_id", 0);
@@ -94,7 +94,7 @@ const HomeScreen = ({goToDisplayPokemonScreen_FromHomeScreen,goToRatePokemonScre
     const selectOptionsPokemon = {
 
         option1: <p className= "optionSelected">Find Pokemon</p>,
-        option2:<p className= "optionSelected">Rate Pokemon</p>,
+        option2: <p className= "optionSelected">Rate Pokemon</p>,
         option3: <p className= "optionSelected">Delete Pokemon</p>,
         option4: <p className= "optionSelected">Catch New Pokemon</p>
 
@@ -114,6 +114,7 @@ const HomeScreen = ({goToDisplayPokemonScreen_FromHomeScreen,goToRatePokemonScre
     const screenDestinationsPokemon = {
          option1: goToDisplayPokemonScreen_FromHomeScreen,
          option2: goToRatePokemonScreen_FromHomeScreen,
+         option3: gotoDeletePokemonScreen_FromHomeScreen,
          option4: goToCatchNewPokemonScreen_FromHomeScreen
          
     }

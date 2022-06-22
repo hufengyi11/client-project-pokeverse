@@ -107,10 +107,12 @@ const ButtonFunctions = (props) => {
             {
                 class: 'noButton-invisible',
                 function: props.goToHomeScreen_FromDeleteTrainersScreen
-            },
+            }
+        ],
+        DeletePokemonScreen: [
             {
-                class: 'yesButton-invisible',
-                function: props.goToHomeScreen_FromDeleteTrainersScreen
+                class: 'noButton-invisible',
+                function: props.goToHomeScreen_FromDeletePokemonScreen
             }
         ],
         PokemonGameScreen: [

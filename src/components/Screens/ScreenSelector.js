@@ -12,6 +12,7 @@ import CatchNewPokemon from "../CatchNewPokemon/CatchNewPokemon";
 import AddNewTrainerScreen from "../AddNewTrainer/AddNewTrainer";
 import DeleteTrainersScreen from "../DeleteTrainers/DeleteTrainersScreen";
 import PokemonGame from "../PokemonGame/PokemonGame";
+import DeletePokemonScreen from "../DeletePokemonScreen/DeletePokemonScreen";
 
 
 const ScreenSelector = () => {
@@ -50,8 +51,8 @@ const ScreenSelector = () => {
                 goToMoveTrainersScreen_FromHomeScreen={() => { handleButtonClick('MoveTrainers') }}
                 goToCatchNewPokemonScreen_FromHomeScreen={() => { handleButtonClick('CatchNewPokemon') }}
                 goToAddATrainer_FromHomeScreen={() => { handleButtonClick('AddNewTrainer') }}
-                goToDeleteTrainersScreen_FromHomeScreen = {()=>{handleButtonClick('DeleteTrainers')}}
-                
+                goToDeleteTrainersScreen_FromHomeScreen={() => { handleButtonClick('DeleteTrainers') }}
+                gotoDeletePokemonScreen_FromHomeScreen={() => { handleButtonClick('DeletePokemon')}}
             />,
         SelectPokemonScreen:
             <SelectPokemon
@@ -86,8 +87,12 @@ const ScreenSelector = () => {
         PokemonGameScreen:
             <PokemonGame 
                 goToHomeScreen_FromPokemonGameScreen={() => handleButtonClick('Home')} 
-            />
+            />,
         
+        DeletePokemonScreen:
+            <DeletePokemonScreen
+                gotoHomeScreen_FromDeletePokemonScreen={() => handleButtonClick('Home')} />
+
 
     }
 
