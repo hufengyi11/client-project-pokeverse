@@ -17,14 +17,27 @@ const AddNewTrainerScreen = ({ goToHomeScreen_FromAddNewTrainerScreen, handleBut
     const handleSubmit = (event) => {
         event.preventDefault();
         const trainer = {
-            "trainerName":trainerName,
-            "trainerAge":trainerAge,
-            "trainerTown":trainerTown
+            name: trainerName,
+            age: trainerAge,
+            town: trainerTown,
+            pokemons: [],
+            pokemonCount:0
         }
-        axios.post('http://localhost:8080/trainer', trainer)
+        // axios({
+        //     method: 'post',
+        //     url: 'http://localhost:8080/trainer',
+        //     data: {
+        //         "trainerName": trainerName,
+        //         "trainerAge": trainerAge,
+        //         "trainerTown": trainerTown
+        //     }
+        //   });
+        axios.post('http://localhost:8080/trainer', { trainer })
             .then(res => {
                 console.log(res);
             }).catch((err) => console.log(err));
+
+        console.log("added");
     }
 
     return (

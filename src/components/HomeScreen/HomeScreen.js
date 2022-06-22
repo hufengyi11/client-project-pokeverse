@@ -170,16 +170,7 @@ const HomeScreen = ({goToDisplayPokemonScreen_FromHomeScreen,goToRatePokemonScre
             </section>
             <img src={Picka} className ="Picka"/>
             
-            {/* <p className="leftRight">Hit left or right on DPad</p> */}
             
-            {/* {options["option1"]}
-            {options["option2"]}
-            {options["option3"]}
-            {options["option4"]}
-            {options["option5"]}
-            {options["option6"]}
-            {options["option7"]}
-            {options["option8"]} */}
             </section>
             
 

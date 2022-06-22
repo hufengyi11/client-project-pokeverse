@@ -100,8 +100,11 @@ const CatchNewPokemon = ({goToHomeScreen}) => {
     const caughtScreen = () => {
         return (
             <>
-                <div className="catch-new-pokmon-caught">Caught</div>
-                {/* <img src="https://i.etsystatic.com/21972877/r/il/7d3708/3203082995/il_fullxfull.3203082995_m9os.jpg"/> */}
+                <div className="catch-new-pokemon-caught-message">Gotcha!</div>
+                <div className="catch-new-pokemon-caught-stars">
+                    <span>★</span><span>★</span><span>★</span>
+                </div>
+                <img className="catch-new-pokemon-ball" src={PokeBall}/>
             </>
         )
     }
