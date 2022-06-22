@@ -153,7 +153,7 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
             {screenOptions(horizontalScreenOption)}
                 
             <progress className="pokemon-game-health-bar" id="health" value="80" max="100"></progress>
-            <meter></meter>
+            <meter className="pokemon-game-health-bar" min="0" max="100" value="70"></meter>
             
             <ButtonFunctions dPadLeftGame={()=>{pressLeft()}} 
                             dPadRightGame ={()=>{pressRight()}}
