@@ -1,16 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 
-.add-new-trainer-name-input{
+.label{
     background-color: transparent;
+    padding-top: 10px;
+    padding-bottom: 15px;
 }
-.add-new-trainer-age-input{
-    background-color: transparent;
-}
-.add-new-trainer-town-input{
-    background-color: transparent;
-}
-.submitButton{
-    background-color: transparent;
-    font-family: "Press Start 2P";
-}
+
+.yesButton-invisible {
+    width: 35px;
+    height: 35px;
+    background: transparent;
+    border: none !important;
+  
+    position: absolute;
+    top: 358px;
+    left: 202px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  
+  
+  }
