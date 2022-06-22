@@ -92,10 +92,6 @@ const ButtonFunctions = (props) => {
             {
                 class: 'noButton-invisible',
                 function: props.goToHomeScreen_FromAddNewTrainerScreen
-            },
-            {
-                class: 'yesButton-invisible',
-                function: props.passInPropName
             }
         ],
         DeleteTrainersScreen: [
