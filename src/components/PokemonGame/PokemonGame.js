@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import ButtonFunctions from '../ButtonFunctions';
 import './PokemonGame.css';
 import { selectablePokemons } from './SelectablePokemons';
+import PokemonBattleStats from './PokemonBattleStats';
 
 const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
 
     let [screenOption, setScreenOption] = useState(1);
     let [horizontalScreenOption,setHorizontalScreenOption] = useState(1);
     const [selectedTrainer,setSelectedTrainer] = useState("");
+    const [selectedPokemon, setSelectedPokemon] = useState("");
 
 
 
@@ -50,12 +52,25 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
         option4: "Becca"
 
     }
+    const pokemonNames = {
+        option1: "Machamp",
+        option2: "Lillipup",
+        option3: "Slowking",
+        option4: "Meowth"
+
+    }
 
     const pressYes = (screenOption) => {
         if(horizontalScreenOption===1){
             setSelectedTrainer(trainerNames[`option${screenOption}`])
             setHorizontalScreenOption(2)
-            console.log(selectedTrainer)
+            
+
+        }
+        if(horizontalScreenOption===2){
+            setSelectedPokemon(pokemonNames[`option${screenOption}`])
+            setHorizontalScreenOption(3)
+            
 
         }
         
@@ -66,6 +81,9 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
     const pressNo = () => {
         if(horizontalScreenOption===2){
             setHorizontalScreenOption(1)
+        }
+        if(horizontalScreenOption===3){
+            setHorizontalScreenOption(2)
         }
         
         
@@ -88,17 +106,17 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
     }
 
     const pokemonOptions = {
-        option1 : <p className={"pokemonOption"} >Pokemon1</p>,
-        option2 : <p className={"pokemonOption"} >Pokemon2</p>,
-        option3 : <p className={"pokemonOption"} >Pokemon3</p>,
-        option4 : <p className={"pokemonOption"} >Pokemon4</p>
+        option1 : <p className={"pokemonOption"} >Machamp</p>,
+        option2 : <p className={"pokemonOption"} >Lillipup</p>,
+        option3 : <p className={"pokemonOption"} >Slowking</p>,
+        option4 : <p className={"pokemonOption"} >Meowth</p>
     }
     
     const selectedPokemonOptions = {
-        option1 : <p className={"pokemonOptionSelected"} >Pokemon1</p>,
-        option2 : <p className={"pokemonOptionSelected"} >Pokemon2</p>,
-        option3 : <p className={"pokemonOptionSelected"} >Pokemon3</p>,
-        option4 : <p className={"pokemonOptionSelected"} >Pokemon4</p>
+        option1 :<p className={"pokemonOptionSelected"} >Machamp</p>,
+        option2 : <p className={"pokemonOptionSelected"} >Lillipup</p>,
+        option3 : <p className={"pokemonOptionSelected"} >Slowking</p>,
+        option4 : <p className={"pokemonOptionSelected"} >Meowth</p>
     }
 
     const selectPokemonOption = (screenOption) => {
@@ -112,6 +130,29 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
 
         trainerOptions[`option${screenOption}`] = selectedTrainerOptions[`option${screenOption}`] 
 
+
+    }
+
+    const computerSelection = ()=> {
+        const randomElement = Math.ceil(Math.random() * selectablePokemons.length);
+
+        
+        
+        
+        return pokemonNames[`option${randomElement}`]
+    }
+
+    const computerSelectionReturn = ()=>{
+        
+        while(pokemonNames[`option${computerSelection()}`]===selectedPokemon){
+            let newNumber = computerSelection();
+            if(pokemonNames[`option${computerSelection()}`]!=selectedPokemon){
+                return selectedPokemonOptions[`option${newNumber}`]
+                
+            } 
+        }
+
+        
 
     }
 
@@ -132,11 +173,27 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
         if(horizontalScreenOption===2){
             return(
                 <>
-                     <p>Trainer! Select Your Pokemon:</p>
+                     <p>Trainer! Select Your Pokemon!</p>
                     {pokemonOptions["option1"]}
+                    <img src = {selectablePokemons[0]["image_front"]} className="pokemonImages"/> 
                     {pokemonOptions["option2"]}
+                    <img src = {selectablePokemons[1]["image_front"]} className="pokemonImages" />
                     {pokemonOptions["option3"]}
+                    <img src = {selectablePokemons[2]["image_front"]} className="pokemonImages" />
                     {pokemonOptions["option4"]}
+                    <img src = {selectablePokemons[3]["image_front"]} className="pokemonImages" />
+                
+                </>
+            )
+        }
+        if(horizontalScreenOption===3){
+            return(
+                <>
+                     <p>Computer is selecting a Pokemon...</p>
+                     <p>Computer selection:</p>
+                     {computerSelection()}
+                     
+                     
                 
                 </>
             )
@@ -145,15 +202,15 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
 
     }
 
+
     return(
         <>
-            
+            <section className="screenContainer">
             {selectPokemonOption(screenOption)}
             {selectTrainerOption(screenOption)}
             {screenOptions(horizontalScreenOption)}
-                
-            <progress className="pokemon-game-health-bar" id="health" value="80" max="100"></progress>
-            <meter className="pokemon-game-health-bar" min="0" max="100" value="70"></meter>
+            
+            {PokemonBattleStats()}
             
             <ButtonFunctions dPadLeftGame={()=>{pressLeft()}} 
                             dPadRightGame ={()=>{pressRight()}}
@@ -163,6 +220,7 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
                             noButtonGame={() => {pressNo()}}
                             screen={"PokemonGameScreen"}
             />
+            </section>
         </>
     )
 

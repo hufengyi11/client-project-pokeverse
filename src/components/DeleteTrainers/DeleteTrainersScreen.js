@@ -1,6 +1,7 @@
 import ButtonFunctions from "../ButtonFunctions";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import './DeleteTrainerScreen.css';
 
 
 const DeleteTrainersScreen = ({ goToHomeScreen_FromDeleteTrainersScreen }) => {
@@ -30,7 +31,7 @@ const DeleteTrainersScreen = ({ goToHomeScreen_FromDeleteTrainersScreen }) => {
         <>
             <p>Delete a trainer</p>
             <form>
-                <label>Type in an ID</label>
+                <label className="label">Type in an ID</label>
                 <input
                     className="label"
                     type="number"

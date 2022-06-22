@@ -8,22 +8,27 @@ const DeletePokemonScreen = ({ goToHomeScreen_FromDeletePokemonScreen }) => {
 
     const [pokemonId, setPokemonId] = useState([]);
 
-    
+
+
+
     return (
         <>
 
 
             <form>
                 <label htmlFor="name">Delete Pokemon by ID</label>
-                <input type='text'onChange={(event) => {
-                    setPokemonId(event.target.value)
-                }}/>
+                <input
+                    className="label"
+                    type='text'
+                    onChange={(event) => {
+                        setPokemonId(event.target.value)
+                    }} />
+                <label>Press A to continue</label>
             </form>
 
-            <button 
-                className="yesButton-invisible" 
-                onClick={() => {DeletePokemon(pokemonId)}}
-            ></button>
+            <button
+                className="yesButton-invisible"
+                onClick={() => { DeletePokemon(pokemonId) }}></button>
 
 
             <ButtonFunctions

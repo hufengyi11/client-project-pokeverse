@@ -1,20 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
+.label {
+  background-color: transparent;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
 
 .yesButton-invisible {
-    width: 35px;
-    height: 35px;
-    background: transparent;
-    border: none !important;
-  
-    position: absolute;
-    top: 358px;
-    left: 202px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-  
-  
-  }
+  width: 35px;
+  height: 35px;
+  background: transparent;
+  border: none !important;
+
+  position: absolute;
+  top: 358px;
+  left: 202px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+
+}

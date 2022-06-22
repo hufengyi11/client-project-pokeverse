@@ -88,10 +88,10 @@ const ScreenSelector = () => {
             <PokemonGame 
                 goToHomeScreen_FromPokemonGameScreen={() => handleButtonClick('Home')} 
             />,
-        
         DeletePokemonScreen:
             <DeletePokemonScreen
-                gotoHomeScreen_FromDeletePokemonScreen={() => handleButtonClick('Home')} />
+                goToHomeScreen_FromDeletePokemonScreen={() => handleButtonClick('Home')} 
+            />
 
 
     }

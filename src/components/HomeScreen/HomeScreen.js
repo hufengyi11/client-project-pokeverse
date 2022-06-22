@@ -76,7 +76,7 @@ const HomeScreen = ({goToDisplayPokemonScreen_FromHomeScreen,goToRatePokemonScre
 
     const optionsPokemon = {
         option1: <p className= "option">Find Pokemon</p>,
-        option2:<p className= "option">Rate Pokemon</p>,
+        option2: <p className= "option">Rate Pokemon</p>,
         option3: <p className= "option">Delete Pokemon</p>,
         option4: <p className= "option">Catch New Pokemon</p>
 

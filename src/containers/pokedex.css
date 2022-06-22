@@ -485,6 +485,10 @@ section {
   z-index: 1;
 }
 
+/* .noButton-invisible:hover {
+  background: blue;
+} */
+
 .yesButton-invisible {
   width: 35px;
   height: 35px;
