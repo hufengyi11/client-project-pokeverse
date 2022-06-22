@@ -111,7 +111,7 @@ const ButtonFunctions = (props) => {
         DeletePokemonScreen: [
             {
                 class: 'noButton-invisible',
-                function: props.goToHomeScreen_FromDeleteTrainersScreen
+                function: props.goToHomeScreen_FromDeletePokemonScreen
             }
         ]
 
