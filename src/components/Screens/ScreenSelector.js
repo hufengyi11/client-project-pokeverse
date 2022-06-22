@@ -14,15 +14,14 @@ import DeleteTrainersScreen from "../DeleteTrainers/DeleteTrainersScreen";
 import DeletePokemonScreen from "../DeletePokemonScreen/DeletePokemonScreen";
 // npm install use-sound
 import useSound from 'use-sound';
-import Pikachu_Sound_Effect from './Pikachu_Sound_Effect.m4a'
 
 
 const ScreenSelector = () => {
+    const soundURL = './Pikachu_Sound_Effect.mp3';
 
-    const SoundOnSplashScreen = () => {
-        const [play] = useSound(Pikachu_Sound_Effect);
-        console.log("sound played")
-    }
+    const [play] = useSound(
+        soundURL, { volume: 1 }
+    )
 
     const [screen, setScreen] = useState('StartUp');
 
@@ -30,7 +29,7 @@ const ScreenSelector = () => {
     useEffect(() => {
         setTimeout(() => {
             setScreen('Home')
-            SoundOnSplashScreen()
+            play()
         }, 3000)
     }, [])
 
@@ -54,7 +53,7 @@ const ScreenSelector = () => {
                 goToCatchNewPokemonScreen_FromHomeScreen={() => { handleButtonClick('CatchNewPokemon') }}
                 goToAddATrainer_FromHomeScreen={() => { handleButtonClick('AddNewTrainer') }}
                 goToDeleteTrainersScreen_FromHomeScreen={() => { handleButtonClick('DeleteTrainers') }}
-                gotoDeletePokemonScreen_FromHomeScreen={() => { handleButtonClick('DeletePokemon')}}
+                gotoDeletePokemonScreen_FromHomeScreen={() => { handleButtonClick('DeletePokemon') }}
             />,
         SelectPokemonScreen:
             <SelectPokemon
