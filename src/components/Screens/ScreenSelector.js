@@ -17,18 +17,21 @@ import useSound from 'use-sound';
 
 
 const ScreenSelector = () => {
+
+
+    const [screen, setScreen] = useState('StartUp');
+
     const soundURL = './Pikachu_Sound_Effect.mp3';
 
     const [play] = useSound(
         soundURL, { volume: 1 }
     )
 
-    const [screen, setScreen] = useState('StartUp');
 
 
     useEffect(() => {
         setTimeout(() => {
-            setScreen('Home')
+            setScreen('Home');
             play()
         }, 3000)
     }, [])
