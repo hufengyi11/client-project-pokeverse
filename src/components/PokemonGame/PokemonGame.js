@@ -4,6 +4,9 @@ import './PokemonGame.css';
 import { selectablePokemons } from './SelectablePokemons';
 import PokemonBattleStats from './PokemonBattleStats';
 import PokemonBattleground from './PokemonBattleground';
+import Snorlax from './snorlaxSleep.jpeg'
+import SnorlaxHi from "./snorlaxHi.jpeg"
+import PokeBall from "./pokeball.jpeg"
 
 const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
 
@@ -11,6 +14,10 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
     let [horizontalScreenOption,setHorizontalScreenOption] = useState(1);
     const [selectedTrainer,setSelectedTrainer] = useState("");
     const [selectedPokemon, setSelectedPokemon] = useState("");
+    const [computerLoad,setComputerLoad] = useState([])
+    const [checkTimeout,setCheckTimeout] = useState(true)
+    const [computerChosenP,setComputerChosenP] = useState("")
+    const [loadImage, setLoadImage] = useState(<img src={Snorlax} className = "Snorlax"/>)
 
 
 
@@ -152,6 +159,38 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
         
         return selectedPokemonOptions[`option${randomElement}`]
     }
+    
+    const imageLoadOut = ()=>{
+        setTimeout(()=>{
+            setLoadImage(<img src={SnorlaxHi} className = "SnorlaxHigh"/>)
+            
+        },5000)
+
+    }
+
+
+    const computerChosenTimeout = () => {
+
+        setTimeout(()=>{
+            // setLoadImage(<img src={SnorlaxHi} className = "SnorlaxHigh"/>)
+            setComputerChosenP(<p>Computer has selected:</p>)
+        },4000)
+
+
+    }
+
+    const computerTimeOut = () => {
+
+        
+        if(checkTimeout){
+            setTimeout(() => {
+                setComputerLoad(computerSelection());
+              }, 4000);
+              setCheckTimeout(false)
+
+        }
+        
+    }
 
     
 
@@ -188,9 +227,16 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
         if(horizontalScreenOption===3){
             return(
                 <>
-                     <p>Computer is selecting a Pokemon...</p>
-                     <p>Computer selection:</p>
-                     {computerSelection()}
+                     <p>Computer is selecting a Pokemon</p>
+                     {loadImage}
+                     {computerChosenTimeout()}   
+                     {computerTimeOut()}
+                     {computerChosenP}
+                     {computerLoad}
+                     
+
+                     {/* <p>Computer selection:</p>
+                     {computerSelection()} */}
                      
                      
                 
@@ -209,9 +255,9 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
             {selectTrainerOption(screenOption)}
             {screenOptions(horizontalScreenOption)}
             
-            {PokemonBattleStats(true)}
+            {/* {PokemonBattleStats(true)}
             {PokemonBattleStats(false)}
-            {PokemonBattleground()}
+            {PokemonBattleground()} */}
             
             <ButtonFunctions dPadLeftGame={()=>{pressLeft()}} 
                             dPadRightGame ={()=>{pressRight()}}
