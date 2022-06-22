@@ -1,34 +1,38 @@
 import React from 'react';
-import './PokemonBattleStats.css';
 
 
-
-const PokemonBattleStats = () => {
-    
+const PokemonBattleStats = (opponentPokemon) => {
     
     // --- INPUTS
     const currentHealthNumeric = 151;
     const totalHealthNumeric = 200;
-    const opponentPokemon = false;
 
+    
 
     const remainingHealthPercentage = (currentHealthNumeric / totalHealthNumeric) * 100;
 
+    let leftPosition, topPosition;
     if (opponentPokemon) {
-        
+        leftPosition = "10px";
+        topPosition = "30px";
+    }
+    else {
+        leftPosition = "90px";
+        topPosition = "190px";
     }
 
     const battleStatsContainer = {
         position: "absolute",
-        left: "90px",
-        top: "210px",
+        left: leftPosition,
+        top: topPosition,
         border: "black",
         borderWidth: "2px",
         borderStyle: "solid",
         padding: "2px",
         borderRadius: "5px",
         height: "42px",
-        width: "127px"
+        width: "127px",
+        backgroundColor: "rgba(20, 63, 37, 1)"
     }
 
     const pokemonName = {
@@ -56,7 +60,7 @@ const PokemonBattleStats = () => {
     const healthBarContainer = {
         width: "95px",
         height: "10px",
-        backgroundColor: "transparent",
+        backgroundColor: "rgba(31, 58, 41, 1)",
         border: "solid",
         borderColor: "black",
         display: "flex",

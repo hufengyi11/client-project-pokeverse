@@ -198,7 +198,8 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
             {selectTrainerOption(screenOption)}
             {screenOptions(horizontalScreenOption)}
             
-            {PokemonBattleStats()}
+            {PokemonBattleStats(true)}
+            {PokemonBattleStats(false)}
             
             <ButtonFunctions dPadLeftGame={()=>{pressLeft()}} 
                             dPadRightGame ={()=>{pressRight()}}
