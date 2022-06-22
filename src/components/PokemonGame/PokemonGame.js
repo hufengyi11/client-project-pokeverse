@@ -139,22 +139,10 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
         
         
         
-        return pokemonNames[`option${randomElement}`]
+        return selectedPokemonOptions[`option${randomElement}`]
     }
 
-    const computerSelectionReturn = ()=>{
-        
-        while(pokemonNames[`option${computerSelection()}`]===selectedPokemon){
-            let newNumber = computerSelection();
-            if(pokemonNames[`option${computerSelection()}`]!=selectedPokemon){
-                return selectedPokemonOptions[`option${newNumber}`]
-                
-            } 
-        }
-
-        
-
-    }
+    
 
     const screenOptions = (horizontalScreenOption) => {
 
