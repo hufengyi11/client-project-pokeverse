@@ -9,6 +9,14 @@ const DeleteTrainersScreen = ({ goToHomeScreen_FromDeleteTrainersScreen }) => {
     const [searchField, setSearchField] = useState([]);
 
     useEffect(() => {
+        axios.get('http://localhost:8080/trainer')
+            .then(res => {
+                const trainers = res.data;
+                setTrainers(trainers);
+            }).catch((err) => console.log(err));
+    }, [])
+
+    useEffect(() => {
         axios.delete('http://localhost:8080/trainer')
             .then(res => {
                 const trainers = res.data;
@@ -18,8 +26,8 @@ const DeleteTrainersScreen = ({ goToHomeScreen_FromDeleteTrainersScreen }) => {
 
     function handleDeleteTrainer() {
         console.log("begin")
-        // const newTrainers = trainers.filter(trainer => trainer.id !== searchField)
-        // setTrainers(newTrainers)
+        const newTrainers = trainers.filter(trainer => trainer.id !== searchField)
+        setTrainers(newTrainers)
     }
 
     return (
@@ -34,6 +42,24 @@ const DeleteTrainersScreen = ({ goToHomeScreen_FromDeleteTrainersScreen }) => {
                 />
                 <button className="yesButton-invisible" onClick={handleDeleteTrainer}></button>
             </form>
+
+            {trainers.filter((val) => {
+                if (searchField == "") { return null }
+                else if (val.id == searchField) {
+                    return val
+                }
+            }).map((val, key) => {
+                return (
+                    <>
+                        <p>Name:{val.name}</p>
+                        <p>Age: {val.age}</p>
+                        <p>Location: {val.town}</p>
+                    </>
+                )
+            })
+            }
+
+            <label>Press A to delete</label>
 
             <ButtonFunctions
                 goToHomeScreen_FromDeleteTrainersScreen={goToHomeScreen_FromDeleteTrainersScreen}
