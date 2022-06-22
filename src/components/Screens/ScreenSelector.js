@@ -12,6 +12,7 @@ import CatchNewPokemon from "../CatchNewPokemon/CatchNewPokemon";
 import AddNewTrainerScreen from "../AddNewTrainer/AddNewTrainer";
 import DeleteTrainersScreen from "../DeleteTrainers/DeleteTrainersScreen";
 
+
 const ScreenSelector = () => {
 
     const [screen, setScreen] = useState('StartUp');
@@ -71,7 +72,9 @@ const ScreenSelector = () => {
         DeleteTrainersScreen:
             <DeleteTrainersScreen
                 goToHomeScreen_FromDeleteTrainersScreen={() => handleButtonClick('Home')}
-            />
+            />,
+        
+
     }
 
 

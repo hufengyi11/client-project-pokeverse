@@ -71,7 +71,16 @@ const ButtonFunctions = (props) => {
             {
                 class:'yesButton-invisible',
                 function: props.acceptChange
+            },
+            {
+                class: "DPadHorizontalLEFT_invisible",
+                function: props.goLeft_DPad
+            },
+            {
+                class: "DPadHorizontalRIGHT_invisible",
+                function: props.goRight_DPad
             }
+
         ],
         CatchNewPokemonScreen: [
             {

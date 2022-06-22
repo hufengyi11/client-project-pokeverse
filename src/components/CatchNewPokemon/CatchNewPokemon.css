@@ -40,11 +40,12 @@
 }
 
 .catch-new-pokemon-press-random {
-    font-size: 10px;
-    margin-top: 5px;
+    font-size: 11px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .catch-new-pokemon-press-catch {
     font-size: 10px;
-    margin-top: 5px;
+    margin-top: 10px;
 }
