@@ -15,7 +15,12 @@ const AddNewTrainerScreen = ({ goToHomeScreen_FromAddNewTrainerScreen, handleBut
     const handleAgeChange = event => setTrainerAge(event.target.value);
     const handleTownChange = event => setTrainerTown(event.target.value);
 
-    const handleSubmit = (event) => {
+    const toPostTrainer = async (trainer) => {
+        const result = await PostTrainer(JSON.stringify(trainer))
+        console.log(result)
+    }
+
+    const handleFormSubmit = (event) => {
         event.preventDefault();
         const trainer = {
             name: trainerName,
@@ -24,6 +29,13 @@ const AddNewTrainerScreen = ({ goToHomeScreen_FromAddNewTrainerScreen, handleBut
             pokemons: [],
             pokemonCount:0
         }
+
+        toPostTrainer(trainer);
+
+        setTrainerAge(0);
+        setTrainerName('');
+        setTrainerTown('')
+
         // axios({
         //     method: 'post',
         //     url: 'http://localhost:8080/trainer',
@@ -33,13 +45,14 @@ const AddNewTrainerScreen = ({ goToHomeScreen_FromAddNewTrainerScreen, handleBut
         //         "trainerTown": trainerTown
         //     }
         //   });
-        axios.post('http://localhost:8080/trainer', { trainer })
-            .then(res => {
-                console.log(res);
-            }).catch((err) => console.log(err));
-
-        console.log("added");
+        // axios.post('http://localhost:8080/trainer', { trainer })
+        //     .then(res => {
+        //         console.log(res);
+        //     }).catch((err) => console.log(err));
     }
+
+    
+
 
     return (
         <>
@@ -51,6 +64,7 @@ const AddNewTrainerScreen = ({ goToHomeScreen_FromAddNewTrainerScreen, handleBut
                         type="text"
                         onChange={handleNameChange}
                         className="label"
+                        value={trainerName}
                     />
                 </label>
                 <label className="label">
@@ -59,6 +73,7 @@ const AddNewTrainerScreen = ({ goToHomeScreen_FromAddNewTrainerScreen, handleBut
                         type="number"
                         onChange={handleAgeChange}
                         className="label"
+                        value={trainerAge}
                     />
                 </label>
                 <label className="label">
@@ -68,9 +83,10 @@ const AddNewTrainerScreen = ({ goToHomeScreen_FromAddNewTrainerScreen, handleBut
                         type="text"
                         onChange={handleTownChange}
                         className="label"
+                        value={trainerTown}
                     />
                     <label className="label">Press A to submit</label>
-                    <button className="yesButton-invisible" type='submit' onClick={handleSubmit}></button>
+                    <button className="yesButton-invisible" onClick={(event) => handleFormSubmit(event)}>Sum</button>
                 </label>
             </form>
             <ButtonFunctions
