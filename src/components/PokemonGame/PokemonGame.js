@@ -2,8 +2,14 @@ import React, { useState } from 'react';
 import ButtonFunctions from '../ButtonFunctions';
 import './PokemonGame.css';
 import { selectablePokemons } from './SelectablePokemons';
+
+
 import PokemonBattleStats from './PokemonBattleStats';
 import PokemonBattleground from './PokemonBattleground';
+import PokemonPlacements from './PokemonPlacements';
+
+
+
 
 const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
 
@@ -11,7 +17,6 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
     let [horizontalScreenOption,setHorizontalScreenOption] = useState(1);
     const [selectedTrainer,setSelectedTrainer] = useState("");
     const [selectedPokemon, setSelectedPokemon] = useState("");
-
 
 
 
@@ -207,14 +212,28 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
     return(
         <>
             <section className="screenContainer">
-            {selectPokemonOption(screenOption)}
+            {/* {selectPokemonOption(screenOption)}
             {selectTrainerOption(screenOption)}
-            {screenOptions(horizontalScreenOption)}
+            {screenOptions(horizontalScreenOption)} */}
             
             {PokemonBattleStats(true)}
             {PokemonBattleStats(false)}
-            {PokemonBattleground()}
+            {PokemonBattleground(true)}
+            {PokemonBattleground(false)}
+            {PokemonPlacements(
+                {
+                    front: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/52.png", 
+                    back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/52.png", 
+                    opponent: true
+                })}
+            {PokemonPlacements(
+                {
+                    front: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/52.png", 
+                    back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/52.png", 
+                    opponent: false
+                })}
             
+
             <ButtonFunctions dPadLeftGame={()=>{pressLeft()}} 
                             dPadRightGame ={()=>{pressRight()}}
                             dPadUpGame = {()=>{pressUp()}}

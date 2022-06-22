@@ -7,7 +7,7 @@ const PokemonBattleStats = (opponentPokemon) => {
     const currentHealthNumeric = 151;
     const totalHealthNumeric = 200;
 
-    
+
 
     const remainingHealthPercentage = (currentHealthNumeric / totalHealthNumeric) * 100;
 
@@ -32,7 +32,8 @@ const PokemonBattleStats = (opponentPokemon) => {
         borderRadius: "5px",
         height: "42px",
         width: "127px",
-        backgroundColor: "rgba(20, 63, 37, 1)"
+        backgroundColor: "transparent",
+        zIndex: "900"
     }
 
     const pokemonName = {
@@ -60,7 +61,7 @@ const PokemonBattleStats = (opponentPokemon) => {
     const healthBarContainer = {
         width: "95px",
         height: "10px",
-        backgroundColor: "rgba(31, 58, 41, 1)",
+        backgroundColor: "transparent",
         border: "solid",
         borderColor: "black",
         display: "flex",
