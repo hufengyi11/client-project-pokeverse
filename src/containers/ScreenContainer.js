@@ -3,7 +3,7 @@ import HomeScreen from "../components/HomeScreen/HomeScreen";
 import BackLightButton from "../components/Buttons/BackLightButton";
 import PokeDexContainer from "./PokeDexContainer";
 import PokemonGame from "../components/PokemonGame/PokemonGame";
-// import useSound from "use-sound";
+import useSound from "use-sound";
 import { useState } from "react";
 import PikaSound from './Pikachu-Sound-Effect.mp3'
 
@@ -12,7 +12,7 @@ const ScreenContainer = ({ onClickHere }) => {
     const [screen, setScreen] = useState("");
     const [backLightButtonNull, setBackLightButtonNull] = useState("");
 
-    // const [play] = useSound(PikaSound);
+    const [play] = useSound(PikaSound);
 
 
     return (
@@ -28,7 +28,7 @@ const ScreenContainer = ({ onClickHere }) => {
 
                         setScreen(<ScreenSelector />)
                         setBackLightButtonNull("");
-                        // play();
+                        play();
                     } else if (screen != "") {
                         setScreen("")
                         setBackLightButtonNull(<button className='backlight-button__Null' ></button>)

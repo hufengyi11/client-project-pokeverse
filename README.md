@@ -16,6 +16,12 @@ After examining the backend functionalities, taking into account team All Staryu
 - Recruit new trainers
 - Fire any personnel
 - Allow all members to practise Pokemon battles
-
+**Design**
+We are inspired by the _Pokemon Pikachu Handheld_ device and decide to make a replica. Wireframe is down below.
 
 ![WireFrame](./wire.jpeg)
+
+## Functionality
+You will be able to view pokemons, get a similar pokemon by name and get a random pokemon. You can also delete a pokemon or update pokemon. 
+
+As a trainer you can also see all trainers, edit your location, or delete a trainer. 

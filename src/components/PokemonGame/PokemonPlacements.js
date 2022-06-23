@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './PokemonPlacements.css'
 
 const PokemonPlacements = (pokemonInfo, opponent) => {
 
@@ -33,7 +33,7 @@ const PokemonPlacements = (pokemonInfo, opponent) => {
 
     return (
         <>
-            <div style={pokemonContainer}>
+            <div style={pokemonContainer} className="pokemon-container">
                 <img 
                     src={image} 
                     alt=""
