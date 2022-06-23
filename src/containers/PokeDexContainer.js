@@ -45,8 +45,6 @@ const PokeDexContainer = ({ inStuff }) => {
           <div className="screenBorderTopText">Team Rocket Edition</div>
           <ButtonsContainer />
           <BackLightButton backLightToggle={backLightToggle} />
-          <div className="keyhole"></div>
-          <div className="keychain"></div>
           
         </div>
       </div>
