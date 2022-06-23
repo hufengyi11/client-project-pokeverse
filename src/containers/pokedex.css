@@ -215,7 +215,8 @@ section {
 .DPadVerticalTOP_invisible {
   width: 24.5px;
   height: 28.5px;
-  color : blue;
+  color : transparent;
+  background-color: transparent;
   opacity: 1;
   position: absolute;
   top: 348px;
@@ -225,7 +226,7 @@ section {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   overflow: hidden;
-  box-shadow: 1.5px 1px 2px 1px rgba(0, 0, 0, 0.35);
+  /* box-shadow: 1.5px 1px 2px 1px rgba(0, 0, 0, 0.35); */
   z-index: 1;
 }
 
@@ -252,7 +253,8 @@ section {
 .DPadVerticalBOTTOM_invisible {
   width: 24.5px;
   height: 28.5px;
-  color: blue;
+  color: transparent;
+  background-color: transparent;
   opacity: 1;
   position: absolute;
   top: 408px;
@@ -262,7 +264,7 @@ section {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   overflow: hidden;
-  box-shadow: 1.5px 1px 2px 1px rgba(0, 0, 0, 0.35);
+  /* box-shadow: 1.5px 1px 2px 1px rgba(0, 0, 0, 0.35); */
   z-index: 1;
 
 
@@ -290,7 +292,7 @@ section {
 .DPadHorizontalLEFT_invisible {
   width: 24.5px;
   height: 28.5px;
-  background:  blue;
+  background:  transparent;
   opacity: 1;
   position: absolute;
   top: 379px;
@@ -301,7 +303,7 @@ section {
   border-bottom-right-radius: 5px;
   transform: rotate(-90deg);
   overflow: hidden;
-  box-shadow: -1.5px 1px 2px 1px rgba(0, 0, 0, 0.35);
+  /* box-shadow: -1.5px 1px 2px 1px rgba(0, 0, 0, 0.35); */
   z-index: 1;
 
 }
@@ -327,7 +329,7 @@ section {
 
   width: 24.5px;
   height: 28.5px;
-  background: blue;
+  background: transparent;
   opacity: 1;
   position: absolute;
   top: 379px;
@@ -338,7 +340,7 @@ section {
   border-bottom-right-radius: 5px;
   transform: rotate(-90deg);
   overflow: hidden;
-  box-shadow: -1.5px 1px 2px 1px rgba(0, 0, 0, 0.35);
+  /* box-shadow: -1.5px 1px 2px 1px rgba(0, 0, 0, 0.35); */
   z-index: 1;
 
 
@@ -483,13 +485,14 @@ section {
 .yesButton-invisible {
   width: 35px;
   height: 35px;
-  background: blue;
-  border: none !important;
-
+  background: transparent;
+  /* border: none !important; */
+  
   position: absolute;
   top: 358px;
   left: 202px;
   border-radius: 50%;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -713,7 +716,7 @@ section {
   width: 20px;
   height: 20px;
   /* background: linear-gradient(315deg, rgba(0, 0, 0, 1) 0%, rgba(62, 62, 62, 1) 95%, rgba(130, 130, 130, 1) 100%); */
-  background-color: hotpink;
+  background-color: transparent;
   opacity: 1;
   position: absolute;
   top: 383px;

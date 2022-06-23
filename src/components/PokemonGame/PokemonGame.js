@@ -28,7 +28,9 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
     const [computerDifficulty,setComputerDifficulty] = useState("Hard")
     const [computerDamageArray,setComputerDamageArray] = useState([])
     let [moveCount,setMoveCount] = useState(0)
+   
     
+    let isComputersTurn = false;
 
 
     // Screen Message State
@@ -45,7 +47,8 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
         affectedPokemon['current_health'] -= moveDamage;
         setOpponentPokemon(affectedPokemon);
         triggerMessage("You", playerPokemon.moves[moveNumber].name);
-        setComputersTurn(true);
+        // setComputersTurn(true);
+        isComputersTurn = true;
         setTimeout( ()=>{computerResponse()},3000)
 
 
@@ -251,16 +254,41 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
             if(pokemonNames[`option${rand}`].toLowerCase()===playerPokemon.name){
                 continue;
             }else{
+                
+                let changePoke = selectablePokemons[rand-1];
+                changePoke["health"] *= 2
+                changePoke["current_health"] *= 2
+                if(computerDifficulty==="Hard" || computerDifficulty === "Impossible"){
+                    setOpponentPokemon(changePoke)
+                }else{
+                    
+                    setOpponentPokemon(selectablePokemons[rand-1])
+                }
                 setComputerPickNumber(rand)
-                setOpponentPokemon(selectablePokemons[rand-1])
+                
+                
+
+
+
+
                 return selectedPokemonOptions[`option${rand}`]
             }
             
             
         }
         
-        setOpponentPokemon(selectablePokemons[randomElement-1])
+        let changePoke;
+        if (computerDifficulty === "Hard" || computerDifficulty === "Impossible") {
+            changePoke = selectablePokemons[randomElement-1];
+            changePoke["health"] *= 2
+            changePoke["current_health"] *= 2
+            setOpponentPokemon(changePoke)
+        }else{
+            setOpponentPokemon(selectablePokemons[randomElement-1])
+        }
         setComputerPickNumber(randomElement)
+        
+
         return selectedPokemonOptions[`option${randomElement}`]
     }
     
@@ -383,10 +411,66 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
 
 
     const computerResponse = () => {
+
+        console.log(isComputersTurn)
+
+        // if(computersTurn===true && computerDifficulty=== "Easy"){
+        if(isComputersTurn===true && computerDifficulty=== "Easy"){
+
+            computerDamageMapper()
+
+            const randomElement = Math.ceil(Math.random() * selectablePokemons.length);
+            
+            const moveName = opponentPokemon.moves[randomElement-1].name;
+            triggerMessage("Opponent", moveName);
+            let affectedPokemon = playerPokemon
+
+
+
+            while((opponentPokemon["moves"][randomElement-1]['damage']===Math.max.apply(null,computerDamageArray))
+                && moveCount%10!=0){
+                    let rand = Math.ceil(Math.random() * selectablePokemons.length);
+                if(opponentPokemon["moves"][rand-1]['damage']===Math.max.apply(null,computerDamageArray)){
+                    continue;
+                }
+                let computerAttack = opponentPokemon["moves"][rand-1]['damage']
+                affectedPokemon["current_health"] -=  computerAttack;
+                setPlayerPokemon(affectedPokemon)
+                setMoveCount(++moveCount)
+                
+                
+            }
+
+                let computerAttack = opponentPokemon["moves"][randomElement-1]['damage']
+                affectedPokemon["current_health"] -=  computerAttack;
+                setPlayerPokemon(affectedPokemon)
+                setMoveCount(++moveCount)
+                // setComputersTurn(false)
+                isComputersTurn = false;
+
+                if (affectedPokemon.current_health <= 0) {
+                    setScreenMessage({message: "YOU LOSE!", display: true})
+                    setTimeout(()=>{
+                        setHorizontalScreenOption(1)
+                    },2000)
+                }
+            
+            console.log(moveCount)
+
+
+
+
+
+
+
+        }
         
-        if(computersTurn===true && computerDifficulty === "Hard"  ){
+        // if(computersTurn===true && computerDifficulty === "Hard"  ){
+        if(isComputersTurn===true && computerDifficulty === "Hard"  ){
 
             
+
+
             
             computerDamageMapper()
 
@@ -404,19 +488,20 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
                 if(opponentPokemon["moves"][rand-1]['damage']===Math.max.apply(null,computerDamageArray)){
                     continue;
                 }
-                let computerAttack = opponentPokemon["moves"][rand-1]['damage']
+                let computerAttack = (opponentPokemon["moves"][rand-1]['damage']*2)
                 affectedPokemon["current_health"] -=  computerAttack;
                 setPlayerPokemon(affectedPokemon)
                 setMoveCount(++moveCount)
                 
-                // return;
+                
             }
 
-                let computerAttack = opponentPokemon["moves"][randomElement-1]['damage']
+                let computerAttack = (opponentPokemon["moves"][randomElement-1]['damage']*2)
                 affectedPokemon["current_health"] -=  computerAttack;
                 setPlayerPokemon(affectedPokemon)
                 setMoveCount(++moveCount)
                 // setComputersTurn(false)
+                isComputersTurn = false;
 
                 if (affectedPokemon.current_health <= 0) {
                     setScreenMessage({message: "YOU LOSE!", display: true})
@@ -427,6 +512,51 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
             
             console.log(moveCount)
             
+        }
+
+        if(isComputersTurn===true && computerDifficulty === "Impossible" ){
+
+            computerDamageMapper()
+
+            const randomElement = Math.ceil(Math.random() * selectablePokemons.length);
+            
+            const moveName = opponentPokemon.moves[randomElement-1].name;
+            triggerMessage("Opponent", moveName);
+            let affectedPokemon = playerPokemon
+
+
+
+            while((opponentPokemon["moves"][randomElement-1]['damage']===Math.max.apply(null,computerDamageArray))
+                && moveCount%2!=0 && moveCount!=0){
+                    let rand = Math.ceil(Math.random() * selectablePokemons.length);
+                if(opponentPokemon["moves"][rand-1]['damage']===Math.max.apply(null,computerDamageArray)){
+                    continue;
+                }
+                let computerAttack = (opponentPokemon["moves"][rand-1]['damage']*10)
+                affectedPokemon["current_health"] -=  computerAttack;
+                setPlayerPokemon(affectedPokemon)
+                setMoveCount(++moveCount)
+                
+                
+            }
+
+                let computerAttack = (opponentPokemon["moves"][randomElement-1]['damage']*10)
+                affectedPokemon["current_health"] -=  computerAttack;
+                setPlayerPokemon(affectedPokemon)
+                setMoveCount(++moveCount)
+                // setComputersTurn(false)
+                isComputersTurn = false;
+
+                if (affectedPokemon.current_health <= 0) {
+                    setScreenMessage({message: "YOU LOSE...as expected", display: true})
+                    setTimeout(()=>{
+                        setHorizontalScreenOption(1)
+                    },2000)
+                }
+            
+            console.log(moveCount)
+
+
         }
 
     }

@@ -46,7 +46,7 @@ export const selectablePokemons = [
             },
             {
                 name: "crunch",
-                damage: 60
+                damage: 40
             }
         ]
     },
@@ -71,7 +71,7 @@ export const selectablePokemons = [
             },
             {
                 name: "flamethrower",
-                damage: 40
+                damage: 60
             }
         ]
     },
