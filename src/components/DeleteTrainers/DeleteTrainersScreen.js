@@ -2,6 +2,8 @@ import ButtonFunctions from "../ButtonFunctions";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import './DeleteTrainerScreen.css';
+import DeleteTrainer from "../APIfunctions/DeleteTrainer";
+import GetAllTrainers from "../APIfunctions/GetAllTrainers";
 
 
 const DeleteTrainersScreen = ({ goToHomeScreen_FromDeleteTrainersScreen }) => {
@@ -19,11 +21,8 @@ const DeleteTrainersScreen = ({ goToHomeScreen_FromDeleteTrainersScreen }) => {
    
     function handleDeleteTrainer(e) {
         e.preventDefault();        
-        axios.delete(`http://localhost:8080/trainer/${searchField}`)
-        .then(res => {
-            // const trainers = res.data;
-            // setTrainers(trainers);
-        }).catch((err) => console.log(err));
+        DeleteTrainer(searchField);
+        trainers.splice(searchField - 1, 1);
         setSearchField(0);
     }
 

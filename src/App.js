@@ -1,38 +1,22 @@
-import { Component } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
-// import PokeDex from './containers/PokeDex';
 import PokeDexDesktop from './containers/PokeDex-Desktop';
 import PokeDexContainer from './containers/PokeDexContainer';
-
-class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { matches: window.matchMedia("(min-width: 480px)").matches };
-  }
-
-  componentDidMount() {
-    const handler = e => this.setState({matches: e.matches});
-    window.matchMedia("(min-width: 480px)").addEventListener('change', handler);
-  }
-
-  render() {
-    return (
-      <div>
-        <div>
-          <h1 className='PageHeader'>PokeVerse</h1>
-        </div>
-        <div >
-          {this.state.matches && (<PokeDexDesktop/>)}
-          {!this.state.matches && (<PokeDexContainer/>)}
-        </div>
-        <div className='footer'>
-          <p>CopyRight</p>
-          <p>Privacy</p>
-          <p>Cookies</p>
-        </div>
+const App = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    window.addEventListener('resize', () => setWidth(window.innerWidth))
+  }, []);
+  return (
+    <>
+      <h1 className='PageHeader'>PokeVerse</h1>
+      {width >= 480 ? <PokeDexDesktop /> : <PokeDexContainer />}
+      <div className='footer'>
+        <p>CopyRight</p>
+        <p>Privacy</p>
+        <p>Cookies</p>
       </div>
-    );
-  }
-}
-
+    </>
+  );
+};
 export default App;
