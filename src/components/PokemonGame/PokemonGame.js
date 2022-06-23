@@ -49,7 +49,7 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
 
             setMoveOption(0)
             // console.log("up")
-            selectablePokemons[computerPick-1].current_health = selectablePokemons[computerPick-1].current_health - returnMoveDamageArray()[moveOption];
+            selectablePokemons[computerPick-1].current_health = selectablePokemons[computerPick-1].current_health - returnMoveDamageArray()[0];
             // console.log(returnMoveDamageArray()[moveOption])
             
 
