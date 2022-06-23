@@ -48,8 +48,8 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
         if(horizontalScreenOption===4){
 
             setMoveOption(0)
-            console.log(moveOption)
-            // selectablePokemons[computerPick-1].current_health = selectablePokemons[computerPick-1].current_health - returnMoveDamageArray()[moveOption];
+            // console.log("up")
+            selectablePokemons[computerPick-1].current_health = selectablePokemons[computerPick-1].current_health - returnMoveDamageArray()[moveOption];
             // console.log(returnMoveDamageArray()[moveOption])
             
 
@@ -395,7 +395,7 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
                         {returnUserPokeMovesArray()}
                         
                          
-                        {console.log(returnMoveDamageArray()[1])}
+                        
                         {/* {console.log(returnUserMoveObject())} */}
                         
                     </section>                
