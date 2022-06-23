@@ -6,6 +6,6 @@ We were given the backend bit by Team Staryu.
 
 After examining the backend functionalities, taking into account team All Staryu’s vision and Team Rocket’s need for total world domination, we decided to design a Pokedex for all Team Rocket personnel.
 
-![WireFrame] (/WIreFrame.png)
+![WireFrame](/WIreFrame.png)
 ![WireFrame](WIreFrame.png)
 ![alt text](https://github.com/hufengyi11/client-project-pokeverse/blob/main/WIreFrame.png)
