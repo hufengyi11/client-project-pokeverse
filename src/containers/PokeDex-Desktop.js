@@ -629,31 +629,6 @@ const PokeDex_Desktop = (props) => {
                                     d="M134.8,40.9c-1.7,0-3.3,0.2-5,0c-2.9-0.3-4.4-2.6-3.6-5.3c2.3-7.6,13.4-13.3,21-10.7
 		c3.2,1.1,4.9,3.4,5.8,6.3c1,3.4,0,5.1-3.2,6.9C146.6,39.7,140.3,40.9,134.8,40.9z"
                                 />
-
-                                <foreignObject x="186" y="403" width='50' height='24' >
-                                    <button>A</button>
-                                </foreignObject>
-                                <foreignObject x="258" y="403" width='50' height='24'>
-                                    <button>B</button>
-                                </foreignObject>
-                                <foreignObject x="345" y="403" width='50' height='24'>
-                                    <button>Up</button>
-                                </foreignObject>
-                                <foreignObject x="345" y="463" width='50' height='24'>
-                                    <button>Down</button>
-                                </foreignObject>
-                                <foreignObject x="305" y="433" width='50' height='24'>
-                                    <button>Left</button>
-                                </foreignObject>
-                                <foreignObject x="365" y="433" width='50' height='24'>
-                                    <button>right</button>
-                                </foreignObject>
-                                <foreignObject x="118" y="400" width='50' height='24'>
-                                    <button>On</button>
-                                </foreignObject>
-                                <foreignObject x="150" y="343" width='50' height='24'>
-                                    <button>Backlight</button>
-                                </foreignObject>
                             </g>
                             <foreignObject>
                                 <ScreenContainer />
