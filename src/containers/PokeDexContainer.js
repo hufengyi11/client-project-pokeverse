@@ -26,8 +26,6 @@ const PokeDexContainer = ({ inStuff }) => {
   }
 
 
-
-
   return (
     <section>
       <div className="shit-container">
