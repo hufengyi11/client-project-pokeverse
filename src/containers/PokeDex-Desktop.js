@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import "./PokeDex-Desktop.css";
 import BackLightButton from "../components/Buttons/BackLightButton";
 import ScreenSelector from '../components/Screens/ScreenSelector';
+import ScreenContainer from './ScreenContainer';
+import ButtonsContainer from './ButtonsContainer';
 
 
 
@@ -653,6 +655,10 @@ const PokeDex_Desktop = (props) => {
                                     <button>Backlight</button>
                                 </foreignObject>
                             </g>
+                            <foreignObject>
+                                <ScreenContainer />
+                                <ButtonsContainer />
+                            </foreignObject>
                         </svg>
                     </div>
                 </div>
