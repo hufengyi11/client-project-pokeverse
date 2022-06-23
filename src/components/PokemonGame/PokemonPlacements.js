@@ -1,9 +1,11 @@
 import React from 'react'
 import './PokemonPlacements.css'
 
-const PokemonPlacements = (pokemonInfo, opponent) => {
+const PokemonPlacements = (pokemonInfo, opponent, doAnimation) => {
 
     const image = opponent ? pokemonInfo.image_front : pokemonInfo.image_back;
+
+
 
     return (
         <>
@@ -11,11 +13,16 @@ const PokemonPlacements = (pokemonInfo, opponent) => {
                 <img 
                     src={image} 
                     alt=""
-                    className={opponent ? "pokemon-image-opponent" : "pokemon-image-player"}
+                    className={
+                        opponent ? 
+                        "pokemon-image-opponent" :
+                        "pokemon-image-player"
+                        
+                    }
                 />
             </div>
         </>
     )
 }
 
-export default PokemonPlacements
+export default PokemonPlacements;

@@ -13,15 +13,15 @@ export const selectablePokemons = [
             },
             {
                 name: "mega-kick",
-                damage: 20
-            },
-            {
-                name: "headbutt",
                 damage: 30
             },
             {
-                name: "body-slam",
+                name: "headbutt",
                 damage: 50
+            },
+            {
+                name: "body-slam",
+                damage: 80
             }
         ]
     },
@@ -46,7 +46,7 @@ export const selectablePokemons = [
             },
             {
                 name: "crunch",
-                damage: 50
+                damage: 60
             }
         ]
     },
@@ -71,7 +71,7 @@ export const selectablePokemons = [
             },
             {
                 name: "flamethrower",
-                damage: 50
+                damage: 40
             }
         ]
     },
@@ -84,15 +84,15 @@ export const selectablePokemons = [
         moves: [
             {
                 name: "pay-day",
-                damage: 10
-            },
-            {
-                name: "scratch",
                 damage: 20
             },
             {
-                name: "cut",
+                name: "scratch",
                 damage: 30
+            },
+            {
+                name: "cut",
+                damage: 40
             },
             {
                 name: "headbutt",

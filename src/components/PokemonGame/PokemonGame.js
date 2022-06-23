@@ -26,6 +26,8 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
     const [moveOption,setMoveOption] = useState("")
     const [computersTurn,setComputersTurn] = useState(false)
     const [computerDifficulty,setComputerDifficulty] = useState("Hard")
+    const [computerDamageArray,setComputerDamageArray] = useState([])
+    let [moveCount,setMoveCount] = useState(0)
     
 
 
@@ -42,37 +44,72 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
         const affectedPokemon = opponentPokemon;                        
         affectedPokemon['current_health'] -= moveDamage;
         setOpponentPokemon(affectedPokemon);
-        setScreenMessage({message: "", display: false})
+        triggerMessage("You", playerPokemon.moves[moveNumber].name);
         setComputersTurn(true);
-        computerResponse()
+        setTimeout( ()=>{computerResponse()},3000)
+
+
+        
         if (affectedPokemon.current_health <= 0) {
             setScreenMessage({message: "YOU WIN!", display: true})
+            setTimeout(()=>{
+                setHorizontalScreenOption(1)}
+            ,2000)
         }
+
     }
 
     const pressUp = () => {
-        if(horizontalScreenOption != 5){
+        if(horizontalScreenOption === 1){
+            setScreenOption(--screenOption)
+            if(screenOption<1) setScreenOption(3)
+        }
+        if(horizontalScreenOption != 5 && horizontalScreenOption!=1){
             setScreenOption(--screenOption)
             if(screenOption<1) setScreenOption(4)
         }
-        if(horizontalScreenOption===5) playerDoDamageToOpponent(0);
-        
+        if(horizontalScreenOption===5 ){
+                playerDoDamageToOpponent(0)
+        }     
     }
 
     const pressDown = () => {
-        if(horizontalScreenOption != 5){
+        if(horizontalScreenOption === 1){
+            setScreenOption(++screenOption)
+            if(screenOption>3) setScreenOption(1)
+        }
+        if(horizontalScreenOption != 5 && horizontalScreenOption!=1){
             setScreenOption(++screenOption)
             if(screenOption>4) setScreenOption(1)
         }
-        if(horizontalScreenOption===5) playerDoDamageToOpponent(2)
+        if(horizontalScreenOption===5 ){
+            
+                
+                playerDoDamageToOpponent(2); 
+            
+            
+        } 
+        
     }
 
     const pressRight = () => {
-        if(horizontalScreenOption===5) playerDoDamageToOpponent(1);
+        if(horizontalScreenOption===5) {
+
+            
+                playerDoDamageToOpponent(1);
+            
+            
+        } 
     }
 
     const pressLeft = () => {
-        if(horizontalScreenOption===5) playerDoDamageToOpponent(3);
+        if(horizontalScreenOption===5 ) {
+
+            
+                playerDoDamageToOpponent(3);
+            
+            
+        } 
     }
 
     
@@ -94,6 +131,7 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
     const pressYes = (screenOption) => {
 
         if(horizontalScreenOption===1){
+            setComputerDifficulty(difficultyOptionsRaw[`option${screenOption}`])
             setHorizontalScreenOption(2)
         }
 
@@ -139,6 +177,13 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
         }
         
         
+    }
+
+    const difficultyOptionsRaw = {
+        option1: "Easy",
+        option2: "Hard",
+        option3: "Impossible"
+
     }
 
     const difficultyOptions = {
@@ -193,17 +238,17 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
     }
 
     const selectDifficultyOption = (screenOption) => {
-        difficultyOptions[`option${screenOption}`] = selectedDifficultyOptions[`options${screenOption}`]
+        difficultyOptions[`option${screenOption}`] = selectedDifficultyOptions[`option${screenOption}`]
 
     }
 
     const computerSelection = ()=> {
-        const randomElement = Math.ceil(Math.random() * selectablePokemons.length);
+        let randomElement = Math.ceil(Math.random() * selectablePokemons.length);
 
-        while(pokemonNames[`option${randomElement}`]===playerPokemon.name){
+        while(pokemonNames[`option${randomElement}`].toLowerCase()===playerPokemon.name){
 
             let rand = Math.ceil(Math.random() * selectablePokemons.length);
-            if(pokemonNames[`option${rand}`]===playerPokemon.name){
+            if(pokemonNames[`option${rand}`].toLowerCase()===playerPokemon.name){
                 continue;
             }else{
                 setComputerPickNumber(rand)
@@ -219,11 +264,7 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
         return selectedPokemonOptions[`option${randomElement}`]
     }
     
-    const imageLoadOut = ()=>{
-        setTimeout(()=>{
-            setLoadImage(<img src={SnorlaxHi} className = "SnorlaxHigh"/>)
-        },5000)
-    }
+    
 
 
     const computerChosenTimeout = () => {
@@ -254,39 +295,6 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
 
 
 
-    // const returnComputerPokeMovesArray = () => {
-
-
-    //     const pokeMovesArray = [];
-
-
-    //     selectablePokemons[computerPickNumber-1]["moves"].map((move,index)=>{
-
-            
-            
-    //         pokeMovesArray.push(<p key={index} className="pokemonMoves">{move["name"].toUpperCase()}</p>)
-            
-            
-
-    //     }) 
-    //     return(pokeMovesArray)
-    // }
-
-    // const returnMoveDamageArray = () => {
-
-    //     const moveDamageArray = [];
-    //     selectablePokemons[screenOption-1]["moves"].map((move,index)=>{
-    //         moveDamageArray.push(move["damage"]);              
-           
-    //     })
-    //     return moveDamageArray;
-
-
-    // }
-
-    
-
-    
 
     const screenOptions = (horizontalScreenOption) => {
 
@@ -367,24 +375,65 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
         }
     }
 
+    const computerDamageMapper = () => {
+        const damageArray = [];
+        opponentPokemon["moves"].map(object=>{damageArray.push(object["damage"])});
+        setComputerDamageArray(damageArray);
+    }
+
 
     const computerResponse = () => {
         
         if(computersTurn===true && computerDifficulty === "Hard"  ){
+
             
-            triggerMessage();
+            
+            computerDamageMapper()
+
+            const randomElement = Math.ceil(Math.random() * selectablePokemons.length);
+            
+            const moveName = opponentPokemon.moves[randomElement-1].name;
+            triggerMessage("Opponent", moveName);
             let affectedPokemon = playerPokemon
-            let computerAttack = opponentPokemon["moves"][3]['damage']
-            affectedPokemon["current_health"] -=  computerAttack;
-            setPlayerPokemon(affectedPokemon)
+
+
+
+            while((opponentPokemon["moves"][randomElement-1]['damage']===Math.max.apply(null,computerDamageArray))
+                && moveCount%2!=0 && moveCount!=0){
+                    let rand = Math.ceil(Math.random() * selectablePokemons.length);
+                if(opponentPokemon["moves"][rand-1]['damage']===Math.max.apply(null,computerDamageArray)){
+                    continue;
+                }
+                let computerAttack = opponentPokemon["moves"][rand-1]['damage']
+                affectedPokemon["current_health"] -=  computerAttack;
+                setPlayerPokemon(affectedPokemon)
+                setMoveCount(++moveCount)
+                
+                // return;
+            }
+
+                let computerAttack = opponentPokemon["moves"][randomElement-1]['damage']
+                affectedPokemon["current_health"] -=  computerAttack;
+                setPlayerPokemon(affectedPokemon)
+                setMoveCount(++moveCount)
+                // setComputersTurn(false)
+
+                if (affectedPokemon.current_health <= 0) {
+                    setScreenMessage({message: "YOU LOSE!", display: true})
+                    setTimeout(()=>{
+                        setHorizontalScreenOption(1)
+                    },2000)
+                }
+            
+            console.log(moveCount)
             
         }
 
     }
 
     
-    const triggerMessage = () => {
-        setScreenMessage({message: "Opponent used MOVE!", display: true})
+    const triggerMessage = (who, move) => {
+        setScreenMessage({message: `${who} used ${move}!`, display: true})
         setTimeout(() => {
             setScreenMessage({message: "", display: false})
         }, 2000)

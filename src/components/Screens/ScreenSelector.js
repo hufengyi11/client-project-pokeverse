@@ -26,7 +26,7 @@ const ScreenSelector = () => {
         localStorage.setItem("pokedex_id", 0);
         setTimeout(() => {
             setScreen('Home')
-        }, 1000)
+        }, 2000)
     }, [])
 
     const handleButtonClick = (screenName) => {

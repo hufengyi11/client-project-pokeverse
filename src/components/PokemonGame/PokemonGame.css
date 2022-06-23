@@ -98,14 +98,30 @@
     
 }
 
+@keyframes difficulty {
+    from{border-left: 3px solid black;
+        border-right:3px solid black;
+        }
+    to{border-left: 6px  dashed black;
+        border-right:6px dashed black;
+        }
+    
+}
+
+
 .difficultyOption{
     font-size: 11px;
+    padding: 3px;
 
 }
 
 .difficultyOptionSelected{
     font-size: 11px;
-    color: red;
+    padding: 3px;
+    
+    animation-name: difficulty;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
     
     
     
@@ -116,6 +132,8 @@
 
 .difficulty{
     font-size: 13px;
+    margin-bottom: 6px;
+    margin-top:10px;
 }
 
 

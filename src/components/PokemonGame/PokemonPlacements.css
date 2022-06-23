@@ -24,3 +24,19 @@
     filter: grayscale(100%) brightness(0.8) contrast(175%);
     z-index: 9999;
 }
+
+.hit {
+    animation: opacityOnAndOff 0.25s 1s linear;
+}
+
+@keyframes opacityOnAndOff {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
