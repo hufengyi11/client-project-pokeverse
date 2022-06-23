@@ -16,7 +16,7 @@ section {
 
 .shit-container {
   width: 375px;
-  height: 667px;
+  height: 521px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,17 +36,8 @@ section {
   overflow: hidden;
   position: relative;
   margin: auto;
-  /* left: 0;
-    right: 0; */
   text-align: center;
   box-shadow: inset -3px -3px 4px 1px rgba(0, 0, 0, 0.25);
-
-  /* min-width: 100%;
-    min-height: 100%;
-    background-size: cover;
-    background-position: center; */
-
-  /* transform: translate(-50%, -50%) */
 }
 
 .screen-border-top {

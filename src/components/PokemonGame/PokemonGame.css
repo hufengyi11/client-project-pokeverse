@@ -88,3 +88,35 @@
 
 
 
+
+.welcomeScreenTitle{
+    
+    border-bottom: double black 2px;
+    border-top: double black 2px;
+    padding: 10px;
+    animation-name: title;
+    
+}
+
+.difficultyOption{
+    font-size: 11px;
+
+}
+
+.difficultyOptionSelected{
+    font-size: 11px;
+    color: red;
+    
+    
+    
+}
+
+
+
+
+.difficulty{
+    font-size: 13px;
+}
+
+
+

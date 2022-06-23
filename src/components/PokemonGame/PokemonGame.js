@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ButtonFunctions from '../ButtonFunctions';
 import './PokemonGame.css';
-// import { selectablePokemons } from './SelectablePokemons';
+import { selectablePokemons } from './SelectablePokemons';
 import PokemonBattleStats from './PokemonBattleStats';
 import PokemonBattleMessage from './PokemonBattleMessage';
 import PokemonPlacements from './PokemonPlacements';
@@ -12,202 +12,70 @@ import './battleScreen.css'
 
 const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
 
-    const selectablePokemons = [
-        {
-            name: "machamp",
-            current_health: 300,
-            health: 300,
-            image_front: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/68.png",
-            image_back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/68.png",
-            moves: [
-                {
-                    name: "mega-punch",
-                    damage: 10
-                },
-                {
-                    name: "mega-kick",
-                    damage: 20
-                },
-                {
-                    name: "headbutt",
-                    damage: 30
-                },
-                {
-                    name: "body-slam",
-                    damage: 50
-                }
-            ]
-        },
-        {
-            name: "lillipup",
-            current_health: 100,
-            health: 100,
-            image_front: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/506.png",
-            image_back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/506.png",
-            moves: [
-                {
-                    name: "tackle",
-                    damage: 10
-                },
-                {
-                    name: "bite",
-                    damage: 20
-                },
-                {
-                    name: "lick",
-                    damage: 30
-                },
-                {
-                    name: "crunch",
-                    damage: 50
-                }
-            ]
-        },
-        {
-            name: "slowking",
-            current_health: 250,
-            health: 250,
-            image_front: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/199.png",
-            image_back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/199.png",
-            moves: [
-                {
-                    name: "ice-beam",
-                    damage: 10
-                },
-                {
-                    name: "hydro-pump",
-                    damage: 20
-                },
-                {
-                    name: "psychic",
-                    damage: 30
-                },
-                {
-                    name: "flamethrower",
-                    damage: 50
-                }
-            ]
-        },
-        {
-            name: "meowth",
-            current_health: 110,
-            health: 110,
-            image_front: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/52.png",
-            image_back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/52.png",
-            moves: [
-                {
-                    name: "pay-day",
-                    damage: 10
-                },
-                {
-                    name: "scratch",
-                    damage: 20
-                },
-                {
-                    name: "cut",
-                    damage: 30
-                },
-                {
-                    name: "headbutt",
-                    damage: 50
-                }
-            ]
-        }
-    ]
+    
 
     let [screenOption, setScreenOption] = useState(1);
     let [horizontalScreenOption,setHorizontalScreenOption] = useState(1);
     const [selectedTrainer,setSelectedTrainer] = useState("");
-    const [selectedPokemon, setSelectedPokemon] = useState("");
+    const [selectedPokemonName, setSelectedPokemonName] = useState("");
     const [computerLoad,setComputerLoad] = useState([])
     const [checkTimeout,setCheckTimeout] = useState(true)
     const [computerChosenParagraph,setComputerChosenParagraph] = useState("")
     const [loadImage, setLoadImage] = useState(<img src={Snorlax} className = "Snorlax"/>)
-    const [computerPick,setComputerPick] = useState("")
+    const [computerPickNumber,setComputerPickNumber] = useState("")
     const [moveOption,setMoveOption] = useState("")
+    const [computersTurn,setComputersTurn] = useState(false)
+    const [computerDifficulty,setComputerDifficulty] = useState("Hard")
     
 
 
     // Screen Message State
     const [screenMessage, setScreenMessage] = useState({message: "", display: false});        
         
-     
+    // Pokemons currently in play
+    const [playerPokemon, setPlayerPokemon] = useState({}); 
+    const [opponentPokemon, setOpponentPokemon] = useState({});
 
+    
+    const playerDoDamageToOpponent = (moveNumber) => {
+        let moveDamage = playerPokemon.moves[moveNumber].damage;
+        const affectedPokemon = opponentPokemon;                        
+        affectedPokemon['current_health'] -= moveDamage;
+        setOpponentPokemon(affectedPokemon);
+        setScreenMessage({message: "", display: false})
+        setComputersTurn(true);
+        computerResponse()
+        if (affectedPokemon.current_health <= 0) {
+            setScreenMessage({message: "YOU WIN!", display: true})
+        }
+    }
 
     const pressUp = () => {
-
-        if(horizontalScreenOption!=4){
-
+        if(horizontalScreenOption != 5){
             setScreenOption(--screenOption)
-
-        if(screenOption<1){
-
-            setScreenOption(4)
+            if(screenOption<1) setScreenOption(4)
         }
-
-        }
-        
-
-        if(horizontalScreenOption===4){
-
-            if(moveOption!=0){
-                setMoveOption(0)
-            }
-            
-            // console.log("up")
-            selectablePokemons[computerPick-1].current_health -= returnMoveDamageArray()[0];
-            // console.log(returnMoveDamageArray()[moveOption])
-            
-
-        }
+        if(horizontalScreenOption===5) playerDoDamageToOpponent(0);
         
     }
 
     const pressDown = () => {
-
-        if(horizontalScreenOption!=4){
-
+        if(horizontalScreenOption != 5){
             setScreenOption(++screenOption)
-
-        if(screenOption>4){
-            setScreenOption(1)
+            if(screenOption>4) setScreenOption(1)
         }
-
-        }
-
-        if(horizontalScreenOption===4){
-
-            // setMoveOption(3)
-            console.log(returnMoveDamageArray()[moveOption])
-
-
-        }
-        
-        
+        if(horizontalScreenOption===5) playerDoDamageToOpponent(2)
     }
 
     const pressRight = () => {
-        if(horizontalScreenOption===4){
-
-            // setMoveOption(1)
-            console.log(returnMoveDamageArray()[moveOption])
-
-
-        }
-
+        if(horizontalScreenOption===5) playerDoDamageToOpponent(1);
     }
 
     const pressLeft = () => {
-        
-        if(horizontalScreenOption===4){
-
-            // setMoveOption(2)
-            console.log(returnMoveDamageArray()[moveOption])
-
-
-        }
+        if(horizontalScreenOption===5) playerDoDamageToOpponent(3);
     }
 
+    
     const trainerNames = {
         option1: "Michelle",
         option2: "Naeem",
@@ -224,25 +92,34 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
     }
 
     const pressYes = (screenOption) => {
-        if(horizontalScreenOption===1){
-            setSelectedTrainer(trainerNames[`option${screenOption}`])
-            setHorizontalScreenOption(2)
-            
 
+        if(horizontalScreenOption===1){
+            setHorizontalScreenOption(2)
         }
+
+
         if(horizontalScreenOption===2){
-            setSelectedPokemon(pokemonNames[`option${screenOption}`])
+            setSelectedTrainer(trainerNames[`option${screenOption}`])
+            setPlayerPokemon(selectablePokemons[screenOption-1])
             setHorizontalScreenOption(3)
             
 
         }
         if(horizontalScreenOption===3){
-            setSelectedPokemon(pokemonNames[`option${screenOption}`])
+            setSelectedPokemonName(pokemonNames[`option${screenOption}`])
+            setPlayerPokemon(selectablePokemons[screenOption-1])
             setHorizontalScreenOption(4)
             
 
         }
         if(horizontalScreenOption===4){
+            setSelectedPokemonName(pokemonNames[`option${screenOption}`])
+            setPlayerPokemon(selectablePokemons[screenOption-1])
+            setHorizontalScreenOption(5)
+            
+
+        }
+        if(horizontalScreenOption===5){
             console.log()
         }
         
@@ -264,7 +141,20 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
         
     }
 
-    
+    const difficultyOptions = {
+        option1: <p className={"difficultyOption"}>Easy</p>,
+        option2: <p className={"difficultyOption"}>Hard</p>,
+        option3: <p className={"difficultyOption"}>Impossible</p>
+    }
+
+    const selectedDifficultyOptions = {
+        option1: <p className={"difficultyOptionSelected"}>Easy</p>,
+        option2: <p className={"difficultyOptionSelected"}>Hard</p>,
+        option3: <p className={"difficultyOptionSelected"}>Impossible</p>
+
+
+
+    }
 
     const trainerOptions = {
         option1 : <p className={"pokemonOption"} >Michelle</p>,
@@ -295,138 +185,104 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
     }
 
     const selectPokemonOption = (screenOption) => {
-
         pokemonOptions[`option${screenOption}`] = selectedPokemonOptions[`option${screenOption}`] 
-
-
     }
 
     const selectTrainerOption = (screenOption) => {
-
         trainerOptions[`option${screenOption}`] = selectedTrainerOptions[`option${screenOption}`] 
+    }
 
+    const selectDifficultyOption = (screenOption) => {
+        difficultyOptions[`option${screenOption}`] = selectedDifficultyOptions[`options${screenOption}`]
 
     }
 
     const computerSelection = ()=> {
         const randomElement = Math.ceil(Math.random() * selectablePokemons.length);
 
-        while(pokemonNames[`option${randomElement}`]===selectedPokemon){
+        while(pokemonNames[`option${randomElement}`]===playerPokemon.name){
 
             let rand = Math.ceil(Math.random() * selectablePokemons.length);
-            if(pokemonNames[`option${rand}`]===selectedPokemon){
+            if(pokemonNames[`option${rand}`]===playerPokemon.name){
                 continue;
             }else{
-                setComputerPick(rand)
+                setComputerPickNumber(rand)
+                setOpponentPokemon(selectablePokemons[rand-1])
                 return selectedPokemonOptions[`option${rand}`]
             }
             
             
         }
         
-        setComputerPick(randomElement)
+        setOpponentPokemon(selectablePokemons[randomElement-1])
+        setComputerPickNumber(randomElement)
         return selectedPokemonOptions[`option${randomElement}`]
     }
     
     const imageLoadOut = ()=>{
         setTimeout(()=>{
             setLoadImage(<img src={SnorlaxHi} className = "SnorlaxHigh"/>)
-            
         },5000)
-
     }
 
 
     const computerChosenTimeout = () => {
-
         setTimeout(()=>{
             // setLoadImage(<img src={SnorlaxHi} className = "SnorlaxHigh"/>)
             setComputerChosenParagraph(<p>Computer has selected:</p>)
         },4000)
-
-
     }
 
     const computerTimeOut = () => {
 
-        
         if(checkTimeout){
             setTimeout(() => {
                 setComputerLoad(computerSelection());
               }, 4000);
               setCheckTimeout(false)
-
         }
-        
     }
-
-    const moveOptions = {}
     
 
-
-  
-
     const returnUserPokeMovesArray = () => {
-
-
         const pokeMovesArray = [];
-
-
         selectablePokemons[screenOption-1]["moves"].map((move,index)=>{
-
-            
-            
             pokeMovesArray.push(<p key={index} className="pokemonMoves">{move["name"].toUpperCase()}</p>)
-            
-            
-
         }) 
-
-        
-
         return(pokeMovesArray)
-
-
-
-    }
-
-    const returnComputerPokeMovesArray = () => {
-
-
-        const pokeMovesArray = [];
-
-
-        selectablePokemons[computerPick-1]["moves"].map((move,index)=>{
-
-            
-            
-            pokeMovesArray.push(<p key={index} className="pokemonMoves">{move["name"].toUpperCase()}</p>)
-            
-            
-
-        }) 
-
-        
-
-        return(pokeMovesArray)
-
-
-
     }
 
 
 
-    const returnMoveDamageArray = () => {
+    // const returnComputerPokeMovesArray = () => {
 
-        const moveDamageArray = [];
-        selectablePokemons[screenOption-1]["moves"].map((move,index)=>{
-            moveDamageArray.push(move["damage"]);              
+
+    //     const pokeMovesArray = [];
+
+
+    //     selectablePokemons[computerPickNumber-1]["moves"].map((move,index)=>{
+
+            
+            
+    //         pokeMovesArray.push(<p key={index} className="pokemonMoves">{move["name"].toUpperCase()}</p>)
+            
+            
+
+    //     }) 
+    //     return(pokeMovesArray)
+    // }
+
+    // const returnMoveDamageArray = () => {
+
+    //     const moveDamageArray = [];
+    //     selectablePokemons[screenOption-1]["moves"].map((move,index)=>{
+    //         moveDamageArray.push(move["damage"]);              
            
-        })
-        return moveDamageArray;
+    //     })
+    //     return moveDamageArray;
 
 
-    }
+    // }
 
     
 
@@ -435,6 +291,22 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
     const screenOptions = (horizontalScreenOption) => {
 
         if(horizontalScreenOption===1){
+
+            return(
+                <>
+                <p className="welcomeScreenTitle">Welcome to Pokemon Battle Simulator</p>
+                <p className="difficulty">Select your difficulty:</p>
+                {difficultyOptions["option1"]}
+                {difficultyOptions["option2"]}
+                {difficultyOptions["option3"]}
+                
+
+                </>
+            )
+
+        }
+
+        if(horizontalScreenOption===2){
             selectablePokemons.forEach(pokemon => {
                 pokemon.current_health = pokemon.health
             })
@@ -449,7 +321,7 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
                 </>
             )
         }
-        if(horizontalScreenOption===2){
+        if(horizontalScreenOption===3){
             return(
                 <>
                      <p>Trainer! Select Your Pokemon!</p>
@@ -465,7 +337,7 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
                 </>
             )
         }
-        if(horizontalScreenOption===3){
+        if(horizontalScreenOption===4){
             return(
                 <>
                      <p className="computerSelection">Computer is selecting a Pokemon</p>
@@ -474,36 +346,21 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
                      {computerTimeOut()}
                      {computerChosenParagraph}
                      {computerLoad}
-                     
-
-                     {/* <p>Computer selection:</p>
-                     {computerSelection()} */}
-                     
-                     
-                
                 </>
             )
         }
-        if(horizontalScreenOption===4){
+        if(horizontalScreenOption===5){
 
             return(
                 <>
-                    {PokemonBattleStats(selectablePokemons[computerPick-1], true)}
-                    {PokemonBattleStats(selectablePokemons[screenOption-1], false)}
-                    {PokemonPlacements(selectablePokemons[computerPick-1], true)}
-                    {PokemonPlacements(selectablePokemons[screenOption-1], false)}
-                    {battleFlow()}
-                    
+                    {PokemonBattleStats(opponentPokemon, true)}
+                    {PokemonBattleStats(playerPokemon, false)}
+                    {PokemonPlacements(opponentPokemon, true)}
+                    {PokemonPlacements(playerPokemon, false)}
                     {PokemonBattleMessage(screenMessage.message, screenMessage.display)}
-                    <button className="test-trigger-message" onClick={triggerMessage}>Trigger Mes</button>
+                    {/* <button className="test-trigger-message" onClick={triggerMessage}>Trigger Mes</button> */}
                     <section className="movesContainer">
-                        {/* {returnUserPokeMoves()} */}
                         {returnUserPokeMovesArray()}
-                        
-                         
-                        
-                        {/* {console.log(returnUserMoveObject())} */}
-                        
                     </section>                
                 </>
             )
@@ -511,56 +368,23 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
     }
 
 
-    const battleFlow = () => {
+    const computerResponse = () => {
         
-        /*
+        if(computersTurn===true && computerDifficulty === "Hard"  ){
             
-            1. Present main battle screen 
+            triggerMessage();
+            let affectedPokemon = playerPokemon
+            let computerAttack = opponentPokemon["moves"][3]['damage']
+            affectedPokemon["current_health"] -=  computerAttack;
+            setPlayerPokemon(affectedPokemon)
             
-            2. User selects a move
-
-            3. Use move damage value to deduct opponent's current health
-
-            4. Check if opponent pokemon is dead
-                
-                if (opponent dead) leave battleFlow and present win screen
-                else carry on battle
-
-            5. Re-render opponent health bar using computer pokemon object
-
-            6. Computer selects a move
-
-            7. Use opponent move damage value to deduct player's current health
-            
-            8. Check if player pokemon is dead
-
-                if (player dead) leave battleFlow and present lose screen
-                else carry on battle
-
-            9. Re-render player health bar using player pokemon object
-
-            10. Back to step 1
-            
-        */
-        
-        // if(moveOption===0){
-            
-        //     let computerHealth = selectablePokemons[computerPick-1].current_health;
-        //     computerHealth -= returnMoveDamageArray()[moveOption];
-        //     selectablePokemons[computerPick-1].current_health = computerHealth;
-
-
-
-        // }
-   
-        
+        }
 
     }
 
     
     const triggerMessage = () => {
         setScreenMessage({message: "Opponent used MOVE!", display: true})
-        
         setTimeout(() => {
             setScreenMessage({message: "", display: false})
         }, 2000)
@@ -573,6 +397,7 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
             <section className="screenContainer">
             {selectPokemonOption(screenOption)}
             {selectTrainerOption(screenOption)}
+            {selectDifficultyOption(screenOption)}
             {screenOptions(horizontalScreenOption)}
         
 
@@ -592,8 +417,9 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
         </>
     )
 
-    
+        
 }
+
 
 
 export default PokemonGame;

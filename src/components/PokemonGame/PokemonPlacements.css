@@ -1,0 +1,26 @@
+
+
+.pokemon-container-player {
+    position: absolute;
+    left: 7px;
+    top: 110px;
+}
+
+.pokemon-container-opponent {
+    position: absolute;
+    left: 110px;
+    top: 60px;
+}
+
+
+.pokemon-image-player {
+    transform: scale(1.2);
+    filter: grayscale(100%) brightness(0.8) contrast(175%);
+    z-index: 9999;
+}
+
+.pokemon-image-opponent {
+    transform: scale(1.1);
+    filter: grayscale(100%) brightness(0.8) contrast(175%);
+    z-index: 9999;
+}

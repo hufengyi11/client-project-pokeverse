@@ -3,41 +3,15 @@ import './PokemonPlacements.css'
 
 const PokemonPlacements = (pokemonInfo, opponent) => {
 
-
-    let image, scale, leftPosition, topPosition;
-    if (opponent) {
-        image = pokemonInfo.image_front;
-        leftPosition = "110px";
-        topPosition = "60px";
-        scale = "scale(1.1)";
-    }
-    else {
-        image = pokemonInfo.image_back;
-        leftPosition = "7px";
-        topPosition = "110px";
-        scale = "scale(1.2)"
-    }
-
-    const pokemonContainer = {
-        position: "absolute",
-        left: leftPosition,
-        top: topPosition
-    }
-
-    const pokemonImage = {
-        transform: scale,
-        filter: "grayscale(100%) brightness(0.8) contrast(175%)",
-        zIndex: "9999"
-    }
-
+    const image = opponent ? pokemonInfo.image_front : pokemonInfo.image_back;
 
     return (
         <>
-            <div style={pokemonContainer} className="pokemon-container">
+            <div className={opponent ? "pokemon-container-opponent" : "pokemon-container-player"}>
                 <img 
                     src={image} 
                     alt=""
-                    style={pokemonImage}
+                    className={opponent ? "pokemon-image-opponent" : "pokemon-image-player"}
                 />
             </div>
         </>
