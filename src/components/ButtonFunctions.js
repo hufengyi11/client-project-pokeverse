@@ -3,10 +3,6 @@ import StartUpScreen from "./Screens/StartUpScreen"
 
 const ButtonFunctions = (props) => {
 
-
-
-
-
     const screens = {
 
         HomeScreen: [

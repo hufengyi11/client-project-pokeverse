@@ -21,9 +21,7 @@ const ScreenContainer = ({ onClickHere }) => {
             <div className="screen-content-container">
                 <button
                     className="centerButton-invisible"
-                    onClick={() => {
-                        setScreen(<PokemonGame />)
-                    }}>
+                    onClick={() => { setScreen(<PokemonGame />) }}>
                 </button>
                 <button
                     className='power-button'
