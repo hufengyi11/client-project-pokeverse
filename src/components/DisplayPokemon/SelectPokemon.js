@@ -27,7 +27,7 @@ const SelectPokemon = ({goToHomeScreen_FromSelectPokemonScreen}) => {
 
 
     const pokemonNameChange = (event) => {
-        setPokemonName(event.target.value);
+        setPokemonName(event.target.value.toLowerCase());
         setPokemonIndex("");
     }
 
@@ -102,7 +102,7 @@ const SelectPokemon = ({goToHomeScreen_FromSelectPokemonScreen}) => {
                     <div className="select-pokemon-by-index">BY INDEX:</div>
                     <input 
                         spellCheck="false"
-                        type="text" 
+                        type="number" 
                         className="enter-pokemon-index" 
                         value={pokemonIndex} 
                         onChange={pokemonIndexChange}

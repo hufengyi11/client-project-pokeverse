@@ -1,18 +1,20 @@
 import React from 'react';
 
 
-const PokemonBattleStats = (opponentPokemon) => {
+const PokemonBattleStats = (pokemonInfo, opponent) => {
     
     // --- INPUTS
-    const currentHealthNumeric = 151;
-    const totalHealthNumeric = 200;
+    let currentHealthNumeric = pokemonInfo.current_health;
+    const totalHealthNumeric = pokemonInfo.health;
 
-    
+    if (currentHealthNumeric <= 0) {
+        currentHealthNumeric = 0;
+    }
 
     const remainingHealthPercentage = (currentHealthNumeric / totalHealthNumeric) * 100;
 
     let leftPosition, topPosition;
-    if (opponentPokemon) {
+    if (opponent) {
         leftPosition = "10px";
         topPosition = "30px";
     }
@@ -32,7 +34,8 @@ const PokemonBattleStats = (opponentPokemon) => {
         borderRadius: "5px",
         height: "42px",
         width: "127px",
-        backgroundColor: "transparent"
+        backgroundColor: "transparent",
+        zIndex: "900"
     }
 
     const pokemonName = {
@@ -86,7 +89,7 @@ const PokemonBattleStats = (opponentPokemon) => {
     return (
         <>
             <div style={battleStatsContainer}>
-                <div style={pokemonName}>PIKACHU</div>
+                <div style={pokemonName}>{pokemonInfo.name.toUpperCase()}</div>
                 <div style={pokemonBattleStatsHealth}>
                     <div style={pokemonHealthPointContainer}>
                         <div style={pokemonHealthPointHP}>HP</div>

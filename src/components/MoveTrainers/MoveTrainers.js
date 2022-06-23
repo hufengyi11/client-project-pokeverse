@@ -120,7 +120,7 @@ const MoveTrainers = ({goToHomeScreen_FromMoveTrainersScreen,acceptChange}) => {
                     type = "number"
                     placeholder="Type Trainer ID "
                     className = "id-input"
-                    onChange={(event)=>{setTrainerID(event.target.value)}}
+                    onChange={(event)=>{setTrainerID((event.target.value)-1)}}
 
                     />
                     <section className="trainer-name">Name: {trainerName}</section>

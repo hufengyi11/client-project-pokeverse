@@ -3,10 +3,12 @@ import ButtonFunctions from '../ButtonFunctions';
 import './PokemonGame.css';
 import { selectablePokemons } from './SelectablePokemons';
 import PokemonBattleStats from './PokemonBattleStats';
-import PokemonBattleground from './PokemonBattleground';
+import PokemonBattleMessage from './PokemonBattleMessage';
+import PokemonPlacements from './PokemonPlacements';
 import Snorlax from './snorlaxSleep.jpeg'
 import SnorlaxHi from "./snorlaxHi.jpeg"
 import PokeBall from "./pokeball.jpeg"
+import './battleScreen.css'
 
 const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
 
@@ -16,41 +18,88 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
     const [selectedPokemon, setSelectedPokemon] = useState("");
     const [computerLoad,setComputerLoad] = useState([])
     const [checkTimeout,setCheckTimeout] = useState(true)
-    const [computerChosenP,setComputerChosenP] = useState("")
+    const [computerChosenParagraph,setComputerChosenParagraph] = useState("")
     const [loadImage, setLoadImage] = useState(<img src={Snorlax} className = "Snorlax"/>)
+    const [computerPick,setComputerPick] = useState("")
+    const [moveOption,setMoveOption] = useState("")
+    
 
 
+    // Screen Message State
+    const [screenMessage, setScreenMessage] = useState({message: "", display: false});        
+        
+     
 
 
     const pressUp = () => {
 
-        setScreenOption(--screenOption)
+        if(horizontalScreenOption!=4){
+
+            setScreenOption(--screenOption)
 
         if(screenOption<1){
 
             setScreenOption(4)
+        }
+
+        }
+        
+
+        if(horizontalScreenOption===4){
+
+            setMoveOption(0)
+            console.log(moveOption)
+            // selectablePokemons[computerPick-1].current_health = selectablePokemons[computerPick-1].current_health - returnMoveDamageArray()[moveOption];
+            // console.log(returnMoveDamageArray()[moveOption])
+            
+
         }
         
     }
 
     const pressDown = () => {
 
-        setScreenOption(++screenOption)
+        if(horizontalScreenOption!=4){
+
+            setScreenOption(++screenOption)
 
         if(screenOption>4){
             setScreenOption(1)
         }
+
+        }
+
+        if(horizontalScreenOption===4){
+
+            setMoveOption(3)
+            console.log(returnMoveDamageArray()[moveOption])
+
+
+        }
+        
         
     }
 
     const pressRight = () => {
-        
+        if(horizontalScreenOption===4){
+
+            setMoveOption(1)
+            console.log(returnMoveDamageArray()[moveOption])
+
+
+        }
 
     }
 
     const pressLeft = () => {
         
-        
+        if(horizontalScreenOption===4){
+
+            setMoveOption(2)
+            console.log(returnMoveDamageArray()[moveOption])
+
+
+        }
     }
 
     const trainerNames = {
@@ -81,6 +130,15 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
             
 
         }
+        if(horizontalScreenOption===3){
+            setSelectedPokemon(pokemonNames[`option${screenOption}`])
+            setHorizontalScreenOption(4)
+            
+
+        }
+        if(horizontalScreenOption===4){
+            console.log()
+        }
         
 
         
@@ -92,6 +150,9 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
         }
         if(horizontalScreenOption===3){
             setHorizontalScreenOption(2)
+        }
+        if(horizontalScreenOption===4){
+            setHorizontalScreenOption(3)
         }
         
         
@@ -150,13 +211,14 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
             if(pokemonNames[`option${rand}`]===selectedPokemon){
                 continue;
             }else{
+                setComputerPick(rand)
                 return selectedPokemonOptions[`option${rand}`]
             }
             
             
         }
         
-        
+        setComputerPick(randomElement)
         return selectedPokemonOptions[`option${randomElement}`]
     }
     
@@ -173,7 +235,7 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
 
         setTimeout(()=>{
             // setLoadImage(<img src={SnorlaxHi} className = "SnorlaxHigh"/>)
-            setComputerChosenP(<p>Computer has selected:</p>)
+            setComputerChosenParagraph(<p>Computer has selected:</p>)
         },4000)
 
 
@@ -192,11 +254,84 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
         
     }
 
+    const moveOptions = {}
+    
+
+
+  
+
+    const returnUserPokeMovesArray = () => {
+
+
+        const pokeMovesArray = [];
+
+
+        selectablePokemons[screenOption-1]["moves"].map((move,index)=>{
+
+            
+            
+            pokeMovesArray.push(<p key={index} className="pokemonMoves">{move["name"].toUpperCase()}</p>)
+            
+            
+
+        }) 
+
+        
+
+        return(pokeMovesArray)
+
+
+
+    }
+
+    const returnComputerPokeMovesArray = () => {
+
+
+        const pokeMovesArray = [];
+
+
+        selectablePokemons[computerPick-1]["moves"].map((move,index)=>{
+
+            
+            
+            pokeMovesArray.push(<p key={index} className="pokemonMoves">{move["name"].toUpperCase()}</p>)
+            
+            
+
+        }) 
+
+        
+
+        return(pokeMovesArray)
+
+
+
+    }
+
+
+
+    const returnMoveDamageArray = () => {
+
+        const moveDamageArray = [];
+        selectablePokemons[screenOption-1]["moves"].map((move,index)=>{
+            moveDamageArray.push(move["damage"]);              
+           
+        })
+        return moveDamageArray;
+
+
+    }
+
+    
+
     
 
     const screenOptions = (horizontalScreenOption) => {
 
         if(horizontalScreenOption===1){
+            selectablePokemons.forEach(pokemon => {
+                pokemon.current_health = pokemon.health
+            })
             return(
                 <>
                     <p>Who do you want to be?</p>
@@ -227,11 +362,11 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
         if(horizontalScreenOption===3){
             return(
                 <>
-                     <p>Computer is selecting a Pokemon</p>
+                     <p className="computerSelection">Computer is selecting a Pokemon</p>
                      {loadImage}
                      {computerChosenTimeout()}   
                      {computerTimeOut()}
-                     {computerChosenP}
+                     {computerChosenParagraph}
                      {computerLoad}
                      
 
@@ -243,9 +378,88 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
                 </>
             )
         }
+        if(horizontalScreenOption===4){
 
+            return(
+                <>
+                    {PokemonBattleStats(selectablePokemons[computerPick-1], true)}
+                    {PokemonBattleStats(selectablePokemons[screenOption-1], false)}
+                    {PokemonPlacements(selectablePokemons[computerPick-1], true)}
+                    {PokemonPlacements(selectablePokemons[screenOption-1], false)}
+                    {battleFlow()}
+                    
+                    {PokemonBattleMessage(screenMessage.message, screenMessage.display)}
+                    <button className="test-trigger-message" onClick={triggerMessage}>Trigger Mes</button>
+                    <section className="movesContainer">
+                        {/* {returnUserPokeMoves()} */}
+                        {returnUserPokeMovesArray()}
+                        
+                         
+                        {console.log(returnMoveDamageArray()[1])}
+                        {/* {console.log(returnUserMoveObject())} */}
+                        
+                    </section>                
+                </>
+            )
+        }
+    }
+
+
+    const battleFlow = () => {
+        
+        /*
+            
+            1. Present main battle screen 
+            
+            2. User selects a move
+
+            3. Use move damage value to deduct opponent's current health
+
+            4. Check if opponent pokemon is dead
+                
+                if (opponent dead) leave battleFlow and present win screen
+                else carry on battle
+
+            5. Re-render opponent health bar using computer pokemon object
+
+            6. Computer selects a move
+
+            7. Use opponent move damage value to deduct player's current health
+            
+            8. Check if player pokemon is dead
+
+                if (player dead) leave battleFlow and present lose screen
+                else carry on battle
+
+            9. Re-render player health bar using player pokemon object
+
+            10. Back to step 1
+            
+        */
+        
+        // if(moveOption===0){
+            
+        //     let computerHealth = selectablePokemons[computerPick-1].current_health;
+        //     computerHealth -= returnMoveDamageArray()[moveOption];
+        //     selectablePokemons[computerPick-1].current_health = computerHealth;
+
+
+
+        // }
+   
+        
 
     }
+
+    
+    const triggerMessage = () => {
+        setScreenMessage({message: "Opponent used MOVE!", display: true})
+        
+        setTimeout(() => {
+            setScreenMessage({message: "", display: false})
+        }, 2000)
+    }
+
 
 
     return(
@@ -254,7 +468,8 @@ const PokemonGame = ({goToHomeScreen_FromPokemonGameScreen}) => {
             {selectPokemonOption(screenOption)}
             {selectTrainerOption(screenOption)}
             {screenOptions(horizontalScreenOption)}
-            
+        
+
             {/* {PokemonBattleStats(true)}
             {PokemonBattleStats(false)}
             {PokemonBattleground()} */}
